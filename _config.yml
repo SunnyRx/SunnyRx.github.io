@@ -1,0 +1,20 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Void
+email: SunnyRx@vip.qq.com
+description: > # this means to ignore newlines until "baseurl:"
+  It's my blog, and I will try to make it batter.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://NoRUL.com" # the base hostname & protocol for your site
+twitter_username: SunnyRx
+github_username:  SunnyRx
+
+# Build settings
+markdown: kramdown
+permalink: none

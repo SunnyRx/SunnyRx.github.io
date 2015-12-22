@@ -1,9 +1,15 @@
 ---
-layout: post
-title:  "Cocos2d-x 3.4 EditBox的调用方法"
-date:   2015-12-20 01:44:00 +0800
-categories: cocos2dx
+layout:     post
+title:      "Cocos2d-x 3.4 EditBox的调用方法"
+subtitle:   "Cocos2d-x 3.4 EditBox's instructions"
+date:       2015-12-20
+author:     "SunnyRx"
+header-img: "img/post-bg-gray.jpg"
+tags:
+    - cocos2dx
+    - 编程
 ---
+
 本来在cocos2dx中调用EditBox应该是很简单的事情，因为cocos2d-x 3.0版本后更新频繁改动，在百度上搜到的教程大多数都跟不上了。
 现在我所使用的Cocos2d-x版本是3.4，不知道更新的版本是否有其它变动。
 cocos2d-x 3.4的EditBox包含在cocos-ext.h中，具体点应该是extensions\cocos-ext.h，大部分关于EditBox的教程会添加
@@ -22,25 +28,25 @@ cocos2d-x 3.4的EditBox包含在cocos-ext.h中，具体点应该是extensions\co
 然后就可以用EditBox::create()创建EditBox，当然完整的创建方法是有参数的。
 EditBox的create方法有两个，以下是UIEditBox.h中关于create方法的声明。
 
-{% highlight c++ %}
-            /**
-             * create a edit box with size.
-             * @return An autorelease pointer of EditBox, you don't need to release it only if you retain it again.
-             */
-            static EditBox* create(const Size& size,
-                                   Scale9Sprite* normalSprite,
-                                   Scale9Sprite* pressedSprite = nullptr,
-                                   Scale9Sprite* disabledSprite = nullptr);
+```
+/**
+ * create a edit box with size.
+ * @return An autorelease pointer of EditBox, you don't need to release it only if you retain it again.
+ */
+static EditBox* create(const Size& size,
+                       Scale9Sprite* normalSprite,
+                       Scale9Sprite* pressedSprite = nullptr,
+                       Scale9Sprite* disabledSprite = nullptr);
 
             
-            /**
-             * create a edit box with size.
-             * @return An autorelease pointer of EditBox, you don't need to release it only if you retain it again.
-             */
-            static EditBox* create(const Size& size,
-                                   const std::string& pNormal9SpriteBg,
-                                   TextureResType texType = TextureResType::LOCAL);
-{% endhighlight %}
+/**
+ * create a edit box with size.
+ * @return An autorelease pointer of EditBox, you don't need to release it only if you retain it again.
+ */
+static EditBox* create(const Size& size,
+                       const std::string& pNormal9SpriteBg,
+                       TextureResType texType = TextureResType::LOCAL);
+```
 
 在使用Scale9Sprite上遇到了困难，好在发现有第二个create方法。
 

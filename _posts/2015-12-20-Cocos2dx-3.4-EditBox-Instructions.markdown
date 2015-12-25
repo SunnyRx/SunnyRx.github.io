@@ -4,7 +4,7 @@ title:      "Cocos2d-x 3.4 EditBox的调用方法"
 subtitle:   "Cocos2d-x 3.4 EditBox's instructions"
 date:       2015-12-20
 author:     "SunnyRx"
-header-img: "img/post-bg-gray.jpg"
+header-img: "img/post-bg-cocos2dx.jpg"
 tags:
     - cocos2dx
     - 编程

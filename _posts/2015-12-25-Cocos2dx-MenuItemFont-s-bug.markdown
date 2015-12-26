@@ -16,7 +16,7 @@ Cocos2d-x存在MenuItemFont类，用于创建一个Label按钮，当要用文字
 使用MenuItemFont时如果需要设置字体和字号，应该调用setFontNameObj()和setFontSizeObj()函数。
 
 以下代码，执行后button1为默认字体和默认字号，buuton2字体为黑体，字号为60。
-```
+{% highlight c++ %}
 auto button1 = MenuItemFont::create("Button I");
 backButton->setFontName("黑体");
 backButton->setFontSize(60);
@@ -24,10 +24,10 @@ backButton->setFontSize(60);
 auto button2 = MenuItemFont::create("Button II");
 backButton->setFontName("微软雅黑");
 backButton->setFontSize(36);
-```
+{% endhighlight %}
 
 以下代码，执行后button1字体为黑体，字号为60，buuton2字体为微软雅黑，字号为36。
-```
+{% highlight c++ %}
 auto button1 = MenuItemFont::create("Button I");
 backButton->setFontNameObj("黑体");
 backButton->setFontSizeObj(60);
@@ -35,10 +35,10 @@ backButton->setFontSizeObj(60);
 auto button2 = MenuItemFont::create("Button II");
 backButton->setFontNameObj("微软雅黑");
 backButton->setFontSizeObj(36);
-```
+{% endhighlight %}
 
 以下代码将和上面代码一样，执行后button1字体为黑体，字号为60，buuton2字体为微软雅黑，字号为36。
-```
+{% highlight c++ %}
 MenuItemFont::setFontName("黑体");
 MenuItemFont::setFontSize(60);
 auto button1 = MenuItemFont::create("Button I");
@@ -46,4 +46,4 @@ auto button1 = MenuItemFont::create("Button I");
 MenuItemFont::setFontName("微软雅黑");
 MenuItemFont::setFontSize(36);
 auto button2 = MenuItemFont::create("Button II");
-```
+{% endhighlight %}

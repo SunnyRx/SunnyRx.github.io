@@ -1,16 +1,3 @@
----
-layout:     post
-title:      "UIAutomation的简单使用方法"
-subtitle:   "Sample to use UIAutomation"
-date:       2016-01-04
-author:     "SunnyRx"
-header-img: "img/post-bg-gray.jpg"
-tags:
-    - iOS
-    - Xcode
-    - UIAutomation
-    - 自动化测试
----
 UIAutomation是苹果公司发布的一个测试框架，主要用于自动化测试iOS和OS X应用的UI交互情况。它使用了使用灵活、易于扩展的JavaScript作为其主要的脚本语言，可以用使用者快速上手。
 
 本文参考了知平软件Dawson Liu的翻译文[《如何使用UIAutomation进行iOS 自动化测试（Part I）》](http://www.cnblogs.com/vowei/archive/2012/08/10/2631949.html)，原文地址是[http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation](http://blog.manbolo.com/2012/04/08/ios-automated-tests-with-uiautomation)。参考Dawson Liu的翻译文可以更全面了解怎么使用UIAutomation，因为原文是2012年的文章所以有点旧，这里节选其中的一部分内容使用新的Xcode做示范。

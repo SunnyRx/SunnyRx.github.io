@@ -10,23 +10,24 @@ tags:
     - 编程
 ---
 
-本来在cocos2dx中调用EditBox应该是很简单的事情，因为cocos2d-x 3.0版本后更新频繁改动，在百度上搜到的教程大多数都跟不上了。
-现在我所使用的Cocos2d-x版本是3.4，不知道更新的版本是否有其它变动。
-cocos2d-x 3.4的EditBox包含在cocos-ext.h中，具体点应该是extensions\cocos-ext.h，大部分关于EditBox的教程会添加
+本来在`cocos2d-x`中调用`EditBox`应该是很简单的事情，因为`cocos2d-x`3.0版本后更新频繁改动，在百度上搜到的教程大多数都跟不上了。
+现在我所使用的`Cocos2d-x`版本是3.4，不知道更新的版本是否有其它变动。
+`cocos2d-x 3.4`的`EditBox`包含在`cocos-ext.h`中，具体点应该是`extensions\cocos-ext.h`，大部分关于`EditBox`的教程会添加
 
-*#include "extensions\cocos-ext.h"*
-
-在3.4版本中，项目的include相关目录早已经添加了extensions文件夹在其中，在Visual Studio的Project->Properties->Configuration Properties->C/C++->General->Additional Include Directories中，可以看到有"$(EngineRoot)extensions;"在其中。
-所以，应用EditBox相关的头文件应该是
-
-*#include "cocos-ext.h"*
-
+```
+#include "extensions\cocos-ext.h"
+```
+在3.4版本中，项目的include相关目录早已经添加了extensions文件夹在其中，在`Visual Studio`的`Project->Properties->Configuration Properties->C/C++->General->Additional Include Directories`中，可以看到有`$(EngineRoot)extensions;`在其中。
+所以，应用`EditBox`相关的头文件应该是
+```
+#include "cocos-ext.h"
+```
 接下来，添加
-
-*USING_NS_CC_EXT;*
-
-然后就可以用EditBox::create()创建EditBox，当然完整的创建方法是有参数的。
-EditBox的create方法有两个，以下是UIEditBox.h中关于create方法的声明。
+```
+USING_NS_CC_EXT;
+```
+然后就可以用`EditBox::create()`创建`EditBox`，当然完整的创建方法是有参数的。
+`EditBox`的`create`方法有两个，以下是`UIEditBox.h`中关于`create`方法的声明。
 
 ```
 /**
@@ -48,6 +49,6 @@ static EditBox* create(const Size& size,
                        TextureResType texType = TextureResType::LOCAL);
 ```
 
-在使用Scale9Sprite上遇到了困难，好在发现有第二个create方法。
+在使用`Scale9Sprite`上遇到了困难，好在发现有第二个`create`方法。
 
-在编译的时候，遇到了"fatal error C1083: Cannot open include file: 'extensions/......"错误，问题在项目的include相关目录早已经添加了extensions，所以有其它头文件有#include "extensions/..."的话一律会出现error C1083。根据cocos论坛中一个[相关的讨论](http://discuss.cocos2d-x.org/t/error-c1083-cant-open-extensions-extensionmacros-h/11937)，只要在property->configure property->C/C++->general->additional include directory中添加"$(EngineRoot);"就可以解决问题了。
+在编译的时候，遇到了`fatal error C1083: Cannot open include file: 'extensions/......`错误，问题在项目的`include`相关目录早已经添加了`extensions`，所以有其它头文件有`#include "extensions/..."`的话一律会出现`error C1083`。根据cocos论坛中一个[相关的讨论](http://discuss.cocos2d-x.org/t/error-c1083-cant-open-extensions-extensionmacros-h/11937)，只要在`property->configure property->C/C++->general->additional include directory`中添加`$(EngineRoot);`就可以解决问题了。

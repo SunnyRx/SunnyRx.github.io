@@ -4,7 +4,7 @@ title:      "《Kreuz Skelett Mann:saligiare》发布四周年"
 subtitle:   "第一次的游戏创作体验"
 date:       2016-08-30
 author:     "SunnyRx"
-header-img: "img/post-bg-gamejam.jpg"
+header-img: "img/post-bg-ksm.jpg"
 tags:
     - 游戏制作
     - 分享
@@ -88,7 +88,7 @@ KSM中有一段剧情，讲到男主和青梅竹马爬山的回忆，我们需�
 
 >处理后的山道取景
 
-![五个在爬山的小伙伴在山顶合影留念](http://SunnyRx.github.io/img/in-post/post-KSM/IMG_0134.png)
+![五个在爬山的小伙伴在山顶合影留念](http://SunnyRx.github.io/img/in-post/post-KSM/IMG_0134.jpg)
 
 >五个爬山的小伙伴在山顶合影留念
 

@@ -82,7 +82,7 @@ auth_token = 123
 [web]
 type = http
 custom_domains = nasweb.sunnyrx.com
-auto_token = 123
+auth_token = 123
 ```
 
 这里先简单解释一下上面的配置，结合下面的客户端配置更容易理解。

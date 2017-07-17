@@ -1,56 +1,26 @@
 ---
 layout: page
 title: "About"
-description: "Hello, world."
+description: "Hey, this is Hux."
 header-img: "img/about-bg.jpg"
 ---
 
 <!-- Language Selector -->
-<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英语 English </option>
+    <option value="1"> 英文 English </option>
 </select>
 
 <!-- Chinese Version -->
-<div class="zh">
-    <blockquote>
-        热爱生活和追梦的魔法师，<br>
-        一直想制作游戏。
-    </blockquote>
-    
-    <p>
-    网名热心人士，ID SunnyRx。
-    </p>
-
-    <p>
-    暨南大学在读大四学生，软件工程专业。<a href="http://doujin.bgm.tv/club/manyanshe">漫研社</a>创始人。
-    </p>
-
-    <p>
-    <b>喜欢电子游戏，想成为游戏制作人。</b>长期接触ACG文化，偏爱FPS游戏，SteamID <a href="http://steamcommunity.com/id/SunnyRx/">SunnyRx</a>。
-    </p>
-
-    <p>
-    <b>有好多技能，但多数是半桶水。</b>会音视频剪辑，会Photoshop，做过广播剧，做过游戏，催过同人本。主要技能还是编程，擅长使用C++语言，目前在学习Cocos2d-x。
-    </p>
-
-    <p>
-    关于我的作品，欢迎到<a href="http://sunnyrx.github.io/works/">WORKS</a>页面查看。
-    </p>
-
+<div class="zh post-container">
+    {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
 </div>
 
 <!-- English Version -->
-<div class="en">
-    <blockquote>
-        Love life, love dream. <br>
-        Alway want to make games.
-    </blockquote>
-
-    <p>In fact, I don't know how to tell you about me in English.</p>
-
-    <p>But I will try to add the sentence in this page.</p>
-
+<div class="en post-container">
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
 </div>
 
 <!-- Handle Language Change -->
@@ -92,42 +62,6 @@ header-img: "img/about-bg.jpg"
     // init
     _render();
 </script>
-
-
-
-{% if site.duoshuo_username %}
-<!-- 多说评论框 start -->
-<div class="comment">
-    <div class="ds-thread"
-    {% if site.duoshuo_username == "sunnyrx" %}
-        data-thread-id="415617"
-    {% else %}
-        data-thread-key="{{site.duoshuo_username}}/about"
-    {% endif %}
-
-    data-title="{{page.title}}"
-    data-url="{{site.url}}/about/"></div>
-</div>
-<!-- 多说评论框 end -->
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User hacking by Hux
-    var _user = '{{site.duoshuo_username}}';
-
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-{% endif %}
 
 
 {% if site.disqus_username %}

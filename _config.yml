@@ -17,15 +17,23 @@ weibo_username:     SunnyRx
 github_username:    SunnyRx
 twitter_username:   SunnyRx
 #facebook_username: SunnyRx
+# linkedin_username:  firstname-lastname-idxxxx
 
 
 
 # Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
 
 
 
@@ -40,13 +48,10 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+disqus_username: SunnyRx
 
-# Duoshuo settings
-duoshuo_username: sunnyrx
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
+# Netease setttings
+netease_comment: false
 
 
 
@@ -72,11 +77,21 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
 # Friends
 friends: [
     {
         title: "Asterisk Blog",
         href: "http://www.liangyuekang.net/"
+    },
+    {
+        title: "Ceplavia的游戏评测站点",
+        href: "http://www.ceplavia.com/"
     },
     {
         title: "Gzp的博客",
@@ -88,7 +103,7 @@ friends: [
     },
     {
         title: "Ruter的博客",
-        href: "http://ruter.sundaystart.net/"
+        href: "http://blog.ruterlv.com/"
     },
     {
         title: "妖孽的简书",

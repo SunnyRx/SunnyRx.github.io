@@ -89,9 +89,9 @@ vhost_http_port = 8080
 客户端前面的操作和服务端是一模一样的，这里不一一解释。
 
 ```
-wget https://github.com/fatedier/frp/releases/download/v0.8.1/frp_0.8.1_linux_386.tar.gz
-tar -zxvf frp_0.8.1_linux_386.tar.gz
-cd frp_0.8.1_linux_386
+wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_386.tar.gz
+tar -zxvf frp_0.13.0_linux_386.tar.gz
+cd frp_0.13.0_linux_386
 rm -f frps
 rm -f frps.ini
 vi frpc.ini

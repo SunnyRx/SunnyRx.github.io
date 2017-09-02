@@ -10,9 +10,11 @@ tags:
     - 内网穿透
 ---
 
+>该文章于2017年9月2日将frp版本从0.8.1更新到0.13.0，下文针对frp 0.13.0配置。
+
 NAS没有公网IP是一件很不方便的事情，尤其是在国内的网络环境，学校和小区内的用户通常都没有公网IP。为了解决这个问题，则需要内网穿透，而内网穿透的方法有很多种，例如使用`花生壳`、`ngrok`等，该文章要介绍的是使用frp让群晖实现内网穿透。
 
-实际上frp有官方的[中文文档](https://github.com/fatedier/frp/blob/master/README_zh.md)，上面的内容已经非常详尽，对相关操作比较熟悉的人可以直接阅读官方的中文文档。
+**实际上frp有官方的[中文文档](https://github.com/fatedier/frp/blob/master/README_zh.md)，上面的内容已经非常详尽，对相关操作比较熟悉的人可以直接阅读官方的中文文档。**
 
 ### 什么是frp
 
@@ -22,7 +24,7 @@ NAS没有公网IP是一件很不方便的事情，尤其是在国内的网络环
 
 在使用frp之前，需要一台有公网IP的服务器（下文称外网主机），一台需要实现内网穿透的机器（下文称内网主机），SSH工具，以及一个域名（如果只是建立SSH反向代理则不需要域名）。
 
-该文章中笔者所使用的服务器是[朋友](http://ruter.sundaystart.net/)推荐的`Vultr`服务器，虽然服务器是在国外，但胜在带宽够，有需要的朋友可以[注册一个](http://www.vultr.com/?ref=6967230)。而需要实现内网穿透的机器则是笔者用上网本搭建的黑群晖。SSH工具使用的是`Xshell 5`。而域名笔者则是使用自己个人网站的域名。
+该文章中笔者所使用的服务器是[朋友](http://blog.ruterly.com/)推荐的`Vultr`服务器，虽然服务器是在国外，但胜在带宽够，有需要的朋友可以[注册一个](http://www.vultr.com/?ref=6967230)。而需要实现内网穿透的机器则是笔者用上网本搭建的黑群晖。SSH工具使用的是`Xshell 5`。而域名笔者则是使用自己个人网站的域名。
 
 ### 开始使用
 
@@ -35,19 +37,19 @@ NAS没有公网IP是一件很不方便的事情，尤其是在国内的网络环
 SSH连接上外网主机后，使用`wget`指令下载frp。
 
 ```
-wget https://github.com/fatedier/frp/releases/download/v0.8.1/frp_0.8.1_linux_amd64.tar.gz
+wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz
 ```
 
 使用`tar`指令解压tar.gz文件
 
 ```
-tar -zxvf frp_0.8.1_linux_amd64.tar.gz
+tar -zxvf frp_0.13.0_linux_amd64.tar.gz
 ```
 
 使用`cd`指令进入解压出来的文件夹
 
 ```
-cd frp_0.8.1_linux_amd64
+cd frp_0.13.0_linux_amd64.tar.gz
 ```
 
 外网主机作为服务端，可以删掉不必要的客户端文件，使用`rm`指令删除文件。
@@ -70,30 +72,9 @@ vi frps.ini
 bind_port = 7000
 vhost_http_port = 8080
 
-[ssh]
-listen_port = 6000
-auth_token = 123
-
-[nas]
-type = http
-custom_domains = nas.sunnyrx.com
-auth_token = 123
-
-[web]
-type = http
-custom_domains = nasweb.sunnyrx.com
-auth_token = 123
 ```
 
-这里先简单解释一下上面的配置，结合下面的客户端配置更容易理解。
-
 `[common]`部分是必须有的配置，其中`bind_port`是自己设定的frp服务端端口，`vhost_http_port`是自己设定的http访问端口。
-
-`[ssh]`部分是ssh反向代理，`listen_port`是自己设定的ssh访问端口，`auth_token`用于身份认证（以下皆是）。（如果只需要建立ssh反向代理，那么服务端和客户端下面的http反向代理部分都可以删去。）
-
-`[nas]`部分是http反向代理（这里[]里的内容可以自己设定，但是客户端和服务端必须要对应。）；`type`为服务类型，可以设为https；`custom_domains`为要映射的域名，记得域名的A记录要解析到外网主机的IP。
-
-`[web]`部分同上，这里创建了两个http反向代理是为了分别映射群晖两个重要的端口，`5000`和`80`，前者用于登录群晖管理，后者用于群晖的`Web Station`和`DS Photo`。
 
 保存上面的配置后，使用以下指令启动frp服务端。（如果需要在后台运行，请往下翻阅关于后台运行的部分。）
 
@@ -122,18 +103,23 @@ vi frpc.ini
 [common]
 server_addr = x.x.x.x
 server_port = 7000
-auth_token = 123
 
 [ssh]
+type = tcp
+local_ip = 127.0.0.1
 local_port = 22
+remote_port = 22
 
 [nas]
 type = http
 local_port = 5000
+custom_domains = no1.sunnyrx.com
 
 [web]
 type = http
 local_port = 80
+custom_domains = no2.sunnyrx.com
+
 ```
 
 上面的配置和服务端是对应的。
@@ -142,9 +128,9 @@ local_port = 80
 
 `[ssh]`中的`local_port`填群晖的ssh端口。
 
-`[nas]`中的`type`对应服务端配置。`local_port`填群晖的DSM端口。
+`[nas]`中的`type`对应服务端配置。`local_port`填群晖的DSM端口。`custom_domains`为要映射的域名，记得域名的A记录要解析到外网主机的IP。
 
-`[web]`同上，`local_port`填群晖的web端口。
+`[web]`同上，`local_port`填群晖的web端口。这里创建了两个http反向代理是为了分别映射群晖两个重要的端口，`5000`和`80`，前者用于登录群晖管理，后者用于群晖的`Web Station`和`DS Photo`。
 
 保存配置，输入以下指令运行frp客户端。（同样如果需要在后台运行，请往下翻阅关于后台运行的部分。）
 
@@ -154,7 +140,7 @@ local_port = 80
 
 此时在服务端会看到"start proxy sucess"字样，即连接成功。
 
-现在可以用SSH通过`外网主机IP:6000`和群晖建立SSH连接。通过浏览器访问`nas.sunnyrx.com:8080`打开群晖nas的管理页面，访问`nasweb.sunnyrx.com:8080`打开群晖`Web Station`的网站，`DS Photo app`可以连接`nasweb.sunnyrx.com:8080`进入`DS Photo`管理。（不要尝试连接这里的示范，笔者实际在使用的不是8080端口。）
+现在可以用SSH通过`外网主机IP:6000`和群晖建立SSH连接。通过浏览器访问`no1.sunnyrx.com:8080`打开群晖nas的管理页面，访问`no2.sunnyrx.com:8080`打开群晖`Web Station`的网站，`DS Photo app`可以连接`no2.sunnyrx.com:8080`进入`DS Photo`管理。
 
 ### 让frp在后台运行
 

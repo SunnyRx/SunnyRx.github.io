@@ -10,7 +10,7 @@ tags:
     - 内网穿透
 ---
 
->该文章于2017年9月2日将frp版本从0.8.1更新到0.13.0，下文针对frp 0.13.0配置。
+>该文章于2018年7月7日将frp版本从0.13.0更新到0.20.0，下文针对frp 0.20.0配置。
 
 NAS没有公网IP是一件很不方便的事情，尤其是在国内的网络环境，学校和小区内的用户通常都没有公网IP。为了解决这个问题，则需要内网穿透，而内网穿透的方法有很多种，例如使用`花生壳`、`ngrok`等，该文章要介绍的是使用frp让群晖实现内网穿透。
 
@@ -37,19 +37,19 @@ NAS没有公网IP是一件很不方便的事情，尤其是在国内的网络环
 SSH连接上外网主机后，使用`wget`指令下载frp。
 
 ```
-wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz
+wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
 ```
 
 使用`tar`指令解压tar.gz文件
 
 ```
-tar -zxvf frp_0.13.0_linux_amd64.tar.gz
+tar -zxvf frp_0.20.0_linux_amd64.tar.gz
 ```
 
 使用`cd`指令进入解压出来的文件夹
 
 ```
-cd frp_0.13.0_linux_amd64.tar.gz
+cd frp_0.20.0_linux_amd64/
 ```
 
 外网主机作为服务端，可以删掉不必要的客户端文件，使用`rm`指令删除文件。
@@ -89,9 +89,9 @@ vhost_http_port = 8080
 客户端前面的操作和服务端是一模一样的，这里不一一解释。
 
 ```
-wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_386.tar.gz
-tar -zxvf frp_0.13.0_linux_386.tar.gz
-cd frp_0.13.0_linux_386
+wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
+tar -zxvf frp_0.20.0_linux_amd64.tar.gz
+cd frp_0.20.0_linux_amd64
 rm -f frps
 rm -f frps.ini
 vi frpc.ini

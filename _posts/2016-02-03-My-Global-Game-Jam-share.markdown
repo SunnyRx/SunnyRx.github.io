@@ -5,6 +5,7 @@ subtitle:   "紧张、兴奋、好玩"
 date:       2016-02-03
 author:     "SunnyRx"
 header-img: "img/post-bg-gamejam.jpg"
+catalog:	true
 tags:
     - 游戏制作
     - 分享

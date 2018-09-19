@@ -343,10 +343,10 @@ a img:focus {
   cursor: zoom-in;
 }
 article {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 blockquote {
-  color: #cccccc;
+  color: gray;
   font-style: italic;
   font-size: 0.95em;
   margin: 20px 0 20px;
@@ -401,7 +401,6 @@ pre code {
   margin-bottom: 15px;
 }
 .post-container a {
-  display: inline-block;
   color: #337ab7;
 }
 .post-container a:hover,

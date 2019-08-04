@@ -11,7 +11,7 @@ tags:
     - 内网穿透
 ---
 
->该文章于2018年7月7日将frp版本从0.13.0更新到0.20.0，下文针对frp 0.20.0配置。
+>该文章于2019年8月5日将frp版本从0.20.0更新到0.24.1，下文针对frp 0.24.1配置。
 
 NAS没有公网IP是一件很不方便的事情，尤其是在国内的网络环境，学校和小区内的用户通常都没有公网IP。为了解决这个问题，则需要内网穿透，而内网穿透的方法有很多种，例如使用`花生壳`、`ngrok`等，该文章要介绍的是使用frp让群晖实现内网穿透。
 
@@ -38,19 +38,19 @@ NAS没有公网IP是一件很不方便的事情，尤其是在国内的网络环
 SSH连接上外网主机后，使用`wget`指令下载frp。
 
 ```
-wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
+wget https://github.com/fatedier/frp/releases/download/v0.24.1/frp_0.24.1_linux_amd64.tar.gz
 ```
 
 使用`tar`指令解压tar.gz文件
 
 ```
-tar -zxvf frp_0.20.0_linux_amd64.tar.gz
+tar -zxvf frp_0.24.1_linux_amd64.tar.gz
 ```
 
 使用`cd`指令进入解压出来的文件夹
 
 ```
-cd frp_0.20.0_linux_amd64/
+cd frp_0.24.1_linux_amd64/
 ```
 
 外网主机作为服务端，可以删掉不必要的客户端文件，使用`rm`指令删除文件。
@@ -90,9 +90,9 @@ vhost_http_port = 8080
 客户端前面的操作和服务端是一模一样的，这里不一一解释。
 
 ```
-wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
-tar -zxvf frp_0.20.0_linux_amd64.tar.gz
-cd frp_0.20.0_linux_amd64
+wget https://github.com/fatedier/frp/releases/download/v0.24.1/frp_0.24.1_linux_amd64.tar.gz
+tar -zxvf frp_0.24.1_linux_amd64.tar.gz
+cd frp_0.24.1_linux_amd64
 rm -f frps
 rm -f frps.ini
 vi frpc.ini
@@ -147,35 +147,22 @@ custom_domains = no2.sunnyrx.com
 
 虽然现在frp运作起来了，内网穿透也实现了，但这还是不够的。此时如果断开与服务端或者客户端的SSH连接（比如关掉了Xshell）也就中止了frp的运行。
 
-保持frp运行是关键是让服务端的frp和客户端的frp在后台运行，这里提两个方法供参考，一个是使用`screen`指令，另一个是使用`nohup`指令。由于群晖的系统默认是没有`screen`指令的，这里也不提供安装`screen`的方法，所以推荐群晖直接使用`nohup`。
+保持frp运行是关键是让服务端的frp和客户端的frp在后台运行，这里提两个方法供参考，一个是使用`screen`指令，另一个是使用`nohup`指令。`nohup`相对简单很多，这里就只介绍`nohup`了。
 
-###### 使用screen让frp在后台运行
-
-下面的示范是运行服务端的frp，客户端就不示范了，前面提过群晖的系统没有`screen`指令。
-
-首先使用`screen`指令创建一个会话。
-
-```
-screen -dmS frp
-```
-
-然后进入这个会话。
-
-```
-screen -r frp
-```
-
-最后使用运行frp的指令，在后面加上" &"。（如果之前断开了SSH连接，记得用`cd`指令进入frp的目录先。）
-
-```
-./frps -c ./frps.ini &
-```
-
-这样就让frp在后台运行了。
 
 ###### 使用nohup指令
 
 nohup指令的使用方法相对简单，只需要在`nohup`后面加上frp的运行指令即可。下面示范的指令是运行frp客户端。（同样，如果之前断开了SSH连接，记得用`cd`指令进入frp的目录先。）
+
+下面分别是服务端和客户端的frp运行指令。
+
+服务端：
+
+```
+nohup ./frps -c ./frps.ini &
+```
+
+客户端：
 
 ```
 nohup ./frpc -c ./frpc.ini &

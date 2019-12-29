@@ -53,12 +53,7 @@ tags:
 
 本教程使用的Shader是シャペル的页面中说明的Arktoon Shaders，也是一个可以免费利用的Shader，感谢作者[synqark](https://twitter.com/synqark)。
 
-如果有兴趣折腾，也可以尝试给模型替换不同的Shader，以表现出不一样的效果，例如：
-
-- [MMS2](https://miniscape.booth.pm/items/1264065)
-- [UnityChanToonShader](https://unity-chan.com/download/releaseNote.php?id=UTS2_0)
-- [Cubeds](https://github.com/cubedparadox/Cubeds-Unity-Shaders/releases)
-- [Unlit_WF_ShaderSuite](https://github.com/whiteflare/Unlit_WF_ShaderSuite/releases/tag/Unlit_WF_ShaderSuite_20190601_ForVket3)
+如果有兴趣折腾，也可以尝试给模型替换不同的Shader，以表现出不一样的效果。
 
 ### Unity 2017.4.28f1
 

@@ -5,6 +5,7 @@ subtitle: "有Unity就够了，不用Blender"
 date: 2019-12-28
 author: "SunnyRx"
 header-img: "img/post-bg-gray.jpg"
+catalog:	true
 tags:
     - VRChat
 ---
@@ -24,13 +25,15 @@ tags:
 - [Unity 2017.4.28f1](https://download.unity3d.com/download_unity/e3a0f7dd2097/Windows64EditorInstaller/UnitySetup64.exe)
 - [VRChat SDK](https://vrchat.com/download/sdk)
 
-如果想要让头发和裙子动起来，还需要[动态骨骼](https://assetstore.unity.com/packages/tools/animation/dynamic-bone-16743#description)，售价为20$。注意这不是必须的。
+> 如果想要让头发和裙子动起来，还需要[动态骨骼](https://assetstore.unity.com/packages/tools/animation/dynamic-bone-16743#description)，售价为20$。注意这不是必须的。
 
 下面笔者会对这四个东西暂开详细说明。
 
 ### 模型シャペル
 
 笔者看到部分教程推荐的模型大多数是来自一些并非面向VRChat的模型网站，从这些网站下载下来的模型通常需要自己做一些处理才能使用。
+
+![シャペル](/img/in-post/post-VRChat-01/shapell.jpg)
 
 本教程使用的模型是从[BOOTH](https://booth.pm/zh-cn)找来的免费模型，基于[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.zh)的原创角色シャペル，感谢作者[ろーてく](https://twitter.com/lowteq_vr)。
 
@@ -43,6 +46,8 @@ tags:
 [着色器（Shader）](https://zh.wikipedia.org/zh-hans/%E7%9D%80%E8%89%B2%E5%99%A8)对该教程简单的说，它决定模型实际显示的视觉效果。
 
 在上一段落提到的BOOTH中，一般模型页面会提到该模型使用了什么Shader，为了正常地显示该模型原本的样子，应该导入指定Shader到Unity项目中（具体操作方法接下来会说明）。如果你没有导入对应的Shader，那么你导入模型后会发现整个模型是紫色的（Shader缺失的表现）。
+
+![Arktoon Shaders](/img/in-post/post-VRChat-01/arktoon.jpg)
 
 本教程使用的Shader是シャペル的页面中说明的Arktoon Shaders，也是一个可以免费利用的Shader，感谢作者[synqark](https://twitter.com/synqark)。
 
@@ -109,7 +114,7 @@ tags:
 
 ### 第四步：导入模型
 
-> 如果要导入动态骨骼，请在导入模型前导入。这里不展开说明。
+> 如果要导入动态骨骼，请在这一步之前导入。这里不展开说明。
 
 下载好后的模型也是一个压缩包，解压后也会看到一个unitypackage文件，一样参照第二步的做法导入即可。
 
@@ -198,4 +203,8 @@ tags:
 
 点击上传后，稍等片刻，看到上面这个窗口弹出，就可以登录游戏点开自己的Avatar确认了。
 
+# 完成
+
 ![游戏中的样子](/img/in-post/post-VRChat-01/18.jpg)
+
+上图就是在游戏中的样子啦~

@@ -20,9 +20,9 @@ tags:
 
 # Avatar
 
-![シャペル](/img/in-post/post-VRChat-collection/Avatar_syaperu.png)
-
 ### シャペル
+
+![シャペル](/img/in-post/post-VRChat-collection/Avatar_syaperu.png)
 
 > 这里有一篇[关于上传Avatar的博文](https://sunnyrx.com/2019/12/28/Easy-to-DIY-VRChat-Avatar/)，其中所使用的Avatar正是这个。
 
@@ -32,9 +32,9 @@ tags:
 
 ---
 
-![響狐リク](/img/in-post/post-VRChat-collection/Avatar_hibikikitsuneriku.png)
-
 ### 響狐リク
+
+![響狐リク](/img/in-post/post-VRChat-collection/Avatar_hibikikitsuneriku.png)
 
 作者：KarakuriPower
 
@@ -42,9 +42,9 @@ tags:
 
 ---
 
-![くろちゃん(分霊)](/img/in-post/post-VRChat-collection/Avatar_kurotyan.png)
-
 ### くろちゃん(分霊)
+
+![くろちゃん(分霊)](/img/in-post/post-VRChat-collection/Avatar_kurotyan.png)
 
 > 笔者最喜欢的免费Avatar，希望喜欢的人可以关注一下作者的[All Alone Connect Project](https://twitter.com/ALL_Alone_kuro)。
 
@@ -54,9 +54,9 @@ tags:
 
 ---
 
-![ソニカちゃん](/img/in-post/post-VRChat-collection/Avatar_sonikatyan.png)
-
 ### ソニカちゃん
+
+![ソニカちゃん](/img/in-post/post-VRChat-collection/Avatar_sonikatyan.png)
 
 作者：コクリコ
 
@@ -64,9 +64,9 @@ tags:
 
 ---
 
-![コクリコ](/img/in-post/post-VRChat-collection/Avatar_soara.png)
-
 ### そあら
+
+![コクリコ](/img/in-post/post-VRChat-collection/Avatar_soara.png)
 
 作者：コクリコ
 
@@ -76,9 +76,9 @@ tags:
 
 # Shader
 
-![Arktoon-Shaders](/img/in-post/post-VRChat-collection/Shader_Arktoon-Shaders.png)
-
 ### Arktoon-Shaders
+
+![Arktoon-Shaders](/img/in-post/post-VRChat-collection/Shader_Arktoon-Shaders.png)
 
 作者：PacketbirD
 
@@ -86,9 +86,9 @@ tags:
 
 ---
 
-![PBT-Shader](/img/in-post/post-VRChat-collection/Shader_PBT-Shader.png)
-
 ### PBT-Shader
+
+![PBT-Shader](/img/in-post/post-VRChat-collection/Shader_PBT-Shader.png)
 
 作者：四拾弐(yosohuta)
 
@@ -96,9 +96,9 @@ tags:
 
 ---
 
-![Sunao Shader](/img/in-post/post-VRChat-collection/Shader_Sunao Shader.png)
-
 ### Sunao Shader
+
+![Sunao Shader](/img/in-post/post-VRChat-collection/Shader_Sunao Shader.png)
 
 作者：揚茄子研究所
 
@@ -106,9 +106,9 @@ tags:
 
 ---
 
-![まんまるしぇーだー2.0/MnmrShader2.0](/img/in-post/post-VRChat-collection/Shader_MnmrShader2.0.png)
-
 ### まんまるしぇーだー2.0/MnmrShader2.0
+
+![まんまるしぇーだー2.0/MnmrShader2.0](/img/in-post/post-VRChat-collection/Shader_MnmrShader2.0.png)
 
 作者：みにすけーぷ
 

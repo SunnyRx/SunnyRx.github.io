@@ -78,11 +78,11 @@ tags:
 
 ### リズリン
 
-![リズリン](/img/in-post/post-VRChat-collection/Avatar_lizlin.png)
+![リズリン](/img/in-post/post-VRChat-collection/Avatar_lizlin.jpg)
 
 作者：寺井
 
-链接：[【無料配布】オリジナル3Dモデル『リズリン|Lizlin』](https://athv.booth.pm/items/1488786)
+链接：[【無料配布】オリジナル3Dモデル『リズリン｜Lizlin』](https://athv.booth.pm/items/1488786)
 
 ---
 

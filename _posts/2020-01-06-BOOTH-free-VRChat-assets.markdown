@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BOOTH免费VRChat资源整理"
-subtitle: "面向VRChat的免费Avatar、免费Shader，每一个都是精品"
+subtitle: "面向VRChat的免费Avatar、免费Shader"
 date: 2020-01-06
 author: "SunnyRx"
 header-img: "img/post-bg-gray.jpg"
@@ -17,6 +17,8 @@ tags:
 实际利用时请注意使用规约。
 
 该列表会不定期更新。
+
+> 本文最近一次更新时间为2020年1月16日
 
 # Avatar
 
@@ -71,6 +73,16 @@ tags:
 作者：コクリコ
 
 链接：[オリジナル3Dモデル『そあら』](https://coquelicotz.booth.pm/items/1338553)
+
+---
+
+### リズリン
+
+![リズリン](/img/in-post/post-VRChat-collection/Avatar_lizlin.png)
+
+作者：寺井
+
+链接：[【無料配布】オリジナル3Dモデル『リズリン|Lizlin』](https://athv.booth.pm/items/1488786)
 
 ---
 

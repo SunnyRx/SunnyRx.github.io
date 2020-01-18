@@ -18,7 +18,7 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2020年1月16日
+> 本文最近一次更新时间为2020年1月19日
 
 # Avatar
 
@@ -83,6 +83,36 @@ tags:
 作者：寺井
 
 链接：[【無料配布】オリジナル3Dモデル『リズリン｜Lizlin』](https://athv.booth.pm/items/1488786)
+
+---
+
+### ルナーフ
+
+![ルナーフ](/img/in-post/post-VRChat-collection/Avatar_lunauff.jpg)
+
+作者：びきたん
+
+链接：[【無料配布】オリジナル3Dモデル 『ルナーフ』](https://bbkktn.booth.pm/items/1305740)
+
+---
+
+### アビニトゥール
+
+![アビニトゥール](/img/in-post/post-VRChat-collection/Avatar_abinitour.jpg)
+
+作者：びきたん
+
+链接：[【無料配布】オリジナル3Dモデル 『アビニトゥール』](https://bbkktn.booth.pm/items/1434569)
+
+---
+
+### カロナーフ
+
+![カロナーフ](/img/in-post/post-VRChat-collection/Avatar_caronauff.jpg)
+
+作者：びきたん
+
+链接：[【無料配布】オリジナル3Dモデル 『カロナーフ』](https://bbkktn.booth.pm/items/1651921)
 
 ---
 

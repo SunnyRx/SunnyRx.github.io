@@ -116,6 +116,62 @@ tags:
 
 ---
 
+### なつこ
+
+![なつこ](/img/in-post/post-VRChat-collection/Avatar_natsuko.jpg)
+
+作者：sasamin
+
+链接：[【無料】オリジナル3Dモデル「なつこ」](https://sasaminvrc.booth.pm/items/1525198)
+
+---
+
+### きつねちゃん
+
+![きつねちゃん](/img/in-post/post-VRChat-collection/Avatar_kitsunetyan.jpg)
+
+> 该模型导入Unity后需要自己对fbx文件进行处理
+
+作者：45°
+
+链接：[【 オリジナル3Dモデル 】きつねちゃん](https://diagonal45angle.booth.pm/items/1464070)
+
+---
+
+### ねこねこさん
+
+![ねこねこさん](/img/in-post/post-VRChat-collection/Avatar_nekonekosan.jpg)
+
+> 该模型导入Unity后需要自己对fbx文件进行处理
+
+作者：45°
+
+链接：[【 オリジナル3Dモデル 】ねこねこさん](https://diagonal45angle.booth.pm/items/1342205)
+
+---
+
+### ケッティ
+
+![ケッティ](/img/in-post/post-VRChat-collection/Avatar_caitty.jpg)
+
+作者：こばる
+
+链接：[オリジナル３Dモデル『ケッティ』](https://cobal.booth.pm/items/1762270)
+
+---
+
+### ソルティ
+
+![ソルティ](/img/in-post/post-VRChat-collection/Avatar_salty.jpg)
+
+> 该模型导入Unity后需要自己对fbx文件进行处理
+
+作者：ステラ
+
+链接：[OculusQuest VRChat対応 3Dモデル 『ソルティ -プロトタイプ-』](https://steller.booth.pm/items/1672165)
+
+---
+
 # Shader
 
 ### Arktoon-Shaders

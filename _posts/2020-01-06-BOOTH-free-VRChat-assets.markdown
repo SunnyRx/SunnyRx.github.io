@@ -18,7 +18,7 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2020年1月21日
+> 本文最近一次更新时间为2020年2月26日
 
 # Avatar
 
@@ -126,6 +126,16 @@ tags:
 
 ---
 
+### とらとら
+
+![とらとら](/img/in-post/post-VRChat-collection/Avatar_toratora.jpg)
+
+作者：sasamin
+
+链接：[【無料】オリジナル3Dモデル「とらとら」](https://sasaminvrc.booth.pm/items/1820903)
+
+---
+
 ### きつねちゃん
 
 ![きつねちゃん](/img/in-post/post-VRChat-collection/Avatar_kitsunetyan.jpg)
@@ -172,6 +182,71 @@ tags:
 
 ---
 
+### 亜人のリム
+
+![リム](/img/in-post/post-VRChat-collection/Avatar_rim.jpg)
+
+
+作者：かふか
+
+链接：[【VRChat向け3Dモデル】亜人のリム](https://kafukaya.booth.pm/items/1308088)
+
+---
+
+### 在りし日のラジアータ
+
+![ラジアータ](/img/in-post/post-VRChat-collection/Avatar_radiata.jpg)
+
+
+作者：かふか
+
+链接：[【VRChat向け3Dモデル】在りし日のラジアータ](https://kafukaya.booth.pm/items/1604345)
+
+---
+
+### [IST]式 白井鈴
+
+![白井鈴](/img/in-post/post-VRChat-collection/Avatar_sirairin.jpg)
+
+
+作者：[IST]\(いそっち゜)
+
+链接：[【MMD/VRC用3Dモデル】[IST]式 白井鈴 ver.1.0](https://isotch0130.booth.pm/items/1384082)
+
+---
+
+### [IST]式 白井鈴 Append
+
+![白井鈴 Append](/img/in-post/post-VRChat-collection/Avatar_sirairinappend.jpg)
+
+
+作者：[IST]\(いそっち゜)
+
+链接：[【MMD/VRC用3Dモデル】[IST]式 白井鈴 Append ver.1.0](https://isotch0130.booth.pm/items/1399653)
+
+---
+
+### [IST]式 佐野ひまり
+
+![佐野ひまり](/img/in-post/post-VRChat-collection/Avatar_himari.jpg)
+
+
+作者：[IST]\(いそっち゜)
+
+链接：[【MMD/VRC用3Dモデル】[IST]式 佐野ひまり ver.1.0](https://isotch0130.booth.pm/items/1604378)
+
+---
+
+### NecoMaid
+
+![NecoMaid](/img/in-post/post-VRChat-collection/Avatar_necomaid.jpg)
+
+
+作者：SONO
+
+链接：[5000ポリNecoMaid](https://sonovr.booth.pm/items/1843582)
+
+---
 # Shader
 
 ### Arktoon-Shaders
@@ -211,3 +286,13 @@ tags:
 作者：みにすけーぷ
 
 链接：[まんまるしぇーだー2.0/MnmrShader2.0](https://miniscape.booth.pm/items/1264065)
+
+---
+
+### ごった煮トゥーンシェーダー
+
+![ごった煮トゥーンシェーダー](/img/in-post/post-VRChat-collection/Shader_GottaniToon.jpg)
+
+作者：ほたて
+
+链接：[ごった煮トゥーンシェーダー](https://hhotatea.booth.pm/items/1668964)

@@ -269,6 +269,17 @@ tags:
 链接：[VRアバター向け3Dモデル【ラドドール】](https://tonomaoo.booth.pm/items/1178641)
 
 ---
+
+### ルル
+
+![ルル](/img/in-post/post-VRChat-collection/Avatar_ruru.jpg)
+
+
+作者：まおー
+
+链接：[ルル](https://korimizu.booth.pm/items/1353303)
+
+---
 # Shader
 
 ### Arktoon-Shaders

@@ -247,6 +247,28 @@ tags:
 链接：[5000ポリNecoMaid](https://sonovr.booth.pm/items/1843582)
 
 ---
+
+### 吸血鬼　アンナちゃん
+
+![アンナちゃん](/img/in-post/post-VRChat-collection/Avatar_anna.jpg)
+
+
+作者：わこー
+
+链接：[【VRchat向け】吸血鬼　アンナちゃんLight ver.](https://wakonoatorie.booth.pm/items/1405336)
+
+---
+
+### ラドドール
+
+![ラドドール](/img/in-post/post-VRChat-collection/Avatar_raddoll.jpg)
+
+
+作者：まおー
+
+链接：[VRアバター向け3Dモデル【ラドドール】](https://tonomaoo.booth.pm/items/1178641)
+
+---
 # Shader
 
 ### Arktoon-Shaders

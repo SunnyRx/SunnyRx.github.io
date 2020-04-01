@@ -4,7 +4,7 @@ title: "我如何克服对《半衰期：爱莉克斯》的恐惧"
 subtitle: "关于对关卡设计者的信任"
 date: 2020-04-02
 author: "SunnyRx"
-header-img: "img/post-half-life-alyx/OculusScreenshot1585053959.jpeg"
+header-img: "img/in-post/post-half-life-alyx/OculusScreenshot1585053959.jpeg"
 catalog:	true
 tags:
     - 分享
@@ -21,7 +21,7 @@ tags:
 
 笔者是个胆小的人，其实早在《半衰期2》的《我们不去莱温霍姆》就觉得那份恐惧难以接受。而这次《半衰期：爱莉克斯》也有不少恐怖的场景，例如昏暗的长廊、都是剧毒猎头蟹的地下室、与杰夫独处的空间。
 
-![昏暗的长廊](/img/post-half-life-alyx/OculusScreenshot1585225906.jpeg)
+![昏暗的长廊](/img/in-post/post-half-life-alyx/OculusScreenshot1585225906.jpeg)
 
 加上戴着VR设备所带来的沉浸体验，近距离感受环境的所有东西，这份恐惧是更加放大了。毕竟VR设备想要给人带来恐怖体验的话，比一般主机更有优势。
 

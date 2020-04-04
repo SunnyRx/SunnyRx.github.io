@@ -140,8 +140,6 @@ tags:
 
 ![きつねちゃん](/img/in-post/post-VRChat-collection/Avatar_kitsunetyan.jpg)
 
-> 该模型导入Unity后需要自己对fbx文件进行处理
-
 作者：45°
 
 链接：[【 オリジナル3Dモデル 】きつねちゃん](https://diagonal45angle.booth.pm/items/1464070)
@@ -151,8 +149,6 @@ tags:
 ### ねこねこさん
 
 ![ねこねこさん](/img/in-post/post-VRChat-collection/Avatar_nekonekosan.jpg)
-
-> 该模型导入Unity后需要自己对fbx文件进行处理
 
 作者：45°
 
@@ -174,8 +170,6 @@ tags:
 
 ![ソルティ](/img/in-post/post-VRChat-collection/Avatar_salty.jpg)
 
-> 该模型导入Unity后需要自己对fbx文件进行处理
-
 作者：ステラ
 
 链接：[OculusQuest VRChat対応 3Dモデル 『ソルティ -プロトタイプ-』](https://steller.booth.pm/items/1672165)
@@ -185,7 +179,6 @@ tags:
 ### 亜人のリム
 
 ![リム](/img/in-post/post-VRChat-collection/Avatar_rim.jpg)
-
 
 作者：かふか
 
@@ -197,7 +190,6 @@ tags:
 
 ![ラジアータ](/img/in-post/post-VRChat-collection/Avatar_radiata.jpg)
 
-
 作者：かふか
 
 链接：[【VRChat向け3Dモデル】在りし日のラジアータ](https://kafukaya.booth.pm/items/1604345)
@@ -207,7 +199,6 @@ tags:
 ### [IST]式 白井鈴
 
 ![白井鈴](/img/in-post/post-VRChat-collection/Avatar_sirairin.jpg)
-
 
 作者：[IST]\(いそっち゜)
 
@@ -219,7 +210,6 @@ tags:
 
 ![白井鈴 Append](/img/in-post/post-VRChat-collection/Avatar_sirairinappend.jpg)
 
-
 作者：[IST]\(いそっち゜)
 
 链接：[【MMD/VRC用3Dモデル】[IST]式 白井鈴 Append ver.1.0](https://isotch0130.booth.pm/items/1399653)
@@ -229,7 +219,6 @@ tags:
 ### [IST]式 佐野ひまり
 
 ![佐野ひまり](/img/in-post/post-VRChat-collection/Avatar_himari.jpg)
-
 
 作者：[IST]\(いそっち゜)
 
@@ -241,7 +230,6 @@ tags:
 
 ![NecoMaid](/img/in-post/post-VRChat-collection/Avatar_necomaid.jpg)
 
-
 作者：SONO
 
 链接：[5000ポリNecoMaid](https://sonovr.booth.pm/items/1843582)
@@ -251,7 +239,6 @@ tags:
 ### 吸血鬼　アンナちゃん
 
 ![アンナちゃん](/img/in-post/post-VRChat-collection/Avatar_anna.jpg)
-
 
 作者：わこー
 
@@ -263,7 +250,6 @@ tags:
 
 ![ラドドール](/img/in-post/post-VRChat-collection/Avatar_raddoll.jpg)
 
-
 作者：まおー
 
 链接：[VRアバター向け3Dモデル【ラドドール】](https://tonomaoo.booth.pm/items/1178641)
@@ -273,7 +259,6 @@ tags:
 ### ルル
 
 ![ルル](/img/in-post/post-VRChat-collection/Avatar_ruru.jpg)
-
 
 作者：まおー
 

@@ -43,6 +43,8 @@ tags:
 
 使用这些VRChat的模型一个好处就是不用自己做额外的处理，例如使用Blender做眼睛追踪、添加VRChat SDK的脚本等，基本上导入Unity项目后就可以直接上传到VRChat。
 
+笔者整理了一些BOOTH上的免费模型，详情请参考[BOOTH免费VRChat资源整理](https://sunnyrx.com/2020/01/06/BOOTH-free-VRChat-assets/#avatar)一文。
+
 ### 着色器Arktoon-Shaders
 
 [着色器（Shader）](https://zh.wikipedia.org/zh-hans/%E7%9D%80%E8%89%B2%E5%99%A8)对该教程简单的说，它决定模型实际显示的视觉效果。
@@ -54,6 +56,8 @@ tags:
 本教程使用的Shader是シャペル的页面中说明的Arktoon Shaders，也是一个可以免费利用的Shader，感谢作者[synqark](https://twitter.com/synqark)。
 
 如果有兴趣折腾，也可以尝试给模型替换不同的Shader，以表现出不一样的效果。
+
+笔者也整理了一些BOOTH上的免费Shader，详情请参考[BOOTH免费VRChat资源整理](https://sunnyrx.com/2020/01/06/BOOTH-free-VRChat-assets/#shader)一文。
 
 ### Unity 2017.4.28f1
 

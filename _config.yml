@@ -101,27 +101,31 @@ friends: [
         href: "http://www.liangyuekang.net/"
     },
     {
-        title: "Ceplavia的游戏评测站点",
+        title: "Ceplavia's Gaming Blog",
         href: "http://www.ceplavia.com/"
     },
     {
         title: "Gzp的博客",
-        href: "http://www.elfgzp.cn/"
+        href: "https://elfgzp.cn/"
     },
     {
         title: "Kuma的博客",
         href: "http://zero.sundaystart.net/"
     },
     {
-        title: "Ruter的博客",
-        href: "http://blog.ruterly.com/"
+        title: "TNK",
+        href: "https://ruterly.com/"
+    },
+    {
+        title: "Trash Can",
+        href: "https://laplacence.github.io/"
     },
     {
         title: "妖孽的简书",
-        href: "http://www.jianshu.com/users/148cab15306f"
+        href: "https://www.jianshu.com/u/148cab15306f"
     },
     {
         title: "纸箱猪的技艺空间",
-        href: "http://zxtechart.com/"
+        href: "https://zxtechart.com/"
     }
 ]

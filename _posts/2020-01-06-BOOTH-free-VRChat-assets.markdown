@@ -18,7 +18,7 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2020年2月29日
+> 本文最近一次更新时间为2020年4月26日
 
 # Avatar
 
@@ -86,13 +86,13 @@ tags:
 
 ---
 
-### ルナーフ
+### 転生ルナーフ
 
-![ルナーフ](/img/in-post/post-VRChat-collection/Avatar_lunauff.jpg)
+![転生ルナーフ](/img/in-post/post-VRChat-collection/Avatar_lunauff.jpg)
 
 作者：びきたん
 
-链接：[【無料配布】オリジナル3Dモデル 『ルナーフ』](https://bbkktn.booth.pm/items/1305740)
+链接：[【無料配布】オリジナル3Dモデル『転生ルナーフ』](https://bbkktn.booth.pm/items/2006071)
 
 ---
 
@@ -133,6 +133,16 @@ tags:
 作者：sasamin
 
 链接：[【無料】オリジナル3Dモデル「とらとら」](https://sasaminvrc.booth.pm/items/1820903)
+
+---
+
+### 右近
+
+![右近](/img/in-post/post-VRChat-collection/Avatar_ukon.jpg.jpg)
+
+作者：キツネツキ
+
+链接：[(無料)VRChat想定3Dモデル「右近」](https://kitsune-tsuki.booth.pm/items/2000812)
 
 ---
 

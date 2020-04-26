@@ -138,7 +138,7 @@ tags:
 
 ### 右近
 
-![右近](/img/in-post/post-VRChat-collection/Avatar_ukon.jpg.jpg)
+![右近](/img/in-post/post-VRChat-collection/Avatar_ukon.jpg)
 
 作者：キツネツキ
 

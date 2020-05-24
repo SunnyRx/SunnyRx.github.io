@@ -18,7 +18,7 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2020年4月26日
+> 本文最近一次更新时间为2020年5月24日
 
 # Avatar
 
@@ -270,9 +270,29 @@ tags:
 
 ![ルル](/img/in-post/post-VRChat-collection/Avatar_ruru.jpg)
 
-作者：まおー
+作者：こおりみず
 
 链接：[ルル](https://korimizu.booth.pm/items/1353303)
+
+---
+
+### テル
+
+![テル](/img/in-post/post-VRChat-collection/Avatar_teru.jpg)
+
+作者：こおりみず
+
+链接：[テル](https://korimizu.booth.pm/items/2019572)
+
+---
+
+### シヴィー/ヨツル/フォーシー
+
+![シヴィー/ヨツル/フォーシー](/img/in-post/post-VRChat-collection/Avatar_VVVVRRRRCCCC.jpg)
+
+作者：しげひろ
+
+链接：[【PC/Quest対応】VR用3dモデル「2A-7-4 / VRCset　シヴィー/ヨツル/フォーシー」](https://hiroiheya.booth.pm/items/2019040)
 
 ---
 # Shader

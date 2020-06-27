@@ -26,15 +26,15 @@ ld: -pie can only be used when targeting iOS 4.2 or later
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 ```
 
-![Build Setting](http://SunnyRx.github.io/img/in-post/post-UIAutomation-BuildSettings.png)
+![Build Setting](/img/in-post/post-UIAutomation/BuildSettings.webp)
 
 启动Instruments(Product->Profile)，或者按command+i，出现profiling template的选择画面，选择Automation，按Choose进行下一步。
 
-![Create Profiling](http://SunnyRx.github.io/img/in-post/post-UIAutomation-createProfiling.png)
+![Create Profiling](/img/in-post/post-UIAutomation/createProfiling.webp)
 
 Instruments窗口出现后，按右边的齿轮图标可以看到脚本列表，默认有一个New Script在里面，选中后可以在左边的窗口编辑脚本，下面的按钮执行脚本。
 
-![Instruments](http://SunnyRx.github.io/img/in-post/post-UIAutomation-Automation.png)
+![Instruments](/img/in-post/post-UIAutomation/Automation.webp)
 
 输入以下代码来完成第一个UIAutomation测试用例
 
@@ -46,7 +46,7 @@ target.logElementTree();
 ```
 
 按下执行后，如无意外在Editor Log窗口中可以看到执行的日志信息。
-![Run Script](http://SunnyRx.github.io/img/in-post/post-UIAutomation-runScript.png)
+![Run Script](/img/in-post/post-UIAutomation/runScript.webp)
 
 接下来，可以跟着原文学习更多UIAutomation的操作。
 这里要提醒的是，原文有一段Test-1.js代码，如下

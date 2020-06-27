@@ -4,7 +4,7 @@ title:      "群晖第三方社群套件资源"
 subtitle:   "The list of Synology 3th party package sources"
 date:       2018-10-03
 author:     "SunnyRx"
-header-img: "img/post-bg-nas.jpg"
+header-img: "img/post-bg-nas.webp"
 tags:
     - NAS
     - 群晖
@@ -20,7 +20,7 @@ tags:
 
 首先打开套件中心。
 
-![添加第三方源套件](\img\in-post\post-NAS\Snipaste_2018-10-02_23-52-13.jpg)
+![添加第三方源套件](\img\in-post\post-NAS\Snipaste_2018-10-02_23-52-13.webp)
 
 1. 点开`设置`
 

@@ -4,7 +4,7 @@ title:      "关于Cocos2d-x MenuItemFont设置字体和字号"
 subtitle:   "Cocos2d-x MenuItemFont's font and size"
 date:       2015-12-25
 author:     "SunnyRx"
-header-img: "img/post-bg-cocos2dx.jpg"
+header-img: "img/post-bg-cocos2dx.webp"
 tags:
     - cocos2dx
     - 编程

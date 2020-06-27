@@ -1,7 +1,7 @@
 # Site settings
 title: Weekend
 SEOTitle: 热心的博客 | Weekend
-header-img: img/home-bg.jpg
+header-img: img/home-bg.webp
 email: admin@sunnyrx.com
 description: "Weekend. We can."
 keyword: "热心人士, SunnyRx, 热心人士的博客, 游戏, @SunnyRx, 群晖, NAS"
@@ -77,7 +77,7 @@ ga_domain: sunnyrx.com
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "热爱生活和追梦的魔法师。傻傻的，就是想做自己想做的事情。"
-sidebar-avatar: /img/avatar-rx.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-rx.webp      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

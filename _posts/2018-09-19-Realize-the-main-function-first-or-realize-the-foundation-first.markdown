@@ -4,7 +4,7 @@ title:      "先实现功能还是先搭建基础"
 subtitle:   "做项目的决策时遇到的问题分享"
 date:       2018-09-19
 author:     "SunnyRx"
-header-img: "img/post-bg-gamejam.jpg"
+header-img: "img/post-bg-gamejam.webp"
 catalog:	true
 tags:
     - 游戏制作

@@ -4,7 +4,7 @@ title:      "Cocos2d-x 在Xcode的Undefined symbols for architecture x86_64错�
 subtitle:   "Cocos2d-x : About Undefined symbols for architecture x86_64 Error"
 date:       2016-01-14
 author:     "SunnyRx"
-header-img: "img/post-bg-gray.jpg"
+header-img: "img/post-bg-gray.webp"
 tags:
     - Xcode
     - Mac
@@ -89,7 +89,7 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 检查了`Xcode`项目中的`Classes`文件夹，所有`.h`文件和`.cpp`均在其中。
 
 而最终解决问题的方法是将Classes文件夹中的内容拖入Xcode目录中时，弹出的对话框`Choose options for adding these files:`中的`Added folders`选择`Create groups`，问题则解决。
-![Choose options对话框](http://SunnyRx.github.io/img/in-post/post-XcodeError.png)
+![Choose options对话框](/img/in-post/post-XcodeError.webp)
 
 尽管标题带有`Cocos2d-x`，实际上跟`Cocos2d-x`没有一点关系。
 另外要注意，将`Resources`文件夹拖入`Xcode`目录时，应该选择`Create folder references`。

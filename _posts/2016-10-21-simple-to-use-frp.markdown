@@ -4,7 +4,7 @@ title:      "使用frp实现内网穿透"
 subtitle:   "群晖NAS+frp发挥更大作用"
 date:       2016-10-21
 author:     "SunnyRx"
-header-img: "img/post-bg-nas.jpg"
+header-img: "img/post-bg-nas.webp"
 catalog:	true
 tags:
     - NAS

@@ -4,7 +4,7 @@ title:      "保护好群晖的数据"
 subtitle:   "记一次设置数据损毁经历"
 date:       2018-09-30
 author:     "SunnyRx"
-header-img: "img/post-bg-nas.jpg"
+header-img: "img/post-bg-nas.webp"
 tags:
     - NAS
     - 群晖
@@ -42,7 +42,7 @@ tags:
 
 ### 利用群晖自带的备份和复制功能，备份到rsync兼容服务器
 
-![利用群晖自带的备份和复制功能，被分到rsync兼容服务器](\img\in-post\post-NAS\Snipaste_2018-09-30_20-58-51.jpg)
+![利用群晖自带的备份和复制功能，被分到rsync兼容服务器](\img\in-post\post-NAS\Snipaste_2018-09-30_20-58-51.webp)
 
 rsync是朋友[小强](https://ruterly.com/)推荐的方法，问题是笔者没有一个足够大的服务器备份整个NAS。
 

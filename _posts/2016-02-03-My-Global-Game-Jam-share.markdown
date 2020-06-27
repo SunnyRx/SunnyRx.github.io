@@ -4,7 +4,7 @@ title:      "Global Game Jam的体验和分享"
 subtitle:   "紧张、兴奋、好玩"
 date:       2016-02-03
 author:     "SunnyRx"
-header-img: "img/post-bg-gamejam.jpg"
+header-img: "img/post-bg-gamejam.webp"
 catalog:	true
 tags:
     - 游戏制作
@@ -15,7 +15,7 @@ tags:
 
 ### 关于Global Game Jam
 
-![Global Game Jam](http://SunnyRx.github.io/img/in-post/post-GlobalGameJam/global_game_jam_logo.jpg)
+![Global Game Jam](/img/in-post/post-GlobalGameJam/global_game_jam_logo.webp)
 
 Global Game Jam（GGJ）是全球最大的线下GameJam活动。这是一个游戏制作爱好者的聚会，大家聚在一起，自由组队，根据题目用48小时制作一个游戏，换句话说就是游戏开发马拉松。活动鼓励参与者们分享、交流、体验、思考和创作，48小时的游戏制作就是一个完整的游戏制作过程的浓缩。
 
@@ -63,11 +63,11 @@ GGJ的主要流程是公布题目、自由组队、头脑风暴）、开发游�
 
 >你可以大胆尝试用各种方法把你的技能或者你的需要传达给周围的人。
 
-![高举笔记本屏幕寻找程序员](http://SunnyRx.github.io/img/in-post/post-GlobalGameJam/findPartner.jpg)
+![高举笔记本屏幕寻找程序员](/img/in-post/post-GlobalGameJam/findPartner.webp)
 
 >2016 Global Game Jam广州站的参展证上，有很多贴纸可以标注自己的身份，包括策划、2D程序、3D程序、2D美术、3D美术、音乐、音效、制作人、老司机（至少参加过一届GGJ），以及组队后的队长贴纸。
 
-![2016 Global Game Jam广州站的参展证](http://SunnyRx.github.io/img/in-post/post-GlobalGameJam/certificate.jpg)
+![2016 Global Game Jam广州站的参展证](/img/in-post/post-GlobalGameJam/certificate.webp)
 
 ### 头脑风暴
 
@@ -103,6 +103,6 @@ GGJ的主要流程是公布题目、自由组队、头脑风暴）、开发游�
 
 >最后附上一张我和队友在2016 Global Game Jam广州站的合影以及作品（Keep Going）的链接。
 
-![合影](http://SunnyRx.github.io/img/in-post/post-GlobalGameJam/photo.jpg)
+![合影](/img/in-post/post-GlobalGameJam/photo.webp)
 
 Keep Going : [http://globalgamejam.org/2016/games/keep-going](http://globalgamejam.org/2016/games/keep-going)

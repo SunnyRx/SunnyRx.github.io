@@ -4,7 +4,7 @@ title:      "在极路由上安装Shadowsocks插件"
 subtitle:   "Shadowsocks in HIWIFI"
 date:       2017-07-17
 author:     "SunnyRx"
-header-img: "img/post-bg-gray.jpg"
+header-img: "img/post-bg-gray.webp"
 tags:
     - HIWIFI
     - Shadowsocks
@@ -18,11 +18,11 @@ Shadowsocks的出现使其成为了新的梯子，聪明的极客们已经有方
 
 ### 第一步：打开极路由的插件管理，选择添加应用
 
-![添加应用](/img/in-post/post-HIWIFI/img01.jpg)
+![添加应用](/img/in-post/post-HIWIFI/img01.webp)
 
 ### 第二步：随便点开一个你没有安装的应用
 
-![随便选择一个没有安装的应用](/img/in-post/post-HIWIFI/img02.jpg)
+![随便选择一个没有安装的应用](/img/in-post/post-HIWIFI/img02.webp)
 
 ### 第三步：修改地址
 
@@ -34,22 +34,22 @@ Shadowsocks的出现使其成为了新的梯子，聪明的极客们已经有方
 
 ### 第四步：点击免费安装，确定安装
 
-![点击免费安装](/img/in-post/post-HIWIFI/img03.jpg)
+![点击免费安装](/img/in-post/post-HIWIFI/img03.webp)
 
-![确定安装](/img/in-post/post-HIWIFI/img04.jpg)
+![确定安装](/img/in-post/post-HIWIFI/img04.webp)
 
 ### 第五步：填写SS服务器信息
 
-![填写SS服务器信息](/img/in-post/post-HIWIFI/img05.jpg)
+![填写SS服务器信息](/img/in-post/post-HIWIFI/img05.webp)
 
 关于代理模式，笔者是只用白名单模式的，白名单域名列表可以搜GFWList或者在ShadowsocksR客户端中的pac文件中提取获得。当然也可以直接用白名单+国外IP模式，但是笔者没试过。
 
 填好后按下一步，等待下载完成后会自动安装，并提醒安装成功。
 
-![安装成功提示](/img/in-post/post-HIWIFI/img06.jpg)
+![安装成功提示](/img/in-post/post-HIWIFI/img06.webp)
 
 ### 完成
 
-![插件运行中](/img/in-post/post-HIWIFI/img07.jpg)
+![插件运行中](/img/in-post/post-HIWIFI/img07.webp)
 
 见到插件运行中就搞定了，这个时候就可以自由浏览网站了。你可以随时点下暂停服务暂时停止使用SS服务，也可以随时在配置参数中修改服务器信息和增删白名单。

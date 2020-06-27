@@ -4,7 +4,7 @@ title: "轻松简单自己上传VRChat的Avatar"
 subtitle: "有Unity就够了，不用Blender"
 date: 2019-12-28
 author: "SunnyRx"
-header-img: "img/post-bg-gray.jpg"
+header-img: "img/post-bg-gray.webp"
 catalog:	true
 tags:
     - VRChat
@@ -35,7 +35,7 @@ tags:
 
 笔者看到部分教程推荐的模型大多数是来自一些并非面向VRChat的模型网站，从这些网站下载下来的模型通常需要自己做一些处理才能使用。
 
-![シャペル](/img/in-post/post-VRChat-01/shapell.jpg)
+![シャペル](/img/in-post/post-VRChat-01/shapell.webp)
 
 本教程使用的模型是从[BOOTH](https://booth.pm/zh-cn)找来的免费模型，基于[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.zh)的原创角色シャペル，感谢作者[ろーてく](https://twitter.com/lowteq_vr)。
 
@@ -51,7 +51,7 @@ tags:
 
 在上一段落提到的BOOTH中，一般模型页面会提到该模型使用了什么Shader，为了正常地显示该模型原本的样子，应该导入指定Shader到Unity项目中（具体操作方法接下来会说明）。如果你没有导入对应的Shader，那么你导入模型后会发现整个模型是紫色的（Shader缺失的表现）。
 
-![Arktoon Shaders](/img/in-post/post-VRChat-01/arktoon.jpg)
+![Arktoon Shaders](/img/in-post/post-VRChat-01/arktoon.webp)
 
 本教程使用的Shader是シャペル的页面中说明的Arktoon Shaders，也是一个可以免费利用的Shader，感谢作者[synqark](https://twitter.com/synqark)。
 
@@ -75,17 +75,17 @@ tags:
 
 ### 第一步：新建一个Unity项目
 
-![新建](/img/in-post/post-VRChat-01/01.jpg)
+![新建](/img/in-post/post-VRChat-01/01.webp)
 
 打开Unity，点击New。
 
-![填写项目属性](/img/in-post/post-VRChat-01/02.jpg)
+![填写项目属性](/img/in-post/post-VRChat-01/02.webp)
 
 1. 填写项目名字，可以取自己喜欢的名字
 2. 该项目的保存路径，可以自己选择一个方便整理的路径，新建的项目会在该路径下新建一个以项目名命名的文件夹
 3. 关掉Unity统计
 
-![Unity界面](/img/in-post/post-VRChat-01/03.jpg)
+![Unity界面](/img/in-post/post-VRChat-01/03.webp)
 
 然后就会进入到该项目的Unity界面了，也就表示成功创建好一个项目了。
 
@@ -93,15 +93,15 @@ tags:
 
 ### 第二步：导入VRChat SDK
 
-![VRChat SDK的unitypackage文件](/img/in-post/post-VRChat-01/04.jpg)
+![VRChat SDK的unitypackage文件](/img/in-post/post-VRChat-01/04.webp)
 
 下载好的VRChat SDK是一个unitypackage文件，应该长的如上图。
 
-![导入VRChat SDK](/img/in-post/post-VRChat-01/05.jpg)
+![导入VRChat SDK](/img/in-post/post-VRChat-01/05.webp)
 
 双击该文件后，稍微等一下会看到如上图的窗口，点击右下角的Import就可以将里面的内容导入到Unity项目中。
 
-![导入VRChat SDK后](/img/in-post/post-VRChat-01/06.jpg)
+![导入VRChat SDK后](/img/in-post/post-VRChat-01/06.webp)
 
 导入后应该会看到Project中的Assets多了Plugins和VRCSDK两个文件夹。
 
@@ -109,7 +109,7 @@ tags:
 
 下载好的Arktoon-Shaders是一个压缩包，解压后也是一个unitypackage文件，此时参照第二步的做法导入即可。
 
-![导入Arktoon-Shaders后](/img/in-post/post-VRChat-01/07.jpg)
+![导入Arktoon-Shaders后](/img/in-post/post-VRChat-01/07.webp)
 
 导入后应该会看到Project中的Assets多了arktoon Shader的文件夹。
 
@@ -119,7 +119,7 @@ tags:
 
 下载好后的模型也是一个压缩包，解压后也会看到一个unitypackage文件，一样参照第二步的做法导入即可。
 
-![导入模型后](/img/in-post/post-VRChat-01/08.jpg)
+![导入模型后](/img/in-post/post-VRChat-01/08.webp)
 
 导入后应该会看到Project中的Assets多了Shapell的文件夹。
 
@@ -131,12 +131,12 @@ tags:
 
 本教程使用的模型则是放在模型文件夹的根目录中。
 
-![打开Scene](/img/in-post/post-VRChat-01/09.jpg)
+![打开Scene](/img/in-post/post-VRChat-01/09.webp)
 
 1. 点开Shapell文件夹
 2. 找到.unity文件（shapellscene.unity，点击后可以在下面看到该文件夹的全名），双击打开
 
-![打开Scene后](/img/in-post/post-VRChat-01/10.jpg)
+![打开Scene后](/img/in-post/post-VRChat-01/10.webp)
 
 打开后能看到如上图的样子，左边是该Scene的内容。
 
@@ -146,7 +146,7 @@ tags:
 
 首先是要找到该模型的fbx文件。
 
-![找fbx文件](/img/in-post/post-VRChat-01/11.jpg)
+![找fbx文件](/img/in-post/post-VRChat-01/11.webp)
 
 1. 点击scene中的shapell。这是就是我们准备要上传的模型，下面还有一个shapell_parts，两者有一点区别，在此姑且不展开解释，把shapell理解为比较简洁的模型，shapell_parts稍微比较复杂点就好。
 2. 在右边的Inspector面板中，找到Animator，点击Avatar的内容（shapellAvatar）。然后可以看到Project会自动跳转到该Avatar所在的文件的位置，它存在于shapell（shapell.fbx）文件中。
@@ -154,14 +154,14 @@ tags:
 
 点击shapell.fbx后，Inspector面板会显示该fbx的信息。接下来要做的是打开Rig的设置。
 
-![打开Rig的设置](/img/in-post/post-VRChat-01/12.jpg)
+![打开Rig的设置](/img/in-post/post-VRChat-01/12.webp)
 
 1. 点击Rig
 2. 点击Configure...
 
 然后是删除左右脚的脚趾……
 
-![删除toes](/img/in-post/post-VRChat-01/13.jpg)
+![删除toes](/img/in-post/post-VRChat-01/13.webp)
 
 1. 找到Left Leg的Toes，点击选中，按键盘上的Del键删除掉
 2. 找到Right Leg的Toes，点击选中，按键盘上的Del键删除掉
@@ -172,7 +172,7 @@ tags:
 
 接下来首先打开VRChat SDK的控制面板。
 
-![点开VRChat SDK的控制面板](/img/in-post/post-VRChat-01/14.jpg)
+![点开VRChat SDK的控制面板](/img/in-post/post-VRChat-01/14.webp)
 
 1. 在Unity上方找到VRChat SDK，点击
 2. 点击Show Control Panel
@@ -183,7 +183,7 @@ tags:
 
 接下来是选择上传Avatar。
 
-![选择上传的Avatar](/img/in-post/post-VRChat-01/15.jpg)
+![选择上传的Avatar](/img/in-post/post-VRChat-01/15.webp)
 
 1. 点击Builder
 2. 点击要上传的Avatar（shapell）
@@ -191,7 +191,7 @@ tags:
 
 此时稍等片刻，在Game面板中会看到如下图的样子，接下来就是填写该Avatar的信息。
 
-![填写Avatar信息](/img/in-post/post-VRChat-01/16.jpg)
+![填写Avatar信息](/img/in-post/post-VRChat-01/16.webp)
 
 1. 该Avatar的名字，必填，这里可以填自己喜欢的名字
 2. 该Avatar的描述，选填，可以填任意描述
@@ -200,12 +200,12 @@ tags:
 5. 勾选，表示确认上面信息准确无误。
 6. 点击上传
 
-![上传成功！](/img/in-post/post-VRChat-01/17.jpg)
+![上传成功！](/img/in-post/post-VRChat-01/17.webp)
 
 点击上传后，稍等片刻，看到上面这个窗口弹出，就可以登录游戏点开自己的Avatar确认了。
 
 # 完成
 
-![游戏中的样子](/img/in-post/post-VRChat-01/18.jpg)
+![游戏中的样子](/img/in-post/post-VRChat-01/18.webp)
 
 上图就是在游戏中的样子啦~

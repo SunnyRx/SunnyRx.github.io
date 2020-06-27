@@ -4,7 +4,7 @@ title:      "免费的域名邮箱（企业邮箱）分享——Migadu"
 subtitle:   "还行，至少免费，能用的域名邮箱"
 date:       2019-08-05
 author:     "SunnyRx"
-header-img: "img/post-bg-gray.jpg"
+header-img: "img/post-bg-gray.webp"
 tags:
     - 分享
 ---

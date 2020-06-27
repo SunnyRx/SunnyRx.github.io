@@ -4,7 +4,7 @@ title: "BOOTH免费VRChat资源整理"
 subtitle: "面向VRChat的免费Avatar、免费Shader"
 date: 2020-01-06
 author: "SunnyRx"
-header-img: "img/post-bg-gray.jpg"
+header-img: "img/post-bg-gray.webp"
 catalog:	true
 tags:
     - VRChat
@@ -24,7 +24,7 @@ tags:
 
 ### シャペル
 
-![シャペル](/img/in-post/post-VRChat-collection/Avatar_syaperu.png)
+![シャペル](/img/in-post/post-VRChat-collection/Avatar_syaperu.webp)
 
 > 这里有一篇[关于上传Avatar的博文](https://sunnyrx.com/2019/12/28/Easy-to-DIY-VRChat-Avatar/)，其中所使用的Avatar正是这个。
 
@@ -36,7 +36,7 @@ tags:
 
 ### 響狐リク
 
-![響狐リク](/img/in-post/post-VRChat-collection/Avatar_hibikikitsuneriku.png)
+![響狐リク](/img/in-post/post-VRChat-collection/Avatar_hibikikitsuneriku.webp)
 
 作者：KarakuriPower
 
@@ -46,7 +46,7 @@ tags:
 
 ### くろちゃん(分霊)
 
-![くろちゃん(分霊)](/img/in-post/post-VRChat-collection/Avatar_kurotyan.png)
+![くろちゃん(分霊)](/img/in-post/post-VRChat-collection/Avatar_kurotyan.webp)
 
 > 笔者最喜欢的免费Avatar，希望喜欢的人可以关注一下作者的[All Alone Connect Project](https://twitter.com/ALL_Alone_kuro)。
 
@@ -58,7 +58,7 @@ tags:
 
 ### ソニカちゃん
 
-![ソニカちゃん](/img/in-post/post-VRChat-collection/Avatar_sonikatyan.png)
+![ソニカちゃん](/img/in-post/post-VRChat-collection/Avatar_sonikatyan.webp)
 
 作者：コクリコ
 
@@ -68,7 +68,7 @@ tags:
 
 ### そあら
 
-![コクリコ](/img/in-post/post-VRChat-collection/Avatar_soara.png)
+![コクリコ](/img/in-post/post-VRChat-collection/Avatar_soara.webp)
 
 作者：コクリコ
 
@@ -78,7 +78,7 @@ tags:
 
 ### リズリン
 
-![リズリン](/img/in-post/post-VRChat-collection/Avatar_lizlin.jpg)
+![リズリン](/img/in-post/post-VRChat-collection/Avatar_lizlin.webp)
 
 作者：寺井
 
@@ -88,7 +88,7 @@ tags:
 
 ### 転生ルナーフ
 
-![転生ルナーフ](/img/in-post/post-VRChat-collection/Avatar_lunauff.jpg)
+![転生ルナーフ](/img/in-post/post-VRChat-collection/Avatar_lunauff.webp)
 
 作者：びきたん
 
@@ -98,7 +98,7 @@ tags:
 
 ### アビニトゥール
 
-![アビニトゥール](/img/in-post/post-VRChat-collection/Avatar_abinitour.jpg)
+![アビニトゥール](/img/in-post/post-VRChat-collection/Avatar_abinitour.webp)
 
 作者：びきたん
 
@@ -108,7 +108,7 @@ tags:
 
 ### カロナーフ
 
-![カロナーフ](/img/in-post/post-VRChat-collection/Avatar_caronauff.jpg)
+![カロナーフ](/img/in-post/post-VRChat-collection/Avatar_caronauff.webp)
 
 作者：びきたん
 
@@ -118,7 +118,7 @@ tags:
 
 ### なつこ
 
-![なつこ](/img/in-post/post-VRChat-collection/Avatar_natsuko.jpg)
+![なつこ](/img/in-post/post-VRChat-collection/Avatar_natsuko.webp)
 
 作者：sasamin
 
@@ -128,7 +128,7 @@ tags:
 
 ### とらとら
 
-![とらとら](/img/in-post/post-VRChat-collection/Avatar_toratora.jpg)
+![とらとら](/img/in-post/post-VRChat-collection/Avatar_toratora.webp)
 
 作者：sasamin
 
@@ -138,7 +138,7 @@ tags:
 
 ### 右近
 
-![右近](/img/in-post/post-VRChat-collection/Avatar_ukon.jpg)
+![右近](/img/in-post/post-VRChat-collection/Avatar_ukon.webp)
 
 作者：キツネツキ
 
@@ -148,7 +148,7 @@ tags:
 
 ### きつねちゃん
 
-![きつねちゃん](/img/in-post/post-VRChat-collection/Avatar_kitsunetyan.jpg)
+![きつねちゃん](/img/in-post/post-VRChat-collection/Avatar_kitsunetyan.webp)
 
 作者：45°
 
@@ -158,7 +158,7 @@ tags:
 
 ### ねこねこさん
 
-![ねこねこさん](/img/in-post/post-VRChat-collection/Avatar_nekonekosan.jpg)
+![ねこねこさん](/img/in-post/post-VRChat-collection/Avatar_nekonekosan.webp)
 
 作者：45°
 
@@ -168,7 +168,7 @@ tags:
 
 ### ケッティ
 
-![ケッティ](/img/in-post/post-VRChat-collection/Avatar_caitty.jpg)
+![ケッティ](/img/in-post/post-VRChat-collection/Avatar_caitty.webp)
 
 作者：こばる
 
@@ -178,7 +178,7 @@ tags:
 
 ### ソルティ
 
-![ソルティ](/img/in-post/post-VRChat-collection/Avatar_salty.jpg)
+![ソルティ](/img/in-post/post-VRChat-collection/Avatar_salty.webp)
 
 作者：ステラ
 
@@ -188,7 +188,7 @@ tags:
 
 ### 亜人のリム
 
-![リム](/img/in-post/post-VRChat-collection/Avatar_rim.jpg)
+![リム](/img/in-post/post-VRChat-collection/Avatar_rim.webp)
 
 作者：かふか
 
@@ -198,7 +198,7 @@ tags:
 
 ### 在りし日のラジアータ
 
-![ラジアータ](/img/in-post/post-VRChat-collection/Avatar_radiata.jpg)
+![ラジアータ](/img/in-post/post-VRChat-collection/Avatar_radiata.webp)
 
 作者：かふか
 
@@ -208,7 +208,7 @@ tags:
 
 ### [IST]式 白井鈴
 
-![白井鈴](/img/in-post/post-VRChat-collection/Avatar_sirairin.jpg)
+![白井鈴](/img/in-post/post-VRChat-collection/Avatar_sirairin.webp)
 
 作者：[IST]\(いそっち゜)
 
@@ -218,7 +218,7 @@ tags:
 
 ### [IST]式 白井鈴 Append
 
-![白井鈴 Append](/img/in-post/post-VRChat-collection/Avatar_sirairinappend.jpg)
+![白井鈴 Append](/img/in-post/post-VRChat-collection/Avatar_sirairinappend.webp)
 
 作者：[IST]\(いそっち゜)
 
@@ -228,7 +228,7 @@ tags:
 
 ### [IST]式 佐野ひまり
 
-![佐野ひまり](/img/in-post/post-VRChat-collection/Avatar_himari.jpg)
+![佐野ひまり](/img/in-post/post-VRChat-collection/Avatar_himari.webp)
 
 作者：[IST]\(いそっち゜)
 
@@ -238,7 +238,7 @@ tags:
 
 ### NecoMaid
 
-![NecoMaid](/img/in-post/post-VRChat-collection/Avatar_necomaid.jpg)
+![NecoMaid](/img/in-post/post-VRChat-collection/Avatar_necomaid.webp)
 
 作者：SONO
 
@@ -248,7 +248,7 @@ tags:
 
 ### 吸血鬼　アンナちゃん
 
-![アンナちゃん](/img/in-post/post-VRChat-collection/Avatar_anna.jpg)
+![アンナちゃん](/img/in-post/post-VRChat-collection/Avatar_anna.webp)
 
 作者：わこー
 
@@ -258,7 +258,7 @@ tags:
 
 ### ラドドール
 
-![ラドドール](/img/in-post/post-VRChat-collection/Avatar_raddoll.jpg)
+![ラドドール](/img/in-post/post-VRChat-collection/Avatar_raddoll.webp)
 
 作者：まおー
 
@@ -268,7 +268,7 @@ tags:
 
 ### ルル
 
-![ルル](/img/in-post/post-VRChat-collection/Avatar_ruru.jpg)
+![ルル](/img/in-post/post-VRChat-collection/Avatar_ruru.webp)
 
 作者：こおりみず
 
@@ -278,7 +278,7 @@ tags:
 
 ### テル
 
-![テル](/img/in-post/post-VRChat-collection/Avatar_teru.jpg)
+![テル](/img/in-post/post-VRChat-collection/Avatar_teru.webp)
 
 作者：こおりみず
 
@@ -288,7 +288,7 @@ tags:
 
 ### シヴィー/ヨツル/フォーシー
 
-![シヴィー/ヨツル/フォーシー](/img/in-post/post-VRChat-collection/Avatar_VVVVRRRRCCCC.jpg)
+![シヴィー/ヨツル/フォーシー](/img/in-post/post-VRChat-collection/Avatar_VVVVRRRRCCCC.webp)
 
 作者：しげひろ
 
@@ -299,7 +299,7 @@ tags:
 
 ### Arktoon-Shaders
 
-![Arktoon-Shaders](/img/in-post/post-VRChat-collection/Shader_Arktoon-Shaders.png)
+![Arktoon-Shaders](/img/in-post/post-VRChat-collection/Shader_Arktoon-Shaders.webp)
 
 作者：PacketbirD
 
@@ -309,7 +309,7 @@ tags:
 
 ### PBT-Shader
 
-![PBT-Shader](/img/in-post/post-VRChat-collection/Shader_PBT-Shader.png)
+![PBT-Shader](/img/in-post/post-VRChat-collection/Shader_PBT-Shader.webp)
 
 作者：四拾弐(yosohuta)
 
@@ -319,7 +319,7 @@ tags:
 
 ### Sunao Shader
 
-![Sunao Shader](/img/in-post/post-VRChat-collection/Shader_Sunao Shader.png)
+![Sunao Shader](/img/in-post/post-VRChat-collection/Shader_Sunao Shader.webp)
 
 作者：揚茄子研究所
 
@@ -329,7 +329,7 @@ tags:
 
 ### まんまるしぇーだー2.0/MnmrShader2.0
 
-![まんまるしぇーだー2.0/MnmrShader2.0](/img/in-post/post-VRChat-collection/Shader_MnmrShader2.0.png)
+![まんまるしぇーだー2.0/MnmrShader2.0](/img/in-post/post-VRChat-collection/Shader_MnmrShader2.0.webp)
 
 作者：みにすけーぷ
 
@@ -339,7 +339,7 @@ tags:
 
 ### ごった煮トゥーンシェーダー
 
-![ごった煮トゥーンシェーダー](/img/in-post/post-VRChat-collection/Shader_GottaniToon.jpg)
+![ごった煮トゥーンシェーダー](/img/in-post/post-VRChat-collection/Shader_GottaniToon.webp)
 
 作者：ほたて
 

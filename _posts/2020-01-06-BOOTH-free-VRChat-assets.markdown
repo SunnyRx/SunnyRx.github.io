@@ -18,7 +18,7 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2020年5月24日
+> 本文最近一次更新时间为2020年8月24日
 
 # Avatar
 
@@ -293,6 +293,26 @@ tags:
 作者：しげひろ
 
 链接：[【PC/Quest対応】VR用3dモデル「2A-7-4 / VRCset　シヴィー/ヨツル/フォーシー」](https://hiroiheya.booth.pm/items/2019040)
+
+---
+
+### アリシア種の猫の子
+
+![アリシア種の猫の子](/img/in-post/post-VRChat-collection/Avatar_nekonoko.webp)
+
+作者：ふらいど。
+
+链接：[VRChat向けセミスクラッチモデル『アリシア種の猫の子』](https://fr1ed.booth.pm/items/1094208)
+
+---
+
+### 八咫みるく
+
+![八咫みるく](/img/in-post/post-VRChat-collection/Avater_yata.webp)
+
+作者：keiichiisozaki
+
+链接：[八咫みるく」](https://keiichiisozaki.booth.pm/items/2321359)
 
 ---
 # Shader

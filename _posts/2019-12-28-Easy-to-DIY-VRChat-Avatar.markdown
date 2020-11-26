@@ -10,6 +10,8 @@ tags:
     - VRChat
 ---
 
+> 博文于2020年11月27日更新。时隔一年，主要有2个比较大的变动，第1是Unity版本发生了变化，多出了一些处理步骤，以下博文做了修正和简单说明。第2是VRChat分开SDK2和SDK3，分别对应Avatars2.0和Avatars3.0，以下博文针对SDK2撰写。
+
 最近一段时间都在玩VRChat，开始自己研究如何打造一个属于自己的Avatar。
 
 在这之前，首先得学会如何自己上传Avatar。
@@ -23,11 +25,13 @@ tags:
 需要的东西如下：
 
 - [模型シャペル](https://booth.pm/zh-cn/items/1349366)
-- [着色器Arktoon-Shaders](https://booth.pm/zh-cn/items/1027997)
-- [Unity 2017.4.28f1](https://download.unity3d.com/download_unity/e3a0f7dd2097/Windows64EditorInstaller/UnitySetup64.exe)
-- [VRChat SDK](https://vrchat.com/download/sdk)
+- [Unity 2018.4.20f1](https://download.unity3d.com/download_unity/008688490035/Windows64EditorInstaller/UnitySetup64.exe)
+- [VRChat帐号](https://vrchat.com)
+- [VRChat SDK2](https://vrchat.com/download/sdk)（本教程使用的SDK2）
 
 > 如果想要让头发和裙子动起来，还需要[动态骨骼](https://assetstore.unity.com/packages/tools/animation/dynamic-bone-16743#description)，售价为20$。注意这不是必须的。
+
+> 2020年11月27日更新：如果没有动态骨骼插件，会因为脚本缺失而无法上传Avatar，详看第五步的最后。
 
 下面笔者会对这四个东西暂开详细说明。
 
@@ -55,15 +59,21 @@ tags:
 
 本教程使用的Shader是シャペル的页面中说明的Arktoon Shaders，也是一个可以免费利用的Shader，感谢作者[synqark](https://twitter.com/synqark)。
 
+少部分模型会在资源包里附上Shader，シャペル已经自带Arktoon Shaders，所以不用提前下载和导入Shader也可以。但是要注意，这个版本的Arktoon Shaders相对较旧，导入シャペル后可以考虑再导入最新版的Arktoon Shaders。
+
 如果有兴趣折腾，也可以尝试给模型替换不同的Shader，以表现出不一样的效果。
 
 笔者也整理了一些BOOTH上的免费Shader，详情请参考[BOOTH免费VRChat资源整理](https://sunnyrx.com/2020/01/06/BOOTH-free-VRChat-assets/#shader)一文。
 
-### Unity 2017.4.28f1
+### Unity 2018.4.20f1
 
-当前VRChat官方推荐使用的Unity版本是2017.4.28，所以本次教程也是使用这个版本。
+当前（2020年11月27日）VRChat官方推荐使用的Unity版本是2018.4.20，所以本次教程也是使用这个版本。
 
 如何安装就不在本教程范围了，如果有疑问的话可以搜索一下相关教程。
+
+如果你电脑有安装UnityHub，可以用下面的链接直接安装2018.4.20版本的Unity。
+
+[unityhub://2018.4.20f1/008688490035](unityhub://2018.4.20f1/008688490035)
 
 ### VRChat SDK
 
@@ -140,35 +150,9 @@ tags:
 
 打开后能看到如上图的样子，左边是该Scene的内容。
 
-### 第六步：处理一下Rig
+> 2020年11月27日更新：如果没有动态骨骼插件，会因为脚本缺失而无法上传Avatar，需要编辑预制体(Prefab)，移除Script Missing的脚本后才能上传。
 
-这一部主要是删除模型中不必要的追踪点，留着可能会带来一些问题。基本上每一个导入后的模型都需要做这一步。
-
-首先是要找到该模型的fbx文件。
-
-![找fbx文件](/img/in-post/post-VRChat-01/11.webp)
-
-1. 点击scene中的shapell。这是就是我们准备要上传的模型，下面还有一个shapell_parts，两者有一点区别，在此姑且不展开解释，把shapell理解为比较简洁的模型，shapell_parts稍微比较复杂点就好。
-2. 在右边的Inspector面板中，找到Animator，点击Avatar的内容（shapellAvatar）。然后可以看到Project会自动跳转到该Avatar所在的文件的位置，它存在于shapell（shapell.fbx）文件中。
-3. 点击shapell.fbx文件
-
-点击shapell.fbx后，Inspector面板会显示该fbx的信息。接下来要做的是打开Rig的设置。
-
-![打开Rig的设置](/img/in-post/post-VRChat-01/12.webp)
-
-1. 点击Rig
-2. 点击Configure...
-
-然后是删除左右脚的脚趾……
-
-![删除toes](/img/in-post/post-VRChat-01/13.webp)
-
-1. 找到Left Leg的Toes，点击选中，按键盘上的Del键删除掉
-2. 找到Right Leg的Toes，点击选中，按键盘上的Del键删除掉
-3. 点击Apply
-4. 点击Done
-
-### 第七步：上传Avatar到VRChat
+### 第六步：上传Avatar到VRChat
 
 接下来首先打开VRChat SDK的控制面板。
 
@@ -182,6 +166,8 @@ tags:
 > 这里需要注意的是，你的VRChat帐号必须满足上传Avatar的资格才可以上传Avatar。通常新帐号是没有资格的，需要游玩一段时间。
 
 接下来是选择上传Avatar。
+
+> 2020年11月27日更新：在这一步可能会看到2和3之间有红色错误，点击Auto Fix即可。
 
 ![选择上传的Avatar](/img/in-post/post-VRChat-01/15.webp)
 

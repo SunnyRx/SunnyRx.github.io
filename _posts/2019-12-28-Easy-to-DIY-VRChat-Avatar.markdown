@@ -59,7 +59,7 @@ tags:
 
 本教程使用的Shader是シャペル的页面中说明的Arktoon Shaders，也是一个可以免费利用的Shader，感谢作者[synqark](https://twitter.com/synqark)。
 
-少部分模型会在资源包里附上Shader，シャペル已经自带Arktoon Shaders，所以不用提前下载和导入Shader也可以。但是要注意，这个版本的Arktoon Shaders相对较旧，导入シャペル后可以考虑再导入最新版的Arktoon Shaders。
+> 2020年11月27日更新：少部分模型会在资源包里附上Shader，シャペル已经自带Arktoon Shaders，所以不用提前下载和导入Shader。但是要注意，这个版本的Arktoon Shaders相对较旧，导入シャペル后可以考虑再导入最新版的Arktoon Shaders。
 
 如果有兴趣折腾，也可以尝试给模型替换不同的Shader，以表现出不一样的效果。
 

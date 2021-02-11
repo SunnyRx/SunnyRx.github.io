@@ -24,7 +24,7 @@ tags:
 
 ### シャペル
 
-![シャペル](/img/in-post/post-VRChat-collection/Avatar_syaperu.webp)
+![シャペル](https://booth.pximg.net/12d291ee-7368-4fb1-bc8b-4bf670ee558a/i/1349366/4025e9f1-aecb-49db-b521-22adb3ec9827_base_resized.jpg)
 
 > 这里有一篇[关于上传Avatar的博文](https://sunnyrx.com/2019/12/28/Easy-to-DIY-VRChat-Avatar/)，其中所使用的Avatar正是这个。
 
@@ -83,36 +83,6 @@ tags:
 作者：寺井
 
 链接：[【無料配布】オリジナル3Dモデル『リズリン｜Lizlin』](https://athv.booth.pm/items/1488786)
-
----
-
-### 転生ルナーフ
-
-![転生ルナーフ](/img/in-post/post-VRChat-collection/Avatar_lunauff.webp)
-
-作者：びきたん
-
-链接：[【無料配布】オリジナル3Dモデル『転生ルナーフ』](https://bbkktn.booth.pm/items/2006071)
-
----
-
-### アビニトゥール
-
-![アビニトゥール](/img/in-post/post-VRChat-collection/Avatar_abinitour.webp)
-
-作者：びきたん
-
-链接：[【無料配布】オリジナル3Dモデル 『アビニトゥール』](https://bbkktn.booth.pm/items/1434569)
-
----
-
-### カロナーフ
-
-![カロナーフ](/img/in-post/post-VRChat-collection/Avatar_caronauff.webp)
-
-作者：びきたん
-
-链接：[【無料配布】オリジナル3Dモデル 『カロナーフ』](https://bbkktn.booth.pm/items/1651921)
 
 ---
 
@@ -313,6 +283,56 @@ tags:
 作者：keiichiisozaki
 
 链接：[八咫みるく」](https://keiichiisozaki.booth.pm/items/2321359)
+
+---
+
+### KissMa
+
+![KissMa](https://booth.pximg.net/2c107679-bd18-493f-84fd-2cb1013e3b27/i/2535009/f85ab830-29e3-47b3-8e0a-3a0a498019e5_base_resized.jpg)
+
+作者：keiichiisozaki
+
+链接：[KissMa](https://keiichiisozaki.booth.pm/items/2535009)
+
+---
+
+### サヤ
+
+![サヤ](https://s2.booth.pm/4e72fa3d-b139-40a3-8f56-1b76952a9486/i/2631601/0214d012-4af4-479b-a56d-1b4781e4b2e9_base_resized.jpg)
+
+作者：uonji
+
+链接：[オリジナル３Dモデル「シンプルくのいち"サヤ"」](https://uonji.booth.pm/items/2631601)
+
+---
+
+### ショットガンきつねメイド
+
+![ショットガンきつねメイド](https://s2.booth.pm/8ffc7807-7b2a-484d-adeb-766daf56eff4/i/2611057/cfc0c09f-646a-45d2-807d-aa747e63e717_base_resized.jpg)
+
+作者：とりにゃん
+
+链接：[ECO FRIENDLY GREENショットガンきつねメイド　アバター](https://tori-nyan.booth.pm/items/2611057)
+
+---
+
+### スターアニスちゃん
+
+![スターアニスちゃん](https://s2.booth.pm/33c7bd03-304a-43d5-aee5-5c24f99ebedb/i/1810562/99c731d0-73d3-4efc-8952-5e81d3b285c9_base_resized.jpg)
+
+作者：gfool6
+
+链接：[【無料オリジナル3Dモデル】スターアニスちゃん](https://gfool6.booth.pm/items/1810562)
+
+---
+
+### オタクくん
+
+![オタクくん](https://s2.booth.pm/33c7bd03-304a-43d5-aee5-5c24f99ebedb/i/2061364/d0a41add-eca0-4afa-bc87-95cb1096e7f7_base_resized.jpg)
+
+作者：gfool6
+
+链接：[【無料オリジナル3Dモデル】オタクくん](https://gfool6.booth.pm/items/2061364)
 
 ---
 # Shader

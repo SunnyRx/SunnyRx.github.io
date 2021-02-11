@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "免费的域名邮箱（企业邮箱）分享——Migadu"
+title:      "【已失效】免费的域名邮箱（企业邮箱）分享——Migadu"
 subtitle:   "还行，至少免费，能用的域名邮箱"
 date:       2019-08-05
 author:     "SunnyRx"
@@ -8,6 +8,8 @@ header-img: "img/post-bg-gray.webp"
 tags:
     - 分享
 ---
+
+> Migadu已于2020年10月取消免费套餐。
 
 > 有人可以告诉给笔者科普一下域名邮箱（Domain Mailbox）和企业邮箱（Enterprise Mailbox）的区别吗？
 

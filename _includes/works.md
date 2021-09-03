@@ -4,7 +4,7 @@
 
 ---
 
-- 异星时劫（[itch.io](https://sunnyrx.itch.io/yixingshijie)）
+- 异星时劫（[itch.io](https://sunnyrx.itch.io/yixingshijie) / [机核网](https://www.gcores.com/games/67506)）
 - Echiod（[GlobalGameJam](http://globalgamejam.org/2017/games/echoid)）
 - Jewel Thief（[App Store](https://itunes.apple.com/cn/app/jewel-thief-a-entertainment-jewel-catching-game/id1143529803)）
 - 这里没有格林达姆（[Steam](https://store.steampowered.com/app/1109460/There_is_No_GreenDam/) / [itch.io](https://sunnyrx.itch.io/there-is-no-greendam) / [百度贴吧](http://tieba.baidu.com/p/3098681603)）

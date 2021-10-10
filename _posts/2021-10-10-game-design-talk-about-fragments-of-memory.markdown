@@ -41,7 +41,9 @@ PS：途中绘师对这个游戏和角色非常有热情，差点拦不住她想
 接下来的内容涉及一点剧透内容，可以体验过游戏后再阅读~
 
 有HTML5版，一共3个关卡，基本在5~10分钟内可以完成游戏。
+
 [https://sunnyrx.itch.io/fragments-of-memory](https://sunnyrx.itch.io/fragments-of-memory)
+
 我希望可以得到大家的反馈，想知道自己想传达的东西是否有传达到位，以及有哪些可以改进的地方。
 
 # 剧情设计

@@ -4,6 +4,7 @@
 
 ---
 
+- 回忆碎片（[itch.io](https://sunnyrx.itch.io/fragments-of-memory)）
 - 异星时劫（[itch.io](https://sunnyrx.itch.io/yixingshijie) / [机核网](https://www.gcores.com/games/67506)）
 - Echiod（[GlobalGameJam](http://globalgamejam.org/2017/games/echoid)）
 - Jewel Thief（[App Store](https://itunes.apple.com/cn/app/jewel-thief-a-entertainment-jewel-catching-game/id1143529803)）
@@ -31,7 +32,7 @@
 
 ---
 
-- 【苍绿祭】我才不说喜欢你（[bilibili](https://www.bilibili.com/video/BV1ps411v7Cd)）
+- 【苍绿祭】我才不说喜欢你（[Youtube](https://www.youtube.com/watch?v=MhhkmeUa3oA) / [bilibili](https://www.bilibili.com/video/BV1ps411v7Cd)）
 - 【漫研社十周年】初心·拾终如一[bilibili](https://www.bilibili.com/video/BV1EJ41147wr)）
 
 # 模型

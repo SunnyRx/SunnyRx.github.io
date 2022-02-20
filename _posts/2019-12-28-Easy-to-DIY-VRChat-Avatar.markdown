@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "轻松简单自己上传VRChat的Avatar"
+title: "【已过时】轻松简单自己上传VRChat的Avatar"
 subtitle: "有Unity就够了，不用Blender"
 date: 2019-12-28
 author: "SunnyRx"
@@ -9,6 +9,8 @@ catalog:	true
 tags:
     - VRChat
 ---
+
+> 博文于2022年2月20日更新。SDK2已停用，该篇文章已经不适用。
 
 > 博文于2020年11月27日更新。时隔一年，主要有2个比较大的变动，第1是Unity版本发生了变化，多出了一些处理步骤，以下博文做了修正和简单说明。第2是VRChat分开SDK2和SDK3，分别对应Avatars2.0和Avatars3.0，以下博文针对SDK2撰写。
 

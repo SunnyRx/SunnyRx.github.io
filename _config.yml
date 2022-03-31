@@ -102,12 +102,8 @@ page-mathjax: false
 # Friends
 friends: [
     {
-        title: "Asterisk Blog",
-        href: "http://www.liangyuekang.net/"
-    },
-    {
         title: "Ceplavia's Gaming Blog",
-        href: "http://www.ceplavia.com/"
+        href: "https://www.ceplavia.com/"
     },
     {
         title: "Gzp的博客",
@@ -115,7 +111,7 @@ friends: [
     },
     {
         title: "Kuma的博客",
-        href: "http://zero.sundaystart.net/"
+        href: "https://0-rpg.com/"
     },
     {
         title: "TNK",
@@ -132,5 +128,9 @@ friends: [
     {
         title: "纸箱猪的技艺空间",
         href: "https://zxtechart.com/"
+    },
+    {
+        title: "魂灵在野",
+        href: "https://freesouls.vercel.app/"
     }
 ]

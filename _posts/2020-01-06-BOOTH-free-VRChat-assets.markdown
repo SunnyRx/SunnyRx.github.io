@@ -18,7 +18,9 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2020年8月24日
+> 本文最近一次更新时间为2022年5月4日
+
+> 排序的顺序为笔者更新的顺序，越靠前的可能存在失效的链接，并且可能仅支持SDK2，使用时需要自己处理成SDK3的Avatar。
 
 # Avatar
 
@@ -176,36 +178,6 @@ tags:
 
 ---
 
-### [IST]式 白井鈴
-
-![白井鈴](/img/in-post/post-VRChat-collection/Avatar_sirairin.webp)
-
-作者：[IST]\(いそっち゜)
-
-链接：[【MMD/VRC用3Dモデル】[IST]式 白井鈴 ver.1.0](https://isotch0130.booth.pm/items/1384082)
-
----
-
-### [IST]式 白井鈴 Append
-
-![白井鈴 Append](/img/in-post/post-VRChat-collection/Avatar_sirairinappend.webp)
-
-作者：[IST]\(いそっち゜)
-
-链接：[【MMD/VRC用3Dモデル】[IST]式 白井鈴 Append ver.1.0](https://isotch0130.booth.pm/items/1399653)
-
----
-
-### [IST]式 佐野ひまり
-
-![佐野ひまり](/img/in-post/post-VRChat-collection/Avatar_himari.webp)
-
-作者：[IST]\(いそっち゜)
-
-链接：[【MMD/VRC用3Dモデル】[IST]式 佐野ひまり ver.1.0](https://isotch0130.booth.pm/items/1604378)
-
----
-
 ### NecoMaid
 
 ![NecoMaid](/img/in-post/post-VRChat-collection/Avatar_necomaid.webp)
@@ -335,6 +307,138 @@ tags:
 链接：[【無料オリジナル3Dモデル】オタクくん](https://gfool6.booth.pm/items/2061364)
 
 ---
+
+### RadDollV2
+
+![RadDollV2](https://s2.booth.pm/3c39b721-63d9-4193-a883-507b13ff6ebc/i/3741802/58843431-33b6-4c22-b391-4dc3fed270ce_base_resized.jpg)
+
+作者：まおー
+
+链接：[VR向けアバターモデル「RadDollV2」【無料】](https://tonomaoo.booth.pm/items/3741802)
+
+---
+
+### ハオランーHAOLAN
+
+![ハオランーHAOLAN](https://s2.booth.pm/1a3d7c54-a290-40a4-b267-0f2e041fef9a/i/3818504/046a73fd-3a55-4cdc-a5c0-b1487f848902_base_resized.jpg)
+
+作者：かなﾘぁ
+
+链接：[オリジナル3Dモデル【ハオランーHAOLAN】](https://kanalia.booth.pm/items/3818504)
+
+---
+
+### のん
+
+![のん](https://s2.booth.pm/b72d62fb-6f78-4042-8674-b0b9d718f73d/i/3204884/fc1cd83c-c08c-4e43-9f41-9e80c7bf54dd_base_resized.jpg)
+
+作者：すいか
+
+链接：[【3Dモデル】『のん』BASIC PACK](https://suicasweets.booth.pm/items/3204884)
+
+---
+
+### セレアーテ
+
+![セレアーテ](https://s2.booth.pm/e63ad514-d9e1-4241-b29f-82bc4b979ff7/i/3738752/dba56208-8849-4f15-a80e-c2e4c30eef32_base_resized.jpg)
+
+作者：Ruruku
+
+链接：[無料アバター「セレアーテ」ファンメイド](https://ruruku14.booth.pm/items/3738752)
+
+---
+
+### ショコラ
+
+![ショコラ](https://s2.booth.pm/e63ad514-d9e1-4241-b29f-82bc4b979ff7/i/3795996/44ee389a-28aa-466e-bfb9-e317c782ee8a_base_resized.jpg)
+
+作者：Ruruku
+
+链接：[無料アバター「ショコラ」ファンメイド](https://ruruku14.booth.pm/items/3795996)
+
+---
+
+### グリーンダムたん
+
+![グリーンダムたん](https://s2.booth.pm/e41bbba7-fcea-4182-8b36-c4e66630ea9e/i/2348604/dc004f23-48a6-4f57-a37f-3b2df30273e1_base_resized.jpg)
+
+> 笔者参与制作的Avatar，希望大家能喜欢小绿！
+
+作者：グリーンダム136
+
+链接：[オリジナル3Dモデル「グリーンダムたん」(GreenDam)](https://sunnyrx.booth.pm/items/2348604)
+
+---
+
+### ゲブラー
+
+![ゲブラー](https://s2.booth.pm/0d2468c0-1ae0-44e4-9281-c6f1646d3f41/i/2528952/33ccf009-4cc3-4883-9a5e-a4a697fe37ea_base_resized.jpg)
+
+作者：セフィ
+
+链接：[【オリジナル3Dモデル】Gevurah〈ゲブラー〉](https://sephir.booth.pm/items/2528952)
+
+---
+
+### アーキ
+
+![アーキ](https://s2.booth.pm/faa23ed5-d45c-463c-8407-1e2c8719778a/i/2688444/68bea772-0c3a-4ab5-9dee-9a839964a3ce_base_resized.jpg)
+
+作者：しおた
+
+链接：[【無料】【VRC想定オリジナル3Dモデル】アーキ](https://shiotar.booth.pm/items/2688444)
+
+---
+
+### ツギノ
+
+![ツギノ](https://s2.booth.pm/faa23ed5-d45c-463c-8407-1e2c8719778a/i/3579977/48fab56b-a174-48d5-a839-799b8a2ef545_base_resized.jpg)
+
+作者：しおた
+
+链接：[【無料】【VRC想定オリジナル3Dモデル】ツギノ](https://shiotar.booth.pm/items/3579977)
+
+---
+
+### コンコード
+
+![コンコード](https://s2.booth.pm/faa23ed5-d45c-463c-8407-1e2c8719778a/i/3782774/704edfb5-0488-4e36-84bd-fc1c3fafe412_base_resized.jpg)
+
+作者：しおた
+
+链接：[【無料】【VRC想定3Dモデル】コンコードver2【アズールレーン】](https://shiotar.booth.pm/items/3782774)
+
+---
+
+### チェシャ猫ちゃん
+
+![チェシャ猫ちゃん](https://s2.booth.pm/bbdabf97-f967-4f75-86fa-50b3aca32c35/i/2814294/d07240af-a83e-47ef-86d7-fadbef410f1f_base_resized.jpg)
+
+作者：\[IST](いそっち゜)
+
+链接：[【基本無料】チェシャ猫ちゃん ver.1.1【MMD/VRC用3Dモデル】](https://isotch0130.booth.pm/items/2814294)
+
+---
+
+### わかば
+
+![わかば](https://s2.booth.pm/bbdabf97-f967-4f75-86fa-50b3aca32c35/i/3273606/6066d95a-aaa2-4eea-9c8b-bc5ee066d093_base_resized.jpg)
+
+作者：\[IST](いそっち゜)
+
+链接：[【基本無料】チェシャ猫ちゃん ver.1.1【MMD/VRC用3Dモデル】](https://isotch0130.booth.pm/items/3273606)
+
+---
+
+### てっさくちゃん
+
+![てっさくちゃん](https://s2.booth.pm/98c1aae5-ed65-45c7-9374-54dfac10fcc2/i/3183052/ebb80654-fdc4-4275-978c-e4d61269fa4b_base_resized.jpg)
+
+作者：神葉詞
+
+链接：[【PC、Quest両対応】オリジナル3Dモデル ｢てっさくちゃん｣](https://kanbasi999.booth.pm/items/3183052)
+
+---
 # Shader
 
 ### Arktoon-Shaders
@@ -384,3 +488,13 @@ tags:
 作者：ほたて
 
 链接：[ごった煮トゥーンシェーダー](https://hhotatea.booth.pm/items/1668964)
+
+---
+
+### lilToon
+
+![lilToon](https://s2.booth.pm/d39ea11b-78fc-488b-90dd-457109c7cd9b/i/3087170/3c857f8a-2349-4986-b126-29e88011ac3e_base_resized.jpg)
+
+作者：lil
+
+链接：[【無料】lilToon](https://lilxyzw.booth.pm/items/3087170)

@@ -7,7 +7,7 @@
 - 回忆碎片（[itch.io](https://sunnyrx.itch.io/fragments-of-memory)）
 - 异星时劫（[itch.io](https://sunnyrx.itch.io/yixingshijie) / [机核网](https://www.gcores.com/games/67506)）
 - Echiod（[GlobalGameJam](http://globalgamejam.org/2017/games/echoid)）
-- Jewel Thief（[App Store](https://itunes.apple.com/cn/app/jewel-thief-a-entertainment-jewel-catching-game/id1143529803)）
+- Jewel Thief（[itch.io](https://sunnyrx.itch.io/jewel-thief) / [App Store(已下架)](https://itunes.apple.com/cn/app/jewel-thief-a-entertainment-jewel-catching-game/id1143529803)）
 - 这里没有格林达姆（[Steam](https://store.steampowered.com/app/1109460/There_is_No_GreenDam/) / [itch.io](https://sunnyrx.itch.io/there-is-no-greendam) / [百度贴吧](http://tieba.baidu.com/p/3098681603)）
 - Last day（[天窗联盟](https://doujin.bgm.tv/blog/42460)）
 - Kreuz Skelett Mann:saligiare（[天窗联盟](https://doujin.bgm.tv/blog/34948)）

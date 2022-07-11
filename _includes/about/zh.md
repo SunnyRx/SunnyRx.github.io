@@ -8,10 +8,10 @@
 
 目前在日本学习游戏设计。
 
-喜欢电子游戏，以游戏制作人为目标进修中。
-
-长期接触ACG文化，偏爱FPS游戏，SteamID:[SunnyRx](http://steamcommunity.com/id/SunnyRx/)。
+长期接触ACG文化，长期接触ACG文化，喜欢电子游戏，以游戏制作人为目标进修中。
 
 有好多技能，但多数是半桶水。会音视频剪辑，会Photoshop，做过广播剧，做过游戏，催过同人本。当前主要技能是项目管理。
 
 关于我的作品，欢迎到[WORKS](http://www.sunnyrx.com/works/)页面查看。
+
+SteamID:[SunnyRx](http://steamcommunity.com/id/SunnyRx/)

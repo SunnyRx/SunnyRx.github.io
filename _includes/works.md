@@ -4,6 +4,7 @@
 
 ---
 
+- Card Empires（[itch.io](https://sunnyrx.itch.io/card-empires)）
 - 回忆碎片（[itch.io](https://sunnyrx.itch.io/fragments-of-memory)）
 - 异星时劫（[itch.io](https://sunnyrx.itch.io/yixingshijie) / [机核网](https://www.gcores.com/games/67506)）
 - Echiod（[GlobalGameJam](http://globalgamejam.org/2017/games/echoid)）

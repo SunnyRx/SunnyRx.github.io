@@ -5,7 +5,7 @@ subtitle: "试想，总之，没想出来"
 date: 2022-11-15
 author: "SunnyRx"
 header-img: "img/post-bg-gray.webp"
-catalog:	false
+catalog: false
 tags:
     - 随笔
 ---

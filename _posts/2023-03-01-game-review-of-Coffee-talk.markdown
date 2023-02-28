@@ -2,10 +2,10 @@
 layout: post
 title: "《COFFEE TALK》评论"
 subtitle: "“Welcome, please take your seat”"
-date: 2022-07-10
+date: 2023-03-01
 author: "SunnyRx"
 header-img: "img/post-bg-gray.webp"
-catalog:	true
+catalog:	false
 tags:
     - 游戏评论
 ---

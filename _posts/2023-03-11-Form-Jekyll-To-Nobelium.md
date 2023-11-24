@@ -1,14 +1,14 @@
-- ---
-  layout: post
-  title: "从 Jekyll 搬到 Nobelium"
-  subtitle: "Form Jekyll to Nobelium"
-  date: 2023-03-11
-  author: "SunnyRx"
-  header-img: "img/post-bg-gray.webp"
-  catalog:	false
-  tags:
-      - 随笔
-  ---
+---
+layout: post
+title: "从 Jekyll 搬到 Nobelium"
+subtitle: "Form Jekyll to Nobelium"
+date: 2023-03-11
+author: "SunnyRx"
+header-img: "img/post-bg-gray.webp"
+catalog:	false
+tags:
+    - 随笔
+---
   
 笔者的博客正式从 [Jekyll](https://jekyll.sunnyrx.com) 迁移到现在的 Nobelium 了。
 

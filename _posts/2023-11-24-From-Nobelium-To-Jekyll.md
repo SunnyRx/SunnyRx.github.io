@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "从 Jekyll 搬到 Nobelium"
-subtitle: "Form Jekyll to Nobelium"
+title: "从 Nobelium 搬到 Jekyll"
+subtitle: "Form Nobelium to Jekyll"
 date: 2023-11-24
 author: "SunnyRx"
 header-img: "img/post-bg-gray.webp"

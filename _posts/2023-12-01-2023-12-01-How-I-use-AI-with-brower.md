@@ -50,10 +50,8 @@ Sider 的设置菜单中可以根据自己的需要配置提示词，下面笔�
 
 ![使用 Sider 查询解释用例](https://raw.githubusercontent.com/SunnyRx/images/main/img/20231201215548.webp)
 
-```
-Contents: "${selection}"  
-Please create a explanation in ${lang} using one paragraph.
-```
+> Contents: "${selection}"  
+> Please create a explanation in ${lang} using one paragraph.
 
 Sider 有自带一条用于解释的提示词，它向 AI 提供一段比较优秀的回答格式，但是回复内容实在太长，有时候里面有不少重复的废话在其中。
 
@@ -63,9 +61,7 @@ Sider 有自带一条用于解释的提示词，它向 AI 提供一段比较优�
 
 ![使用 Sider 查询日语发音例](https://raw.githubusercontent.com/SunnyRx/images/main/img/20231201212156.webp)
 
-```
-読み方を教えて：
-```
+> 読み方を教えて：
 
 笔者在阅读日语文本的时候，经常会看到一些不知道怎么读的汉字词汇，用该提示词可以快速得到对应的读音。
 
@@ -73,9 +69,7 @@ Sider 有自带一条用于解释的提示词，它向 AI 提供一段比较优�
 
 ![使用 Sider 查询外语表达](https://raw.githubusercontent.com/SunnyRx/images/main/img/20231201214542.webp)
 
-```
-我想表达下面的意思，用英语怎么说比较自然呢：
-```
+> 我想表达下面的意思，用英语怎么说比较自然呢：
 
 笔者有时候需要用一些外语短语与人交流，直接用翻译软件的话翻译出来的语句通常怪怪的，一眼机翻，用该提示词可以减少违和感。
 
@@ -91,14 +85,12 @@ Sider 有自带一条用于解释的提示词，它向 AI 提供一段比较优�
 
 ![ChatGPT Slider 生成的 Logseq 日语词汇笔记](https://raw.githubusercontent.com/SunnyRx/images/main/img/a8f1fb001cb292e5e2b58c755400790.webp)
 
-```
-Please create notes for the vocabulary of "${selection}" I provide you in the following format:
-
-${selection} #card #日本語
-- 読み方： [If the vocabulary is in kanji, please provide the furigana here, otherwise leave it blank]
-- 意味： [The corresponding meaning of this vocabulary in ${lang}]
-- 簡易メモ：[Help me remember this vocabulary by providing any additional notes in ${lang}, such as the typical situations where this vocabulary is used]
-```
+> Please create notes for the vocabulary of "${selection}" I provide you in the following format:
+> 
+> ${selection} #card #日本語
+> - 読み方： [If the vocabulary is in kanji, please provide the furigana here, otherwise leave it blank]
+> - 意味： [The corresponding meaning of this vocabulary in ${lang}]
+> - 簡易メモ：[Help me remember this vocabulary by providing any additional notes in ${lang}, such as the typical situations where this vocabulary is used]
 
 最近笔者用于制作 Logseq 记忆卡片用的提示词，详情可以查看笔者的另一篇[博文](https://sunnyrx.com/2023/11/25/2023-11-25-2023-11-25-Create-A-Logseq-Memo-Prompt/)。
 

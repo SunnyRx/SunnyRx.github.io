@@ -18,7 +18,7 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2022年5月4日
+> 本文最近一次更新时间为2023年12月4日
 
 > 排序的顺序为笔者更新的顺序，越靠前的可能存在失效的链接，并且可能仅支持SDK2，使用时需要自己处理成SDK3的Avatar。
 
@@ -437,6 +437,46 @@ tags:
 作者：神葉詞
 
 链接：[【PC、Quest両対応】オリジナル3Dモデル ｢てっさくちゃん｣](https://kanbasi999.booth.pm/items/3183052)
+
+---
+
+### 生駒ミル
+
+![生駒ミル](https://booth.pximg.net/2f131cbf-fd91-4652-9134-5aab11313537/i/3521047/5a42f63c-2486-44e4-8012-e660736906be_base_resized.jpg)
+
+作者：RiBLA Laboratory
+
+链接：[オリジナル3Dモデル「生駒ミル」Original 3D Character "Miru Ikoma" Cloth ver.](https://ribla-laboratory.booth.pm/items/3521047)
+
+---
+
+### 九条フレカ
+
+![九条フレカ](https://s2.booth.pm/2f131cbf-fd91-4652-9134-5aab11313537/i/3644446/937955d3-9f07-4446-8e6a-d050c607d731_base_resized.jpg)
+
+作者：RiBLA Laboratory
+
+链接：[【配信開始！】オリジナル3Dモデル「九条フレカ」Original 3D Character "Fureka Kujo" Cloth ver.](https://ribla-laboratory.booth.pm/items/3644446)
+
+---
+
+### BAMIKO
+
+![BAMIKO](https://booth.pximg.net/44efb5d1-d4a1-473b-b626-4c0e132db617/i/4276052/ac4d3061-1c3b-446c-bc17-daf44f495cf5_base_resized.jpg)
+
+作者：BAMI
+
+链接：[【無料配布】オリジナル3Dモデル「BAMIKO」](https://nanjubami.booth.pm/items/4276052)
+
+---
+
+### クーヘンシア
+
+![クーヘンシア](https://booth.pximg.net/f3df166d-16e6-4205-9c0f-1398f1710890/i/4810558/2d3c9808-6310-4bcd-b505-eec42b3d117e_base_resized.jpg)
+
+作者：なごんなごん
+
+链接：[【メイドプリンセス：クーヘンシア】オリジナル3Dアバター](https://nagonnagonn.booth.pm/items/4810558)
 
 ---
 # Shader

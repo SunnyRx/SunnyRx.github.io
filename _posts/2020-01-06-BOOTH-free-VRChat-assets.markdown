@@ -18,7 +18,7 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2023年12月4日
+> 本文最近一次更新时间为2024年1月6日
 
 > 排序的顺序为笔者更新的顺序，越靠前的可能存在失效的链接，并且可能仅支持SDK2，使用时需要自己处理成SDK3的Avatar。
 
@@ -477,6 +477,46 @@ tags:
 作者：なごんなごん
 
 链接：[【メイドプリンセス：クーヘンシア】オリジナル3Dアバター](https://nagonnagonn.booth.pm/items/4810558)
+
+---
+
+### Lili
+
+![Lili](https://s2.booth.pm/c2a2433c-9c80-418b-a274-9fa5d7f040a8/i/4905115/0275ee5e-a0b0-49b0-b535-de7956e914f9_base_resized.jpg)
+
+作者：筆鍋
+
+链接：[「Lili」VRChatアバター想定３Dモデル](https://rls-house.booth.pm/items/4905115)
+
+---
+
+### ナフォール
+
+![ナフォール](https://s2.booth.pm/9f04b5f1-30e4-4239-947f-b561a75b3aa0/i/5351555/7d9006c8-d62b-4fbb-a837-36de9f9a41f8_base_resized.jpg)
+
+作者：伊鷹いあ
+
+链接：[オリジナル無料3Dモデル「ナフォール」#段ボールでできた店_3D](https://matsuda351.booth.pm/items/5351555)
+
+---
+
+### フェリス
+
+![フェリス](https://s2.booth.pm/14d56648-0171-4777-a521-13016761e779/i/5385176/41dce674-125e-4443-a89e-c71b18ef70c2_base_resized.jpg)
+
+作者：リュクらぼ
+
+链接：[【無料配布】オリジナル3Dモデル「フェリス」](https://ryuku256.booth.pm/items/5385176)
+
+---
+
+### Konomi-このみ-
+
+![Konomi-このみ-](https://booth.pximg.net/63dbea04-1f0e-42e1-bf85-faf8585330b4/i/4282921/cac50924-39f1-4a03-9bdd-feaec7bb67b5_base_resized.jpg)
+
+作者：丸菓こむ
+
+链接：[【オリジナル3Dモデル】Konomi-このみ-](https://maruka.booth.pm/items/4282921)
 
 ---
 # Shader

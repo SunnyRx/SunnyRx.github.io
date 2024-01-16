@@ -10,7 +10,7 @@ tags:
     - VRChat
 ---
 
-笔者非常喜欢BOOTH上的VRChat资源，本博文整理在BOOTH上一些不错的免费资源。
+笔者非常喜欢 BOOTH 上的 VRChat 资源，本博文整理在 BOOTH 上一些不错的免费资源。
 
 感谢每一位提供免费资源的创作者。
 
@@ -18,9 +18,9 @@ tags:
 
 该列表会不定期更新。
 
-> 本文最近一次更新时间为2024年1月6日
+> 本文最近一次更新时间为2024年1月16日
 
-> 排序的顺序为笔者更新的顺序，越靠前的可能存在失效的链接，并且可能仅支持SDK2，使用时需要自己处理成SDK3的Avatar。
+> 排序的顺序为笔者更新的顺序，越靠前的可能存在失效的链接，并且可能仅支持 SDK2，使用时需要自己处理成 SDK3 的 Avatar。
 
 # Avatar
 
@@ -519,6 +519,26 @@ tags:
 链接：[【オリジナル3Dモデル】Konomi-このみ-](https://maruka.booth.pm/items/4282921)
 
 ---
+
+### Makina ―マキナ―
+
+![Makina ―マキナ―](https://s2.booth.pm/ac16fe3f-557e-41d2-9c12-6ef72ded43df/i/4751941/0cb9692c-c440-47a2-85da-1cf817db3c48_base_resized.jpg)
+
+作者：WARPSTAR
+
+链接：[【オリジナル3Dモデル】Makina ―マキナ―](https://warpstar.booth.pm/items/4751941)
+
+---
+
+### 早川葵
+
+![早川葵](https://s2.booth.pm/ac16fe3f-557e-41d2-9c12-6ef72ded43df/i/5405703/16c5057b-9b06-4b4f-aece-c8e9c3f6c13c_base_resized.jpg)
+
+作者：WARPSTAR
+
+链接：[【オリジナル3Dモデル】早川葵](https://warpstar.booth.pm/items/5405703)
+
+---
 # Shader
 
 ### Arktoon-Shaders
@@ -578,3 +598,13 @@ tags:
 作者：lil
 
 链接：[【無料】lilToon](https://lilxyzw.booth.pm/items/3087170)
+
+---
+
+### Poiyomi Toon Shader
+
+![Poiyomi](https://s2.booth.pm/430bb41d-8aaa-46f4-ae48-63cff7c3ff3e/i/4841309/d92f2261-f513-4173-a928-c71537f920f9_base_resized.jpg)
+
+作者：poiyomi
+
+链接：[Poiyomi Toon Shader](https://poiyomi.booth.pm/items/4841309)

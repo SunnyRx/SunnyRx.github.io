@@ -13,6 +13,12 @@
 - Last day（[天窗联盟](https://doujin.bgm.tv/blog/42460)）
 - Kreuz Skelett Mann:saligiare（[天窗联盟](https://doujin.bgm.tv/blog/34948)）
 
+# APP
+
+---
+
+- 骰子模拟器（[Google Play](https://play.google.com/store/apps/details?id=ord.gd136.soft.diceSim)）
+
 # 视频
 
 ---
@@ -34,10 +40,11 @@
 ---
 
 - 【苍绿祭】我才不说喜欢你（[Youtube](https://www.youtube.com/watch?v=MhhkmeUa3oA) / [bilibili](https://www.bilibili.com/video/BV1ps411v7Cd)）
-- 【漫研社十周年】初心·拾终如一[bilibili](https://www.bilibili.com/video/BV1EJ41147wr)）
+- 【漫研社十周年】初心·拾终如一（[bilibili](https://www.bilibili.com/video/BV1EJ41147wr)）
 
 # 模型
 
 ---
 
-- 【苍绿祭】原创3D模型「绿坝娘」(GreenDam)（[BOOTH](https://sunnyrx.booth.pm/items/2348604)）
+- 【苍绿祭】原创 3D 模型「绿坝娘」(GreenDam)（[BOOTH](https://sunnyrx.booth.pm/items/2348604)）
+- 原创 3D 模型「マリちゃん」(marichan)（[BOOTH](https://fairysteaparty.booth.pm/items/5585204)）

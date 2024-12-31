@@ -4,6 +4,7 @@
 
 ---
 
+- 拖拖拉拉小菲镇（[Steam](https://store.steampowered.com/app/3186040/_/)）
 - Card Empires（[itch.io](https://sunnyrx.itch.io/card-empires)）
 - 回忆碎片（[itch.io](https://sunnyrx.itch.io/fragments-of-memory)）
 - 异星时劫（[itch.io](https://sunnyrx.itch.io/yixingshijie) / [机核网](https://www.gcores.com/games/67506)）
@@ -13,11 +14,13 @@
 - Last day（[天窗联盟](https://doujin.bgm.tv/blog/42460)）
 - Kreuz Skelett Mann:saligiare（[天窗联盟](https://doujin.bgm.tv/blog/34948)）
 
-# APP
+# 工具
 
 ---
 
 - 骰子模拟器（[Google Play](https://play.google.com/store/apps/details?id=ord.gd136.soft.diceSim)）
+- Weread2Discord（[GitHub](https://github.com/SunnyRx/weread2discord)）
+- 专注女仆（[GitHub](https://github.com/SunnyRx/focus-maid) / [Blog](https://sunnyrx.com/2024/12/07/focus-maid/)）
 
 # 视频
 

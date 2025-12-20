@@ -1,0 +1,315 @@
+:root {
+  --rx-bg: #ffffff;
+  --rx-surface: #ffffff;
+  --rx-text: #404040;
+  --rx-muted: #a3a3a3;
+  --rx-accent: #0085a1;
+  --rx-link: #337ab7;
+  --rx-link-hover: #0085a1;
+  --rx-border: #eee;
+  --rx-sidebar-text: #bfbfbf;
+  --rx-sidebar-title: #a3a3a3;
+  --rx-navbar-fixed-bg: rgba(255, 255, 255, 0.9);
+  --rx-navbar-fixed-border: #f2f2f2;
+  --rx-code-bg: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --rx-bg: #0f1115;
+    --rx-surface: #171a21;
+    --rx-text: #f5e8d8;
+    --rx-muted: #a89f93;
+    --rx-accent: #ff6f61;
+    --rx-link: #ff6f61;
+    --rx-link-hover: #ff6f61;
+    --rx-border: rgba(245, 232, 216, 0.12);
+    --rx-sidebar-text: #a89f93;
+    --rx-sidebar-title: #f5e8d8;
+    --rx-navbar-fixed-bg: rgba(15, 17, 21, 0.9);
+    --rx-navbar-fixed-border: rgba(245, 232, 216, 0.08);
+    --rx-code-bg: #171a21;
+  }
+}
+
+:root[data-theme="dark"] {
+  --rx-bg: #0f1115;
+  --rx-surface: #171a21;
+  --rx-text: #f5e8d8;
+  --rx-muted: #a89f93;
+  --rx-accent: #ff6f61;
+  --rx-link: #ff6f61;
+  --rx-link-hover: #ff6f61;
+  --rx-border: rgba(245, 232, 216, 0.12);
+  --rx-sidebar-text: #a89f93;
+  --rx-sidebar-title: #f5e8d8;
+  --rx-navbar-fixed-bg: rgba(15, 17, 21, 0.9);
+  --rx-navbar-fixed-border: rgba(245, 232, 216, 0.08);
+  --rx-code-bg: #171a21;
+}
+
+:root[data-theme="light"] {
+  --rx-bg: #ffffff;
+  --rx-surface: #ffffff;
+  --rx-text: #404040;
+  --rx-muted: #a3a3a3;
+  --rx-accent: #0085a1;
+  --rx-link: #337ab7;
+  --rx-link-hover: #0085a1;
+  --rx-border: #eee;
+  --rx-sidebar-text: #bfbfbf;
+  --rx-sidebar-title: #a3a3a3;
+  --rx-navbar-fixed-bg: rgba(255, 255, 255, 0.9);
+  --rx-navbar-fixed-border: #f2f2f2;
+  --rx-code-bg: #f5f5f5;
+}
+
+html,
+body {
+  background-color: var(--rx-bg);
+  color: var(--rx-text);
+}
+
+a {
+  color: var(--rx-link);
+}
+
+a:hover,
+a:focus {
+  color: var(--rx-link-hover);
+}
+
+.post-container a {
+  color: var(--rx-link);
+}
+
+.post-container a:hover,
+.post-container a:focus {
+  color: var(--rx-link-hover);
+}
+
+blockquote {
+  color: var(--rx-muted);
+}
+
+hr.small {
+  border-color: var(--rx-muted);
+}
+
+select {
+  background: var(--rx-surface);
+  color: var(--rx-link);
+  border-color: var(--rx-link);
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border-top-color: var(--rx-border);
+}
+
+table.table > tbody th,
+.table.table > thead th,
+.table.table > tbody td,
+.table.table > thead td {
+  border-color: var(--rx-border) !important;
+}
+
+pre,
+code {
+  background-color: var(--rx-code-bg);
+  color: var(--rx-text);
+}
+
+pre {
+  border-color: var(--rx-border);
+}
+
+.navbar-custom.is-fixed {
+  background-color: var(--rx-navbar-fixed-bg);
+  border-bottom-color: var(--rx-navbar-fixed-border);
+}
+
+.navbar-custom.is-fixed .navbar-brand,
+.navbar-custom.is-fixed .nav li a {
+  color: var(--rx-text);
+}
+
+.navbar-custom.is-fixed .navbar-brand:hover,
+.navbar-custom.is-fixed .navbar-brand:focus,
+.navbar-custom.is-fixed .nav li a:hover,
+.navbar-custom.is-fixed .nav li a:focus {
+  color: var(--rx-accent);
+}
+
+.navbar-custom.invert .navbar-toggle .icon-bar,
+.navbar-custom.invert .navbar-brand,
+.navbar-custom.invert .nav li a {
+  color: var(--rx-text);
+}
+
+.navbar-custom.invert .navbar-toggle .icon-bar {
+  background-color: var(--rx-text);
+}
+
+.navbar-custom.invert .navbar-brand:hover,
+.navbar-custom.invert .navbar-brand:focus,
+.navbar-custom.invert .nav li a:hover,
+.navbar-custom.invert .nav li a:focus {
+  color: var(--rx-accent);
+}
+
+.search-icon a,
+.search-icon-close {
+  color: var(--rx-text);
+}
+
+.search-page {
+  background: var(--rx-bg);
+}
+
+.search-page #search-input {
+  background: transparent;
+  color: var(--rx-text);
+}
+
+.search-page #search-input::placeholder {
+  color: var(--rx-muted);
+}
+
+.search-page #search-results,
+.search-page #search-results * {
+  color: var(--rx-text);
+}
+
+.search-page #search-results a:hover,
+.search-page #search-results a:focus {
+  color: var(--rx-accent);
+}
+
+.theme-toggle-btn {
+  cursor: pointer;
+}
+
+.navbar-custom.is-fixed .theme-toggle-btn,
+.navbar-custom.invert .theme-toggle-btn {
+  color: var(--rx-text);
+}
+
+.navbar-custom.is-fixed .theme-toggle-btn:hover,
+.navbar-custom.is-fixed .theme-toggle-btn:focus,
+.navbar-custom.invert .theme-toggle-btn:hover,
+.navbar-custom.invert .theme-toggle-btn:focus {
+  color: var(--rx-accent);
+}
+
+.post-preview > a,
+.post-preview > .post-meta > a {
+  color: var(--rx-text);
+}
+
+.post-preview > a:hover,
+.post-preview > a:focus,
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+  color: var(--rx-accent);
+}
+
+.post-preview > .post-meta,
+.post-content-preview,
+.post-container .pager li > a > span {
+  color: var(--rx-muted);
+}
+
+.post-content-preview:hover {
+  color: var(--rx-accent);
+}
+
+.post-container h4,
+.post-container h5,
+.post-container h6 {
+  color: var(--rx-muted);
+}
+
+.post-container h2::before {
+  border-bottom-color: var(--rx-border);
+}
+
+.side-catalog .catalog-body .active {
+  background-color: var(--rx-surface);
+}
+
+.sidebar-container {
+  color: var(--rx-sidebar-text);
+}
+
+.sidebar-container h5,
+.sidebar-container h5 a {
+  color: var(--rx-sidebar-title) !important;
+}
+
+.sidebar-container a {
+  color: var(--rx-sidebar-text) !important;
+}
+
+.sidebar-container a:hover,
+.sidebar-container a:active {
+  color: var(--rx-accent) !important;
+}
+
+.sidebar-container .tags a {
+  border-color: var(--rx-sidebar-text);
+}
+
+.sidebar-container .tags a:hover,
+.sidebar-container .tags a:active {
+  border-color: var(--rx-accent);
+}
+
+.pager li > a,
+.pager li > span {
+  background-color: var(--rx-surface);
+  border-color: var(--rx-border);
+}
+
+.pager li > a {
+  color: var(--rx-text);
+}
+
+.pager li > a:hover,
+.pager li > a:focus {
+  color: #fff;
+  background-color: var(--rx-accent);
+  border-color: var(--rx-accent);
+}
+
+.pager li > a:hover > span,
+.pager li > a:focus > span {
+  color: #fff;
+}
+
+footer {
+  background-color: var(--rx-bg);
+}
+
+footer .list-inline a {
+  color: var(--rx-muted) !important;
+}
+
+footer .list-inline a:hover,
+footer .list-inline a:focus {
+  color: var(--rx-accent) !important;
+}
+
+footer .text-muted,
+footer .copyright,
+footer .copyright.text-muted {
+  color: var(--rx-muted) !important;
+}
+
+.paper-snackbar {
+  background-color: var(--rx-accent);
+}

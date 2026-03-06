@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "OpenClaw 的记忆困境与我的探索"
-subtitle: "关于 AI 记忆的一些真实体验与思考"
+title: "OpenClaw 的记忆困境与探索"
+subtitle: "关于 AI 记忆的一些体验与思考"
 date: 2026-03-06
 author: "SunnyRx"
 header-img: "img/post-bg-gray.webp"

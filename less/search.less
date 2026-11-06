@@ -6,14 +6,18 @@
   left: 0;
   z-index: 100;
   background: #fff;
-  -webkit-transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
-  transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.32, 1, 0.23, 1), opacity 400ms;
+  transition: transform 400ms cubic-bezier(0.32, 1, 0.23, 1), opacity 400ms;
   -webkit-transform: translate(0, 100%);
   -ms-transform: translate(0, 100%);
   transform: translate(0, 100%);
   opacity: 0;
 
   &.search-active {
+    visibility: visible;
+    pointer-events: auto;
     opacity: 1;
     -webkit-transform: translate(0, 0) scale(1, 1);
     -ms-transform: translate(0, 0) scale(1, 1);
@@ -25,13 +29,24 @@
 
   .search-main {
     padding-top: 80px;
+    padding-bottom: 20px;
     height: 100%;
     opacity: 0;
-    -webkit-transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
-    transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
+    -webkit-transition: opacity 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
+    transition: opacity 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
     .row,
     .row > div {
       height: 100%;
+    }
+    .row > div {
+      display: flex;
+      flex-direction: column;
+    }
+    form {
+      flex: 0 0 auto;
+      @media only screen and (min-width: 768px) {
+        margin-left: 20px;
+      }
     }
   }
 
@@ -51,7 +66,6 @@
 
     // poorman's reset
     border: none;
-    outline: none;
     padding: 0;
     margin: 0;
     // poorman's reset end
@@ -61,34 +75,62 @@
     font-weight: bold;
     color: @gray-dark;
    
-    @media only screen and (min-width: 768px) {
-      margin-left: 20px;
+    &:focus-visible {
+      outline: 2px solid @brand-primary;
+      outline-offset: 6px;
     }
   }
 
   #search-results {
     overflow: auto;
-    height: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
   }
 }
 
 .search-icon a,
+.search-icon button,
 .search-icon-close {
   cursor: pointer;
   font-size: 30px;
   color: #311e3e;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
 }
 
 .search-icon a:hover,
+.search-icon button:hover,
 .search-icon-close:hover {
-  opacity: 0.8;
+  color: @brand-primary;
+}
+
+.search-icon button:focus-visible,
+.search-icon-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+
+.search-icon-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
 }
 
 .search-icon,
 .search-icon-close {
   font-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-page,
+  .search-page .search-main {
+    transition: none;
+  }
 }

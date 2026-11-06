@@ -1,3 +1,7 @@
+/*!
+ * Hux Blog v1.8.2 (http://huxpro.github.io)
+ * Copyright 2026 Hux <huxpro@gmail.com>
+ */
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
@@ -214,7 +218,7 @@
   width: 160px;
   overflow: hidden;
   user-select: none;
-  color: #000000;
+  color: #000;
   text-transform: uppercase;
   border-radius: 3px;
   outline-color: #a3a3a3;
@@ -231,7 +235,7 @@
   height: 100%;
   /*font-family: 'Roboto';*/
   font-size: 1em;
-  color: #000000;
+  color: #000;
   text-transform: uppercase;
 }
 .paper-button.colored,
@@ -264,13 +268,13 @@ button.paper-button {
   /*font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;*/
   font-size: 1em;
   line-height: 25px;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .paper-button input[type="submit"] {
   outline-color: #a3a3a3;
 }
 .paper-button.colored.raised-button input[type="submit"] {
-  color: #ffffff;
+  color: #fff;
 }
 /** Shadows **/
 .paper-shadow-animated.paper-shadow {
@@ -576,14 +580,18 @@ pre.highlight {
   left: 0;
   z-index: 100;
   background: #fff;
-  -webkit-transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
-  transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.32, 1, 0.23, 1), opacity 400ms;
+  transition: transform 400ms cubic-bezier(0.32, 1, 0.23, 1), opacity 400ms;
   -webkit-transform: translate(0, 100%);
   -ms-transform: translate(0, 100%);
   transform: translate(0, 100%);
   opacity: 0;
 }
 .search-page.search-active {
+  visibility: visible;
+  pointer-events: auto;
   opacity: 1;
   -webkit-transform: translate(0, 0) scale(1, 1);
   -ms-transform: translate(0, 0) scale(1, 1);
@@ -594,14 +602,27 @@ pre.highlight {
 }
 .search-page .search-main {
   padding-top: 80px;
+  padding-bottom: 20px;
   height: 100%;
   opacity: 0;
-  -webkit-transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
-  transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
+  -webkit-transition: opacity 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
+  transition: opacity 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
 }
 .search-page .search-main .row,
 .search-page .search-main .row > div {
   height: 100%;
+}
+.search-page .search-main .row > div {
+  display: flex;
+  flex-direction: column;
+}
+.search-page .search-main form {
+  flex: 0 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .search-page .search-main form {
+    margin-left: 20px;
+  }
 }
 .search-page .search-icon-close-container {
   position: absolute;
@@ -616,7 +637,6 @@ pre.highlight {
 .search-page #search-input {
   font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
   border: none;
-  outline: none;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -624,32 +644,55 @@ pre.highlight {
   font-weight: bold;
   color: #404040;
 }
-@media only screen and (min-width: 768px) {
-  .search-page #search-input {
-    margin-left: 20px;
-  }
+.search-page #search-input:focus-visible {
+  outline: 2px solid #0085a1;
+  outline-offset: 6px;
 }
 .search-page #search-results {
   overflow: auto;
-  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
 }
 .search-icon a,
+.search-icon button,
 .search-icon-close {
   cursor: pointer;
   font-size: 30px;
   color: #311e3e;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
 }
 .search-icon a:hover,
+.search-icon button:hover,
 .search-icon-close:hover {
-  opacity: 0.8;
+  color: #0085a1;
+}
+.search-icon button:focus-visible,
+.search-icon-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+.search-icon-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
 }
 .search-icon,
 .search-icon-close {
   font-size: 16px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-page,
+  .search-page .search-main {
+    transition: none;
+  }
 }
 body {
   /* Hux learn from
@@ -934,7 +977,8 @@ samp {
      *'In' Animation
      */
   }
-  #huxblog_navbar a {
+  #huxblog_navbar a,
+  #huxblog_navbar .search-toggle {
     font-size: 13px;
     line-height: 28px;
   }
@@ -995,15 +1039,30 @@ samp {
 .navbar-custom .navbar-brand:hover {
   color: rgba(255, 255, 255, 0.8);
 }
-.navbar-custom .nav li a {
+.navbar-custom .nav li a,
+.navbar-custom .nav li .search-toggle {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 20px;
   font-weight: 800;
   letter-spacing: 1px;
 }
-.navbar-custom .nav li a:active {
+.navbar-custom .nav li a:active,
+.navbar-custom .nav li .search-toggle:active {
   background: rgba(0, 0, 0, 0.12);
+}
+.navbar-custom .search-toggle {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #404040;
+  font-family: inherit;
+  text-align: left;
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
@@ -1022,15 +1081,19 @@ samp {
   .navbar-custom .navbar-brand:focus {
     color: rgba(255, 255, 255, 0.8);
   }
-  .navbar-custom .nav li a {
+  .navbar-custom .nav li a,
+  .navbar-custom .nav li .search-toggle {
     color: white;
     padding: 20px;
   }
   .navbar-custom .nav li a:hover,
-  .navbar-custom .nav li a:focus {
+  .navbar-custom .nav li .search-toggle:hover,
+  .navbar-custom .nav li a:focus,
+  .navbar-custom .nav li .search-toggle:focus {
     color: rgba(255, 255, 255, 0.8);
   }
-  .navbar-custom .nav li a:active {
+  .navbar-custom .nav li a:active,
+  .navbar-custom .nav li .search-toggle:active {
     background: none;
   }
 }
@@ -1047,11 +1110,14 @@ samp {
 .navbar-custom.invert .navbar-brand:focus {
   color: #0085a1;
 }
-.navbar-custom.invert .nav li a {
+.navbar-custom.invert .nav li a,
+.navbar-custom.invert .nav li .search-toggle {
   color: #404040;
 }
 .navbar-custom.invert .nav li a:hover,
-.navbar-custom.invert .nav li a:focus {
+.navbar-custom.invert .nav li .search-toggle:hover,
+.navbar-custom.invert .nav li a:focus,
+.navbar-custom.invert .nav li .search-toggle:focus {
   color: #0085a1;
 }
 @media only screen and (min-width: 1170px) {
@@ -1085,11 +1151,14 @@ samp {
   .navbar-custom.is-fixed .navbar-brand:focus {
     color: #0085a1;
   }
-  .navbar-custom.is-fixed .nav li a {
+  .navbar-custom.is-fixed .nav li a,
+  .navbar-custom.is-fixed .nav li .search-toggle {
     color: #404040;
   }
   .navbar-custom.is-fixed .nav li a:hover,
-  .navbar-custom.is-fixed .nav li a:focus {
+  .navbar-custom.is-fixed .nav li .search-toggle:hover,
+  .navbar-custom.is-fixed .nav li a:focus,
+  .navbar-custom.is-fixed .nav li .search-toggle:focus {
     color: #0085a1;
   }
   .navbar-custom.is-visible {
@@ -1305,8 +1374,9 @@ samp {
   }
 }
 .post-content-preview {
-  font-size: 13px;
-  font-style: italic;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.7;
   color: #a3a3a3;
 }
 .post-content-preview:hover {
@@ -1314,7 +1384,7 @@ samp {
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 .section-heading {
@@ -1612,6 +1682,10 @@ img::-moz-selection {
 }
 /* Tags support End*/
 /* Hux make all img responsible in post-container */
+.steam-widget {
+  width: 100%;
+  max-width: 646px;
+}
 .post-container img {
   display: block;
   max-width: 100%;

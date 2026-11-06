@@ -36,9 +36,9 @@
                             </a>
                         </li>
                         <li class="search-icon">
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-search"></i>
-                            </a>
+                            <button type="button" class="search-toggle" aria-label="搜索文章" aria-controls="search-page" aria-haspopup="dialog" aria-expanded="false">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -97,6 +97,8 @@
         document.addEventListener('click', function (e) {
             if (e.target == $toggle) return;
             if (e.target.className == 'icon-bar') return;
+            // Keep the mobile search trigger available when dialog focus returns.
+            if (e.target.closest('.search-icon, .search-page')) return;
             __HuxNav__.close();
         })
     </script>

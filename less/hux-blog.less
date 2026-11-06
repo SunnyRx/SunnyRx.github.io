@@ -311,7 +311,8 @@ samp {
     -webkit-transform: scaleX(0);
     -webkit-transform-origin: top right;
     -webkit-transition: all 200ms cubic-bezier(0.47, 0, 0.4, 0.99) 0ms;
-    a {
+    a,
+    .search-toggle {
       font-size: 13px;
       line-height: 28px;
     }
@@ -378,7 +379,8 @@ samp {
   }
   .nav {
     li {
-      a {
+      a,
+      .search-toggle {
         text-transform: uppercase;
         font-size: 12px;
         line-height: 20px;
@@ -390,6 +392,19 @@ samp {
         }
       }
     }
+  }
+  .search-toggle {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: @gray-dark;
+    font-family: inherit;
+    text-align: left;
   }
   @media only screen and (min-width: 768px) {
     body {
@@ -408,7 +423,8 @@ samp {
     }
     .nav {
       li {
-        a {
+        a,
+        .search-toggle {
           color: white;
           padding: 20px;
           &:hover,
@@ -440,7 +456,8 @@ samp {
     }
     .nav {
       li {
-        a {
+        a,
+        .search-toggle {
           color: @gray-dark;
           &:hover,
           &:focus {
@@ -480,7 +497,8 @@ samp {
       }
       .nav {
         li {
-          a {
+          a,
+          .search-toggle {
             color: @gray-dark;
             &:hover,
             &:focus {
@@ -692,14 +710,15 @@ samp {
 
 // Hux add home-page post-content-preview
 .post-content-preview {
-  font-size: 13px;
-  font-style: italic;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.7;
   color: @brand-gray;
   &:hover {
     color: @brand-primary;
   }
   @media only screen and (min-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -1006,6 +1025,11 @@ img::-moz-selection {
 /* Tags support End*/
 
 /* Hux make all img responsible in post-container */
+.steam-widget {
+  width: 100%;
+  max-width: 646px;
+}
+
 .post-container img {
   display: block;
   max-width: 100%;

@@ -1,0 +1,113 @@
+{%- comment -%}
+  Enhance standard rendered <img> tags using checked-in dimensions. All variables
+  are namespaced; src, alt, existing attributes and surrounding HTML stay intact.
+  first_eager defaults to true; pass false for feeds or content below the fold.
+{%- endcomment -%}
+{%- assign ri_parts = include.content | split: '<img' -%}
+{%- assign ri_first = true -%}
+{%- for ri_part in ri_parts -%}
+  {%- if forloop.first -%}
+    {{- ri_part -}}
+  {%- else -%}
+    {%- assign ri_initial = ri_part | slice: 0, 1 | strip -%}
+    {%- assign ri_src = '' -%}
+    {%- assign ri_width = nil -%}
+    {%- assign ri_height = nil -%}
+    {%- assign ri_has_width = false -%}
+    {%- assign ri_has_height = false -%}
+    {%- assign ri_loading = false -%}
+    {%- assign ri_decoding = false -%}
+    {%- assign ri_end = nil -%}
+    {%- assign ri_name = '' -%}
+    {%- assign ri_value = '' -%}
+    {%- assign ri_quote = '' -%}
+    {%- assign ri_state = 'name' -%}
+    {%- if ri_initial == '' -%}
+      {%- assign ri_chars = ri_part | split: '' -%}
+      {%- for ri_char in ri_chars -%}
+        {%- assign ri_space = ri_char | strip -%}
+        {%- assign ri_finish = false -%}
+        {%- if ri_state == 'quoted' -%}
+          {%- if ri_char == ri_quote -%}
+            {%- assign ri_finish = true -%}
+          {%- else -%}
+            {%- assign ri_value = ri_value | append: ri_char -%}
+          {%- endif -%}
+        {%- elsif ri_state == 'value' -%}
+          {%- if ri_space == '' or ri_char == '>' -%}
+            {%- assign ri_finish = true -%}
+          {%- else -%}
+            {%- assign ri_value = ri_value | append: ri_char -%}
+          {%- endif -%}
+        {%- elsif ri_state == 'before-value' -%}
+          {%- if ri_char == '"' or ri_char == "'" -%}
+            {%- assign ri_quote = ri_char -%}
+            {%- assign ri_state = 'quoted' -%}
+          {%- elsif ri_char == '>' -%}
+            {%- assign ri_finish = true -%}
+          {%- elsif ri_space != '' -%}
+            {%- assign ri_value = ri_char -%}
+            {%- assign ri_state = 'value' -%}
+          {%- endif -%}
+        {%- elsif ri_char == '=' -%}
+          {%- assign ri_state = 'before-value' -%}
+        {%- elsif ri_char == '>' -%}
+          {%- assign ri_finish = true -%}
+        {%- elsif ri_space == '' -%}
+          {%- if ri_name != '' -%}
+            {%- assign ri_state = 'after-name' -%}
+          {%- endif -%}
+        {%- elsif ri_char != '/' -%}
+          {%- if ri_state == 'after-name' -%}
+            {%- assign ri_name = '' -%}
+            {%- assign ri_state = 'name' -%}
+          {%- endif -%}
+          {%- assign ri_name = ri_name | append: ri_char -%}
+        {%- endif -%}
+        {%- if ri_state == 'after-name' or ri_state == 'before-value' or ri_finish -%}
+          {%- assign ri_attribute = ri_name | downcase -%}
+          {%- case ri_attribute -%}
+            {%- when 'width' -%}{%- assign ri_has_width = true -%}
+            {%- when 'height' -%}{%- assign ri_has_height = true -%}
+            {%- when 'loading' -%}{%- assign ri_loading = true -%}
+            {%- when 'decoding' -%}{%- assign ri_decoding = true -%}
+          {%- endcase -%}
+        {%- endif -%}
+        {%- if ri_finish -%}
+          {%- assign ri_name = ri_name | downcase -%}
+          {%- case ri_name -%}
+            {%- when 'src' -%}{%- assign ri_src = ri_value -%}
+            {%- when 'width' -%}{%- assign ri_width = ri_value -%}
+            {%- when 'height' -%}{%- assign ri_height = ri_value -%}
+          {%- endcase -%}
+          {%- assign ri_name = '' -%}
+          {%- assign ri_value = '' -%}
+          {%- assign ri_state = 'name' -%}
+        {%- endif -%}
+        {%- if ri_char == '>' and ri_state != 'quoted' -%}
+          {%- assign ri_end = forloop.index0 -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if ri_end and ri_src != '' and ri_width != '0' and ri_height != '0' -%}
+      {%- assign ri_dimensions = site.data.image_dimensions[ri_src] -%}
+      {%- capture ri_additions -%}
+        {%- if ri_dimensions and ri_has_width == false and ri_has_height == false %} width="{{ ri_dimensions.width }}" height="{{ ri_dimensions.height }}"{%- endif -%}
+        {%- unless ri_decoding %} decoding="async"{%- endunless -%}
+        {%- unless ri_loading -%}
+          {%- if ri_first and include.first_eager != false %} loading="eager"{%- else %} loading="lazy"{%- endif -%}
+        {%- endunless -%}
+      {%- endcapture -%}
+      {%- assign ri_first = false -%}
+      {%- assign ri_before = ri_end | minus: 1 -%}
+      {%- assign ri_last = ri_part | slice: ri_before, 1 -%}
+      {%- if ri_last == '/' -%}
+        {%- assign ri_end = ri_before -%}
+      {%- endif -%}
+      <img{{ ri_part | slice: 0, ri_end }}{{ ri_additions }}{{ ri_part | slice: ri_end, ri_part.size }}
+    {%- else -%}
+      <img{{ ri_part }}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

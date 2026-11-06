@@ -1,0 +1,7 @@
+<figure class="article-animation">
+  <video width="{{ include.width }}" height="{{ include.height }}" poster="{{ include.poster | relative_url }}" controls playsinline loop preload="none" aria-label="{{ include.alt | escape }}">
+    <source src="{{ include.src | relative_url }}" type="video/mp4">
+    <a href="{{ include.gif | absolute_url }}"><img src="{{ include.poster | absolute_url }}" width="{{ include.width }}" height="{{ include.height }}" alt="{{ include.alt | escape }}" decoding="async" loading="lazy"></a>
+  </video>
+  <figcaption><a href="{{ include.gif | absolute_url }}">查看原始 GIF 动画</a></figcaption>
+</figure>

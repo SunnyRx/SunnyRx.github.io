@@ -40,7 +40,7 @@ PS：途中绘师对这个游戏和角色非常有热情，差点拦不住她想
 
 最后游戏完成的样子：
 
-![实际画面.gif](/img/in-post/post-FOM/03.gif)
+{% include animation.html src="/img/in-post/post-FOM/03.mp4" poster="/img/in-post/post-FOM/03.webp" gif="/img/in-post/post-FOM/03.gif" width="630" height="474" alt="《回忆碎片》实际游戏画面" %}
 
 接下来的内容涉及一点剧透内容，可以体验过游戏后再阅读~
 

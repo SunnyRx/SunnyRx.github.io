@@ -71,7 +71,9 @@ netease_comment: false
 # Baidu Analytics
 ba_track_id: 81f5525033c6774262ce60bfdf938b0e
 # Google Analytics
-ga_track_id: 'UA-71624738-1'            # Format: UA-xxxxxx-xx
+# Preserve the live linked GA4 destination until its account settings are verified.
+# Empty disables Google Analytics; a verified G-... measurement ID is also supported.
+ga_track_id: 'UA-71624738-3'
 ga_domain: sunnyrx.com
 
 

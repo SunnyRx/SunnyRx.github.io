@@ -6,262 +6,160 @@
  * service worker scripting
  * ========================================================== */
 
-// CACHE_NAMESPACE
-// CacheStorage is shared between all sites under same domain.
-// A namespace can prevent potential name conflicts and mis-deletion.
-const CACHE_NAMESPACE = 'main-'
+const SCOPE = new URL(self.registration.scope);
+// CacheStorage is origin-wide. Include the scope so sibling apps stay isolated.
+const CACHE_NAMESPACE = 'main-' + encodeURIComponent(SCOPE.pathname) + '-';
+// Bump when changing the offline shell. Runtime entries migrate before cleanup.
+const CACHE_VERSION = 'v2';
+const PRECACHE = CACHE_NAMESPACE + 'precache-' + CACHE_VERSION;
+const RUNTIME = CACHE_NAMESPACE + 'runtime-' + CACHE_VERSION;
+const LEGACY_CACHES = ['main-precache-then-runtime', 'main-precache-v1', 'main-runtime'];
+const PRECACHE_URLS = [
+  './',
+  './offline.html',
+  './css/bootstrap.min.css',
+  './css/hux-blog.min.css',
+  './css/theme.css',
+  './css/media.css',
+  './js/jquery.min.js',
+  './js/hux-blog.min.js',
+  './js/theme-toggle.js',
+  './js/search.js',
+  './js/simple-jekyll-search.min.js',
+  './js/jquery.nav.js',
+  './js/snackbar.js',
+  './js/sw-registration.js',
+  './search.json',
+  './img/icon_wechat.png',
+  './img/avatar-rx.webp',
+  './img/home-bg.webp',
+  './img/404-bg.webp'
+].map(path => new URL(path, SCOPE).href);
+const OFFLINE_URL = new URL('./offline.html', SCOPE).href;
+const SEARCH_URL = new URL('./search.json', SCOPE).href;
 
-const CACHE = CACHE_NAMESPACE + 'precache-then-runtime';
-const PRECACHE_LIST = [
-  "./",
-  "./offline.html",
-  "./js/jquery.min.js",
-  "./js/hux-blog.min.js",
-  "./js/snackbar.js",
-  "./img/icon_wechat.png",
-  "./img/avatar-rx.webp",
-  "./img/home-bg.webp",
-  "./img/404-bg.webp",
-  "./css/hux-blog.min.css",
-  "./css/bootstrap.min.css"
-  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
-  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",
-  // "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
-]
-const HOSTNAME_WHITELIST = [
-  self.location.hostname,
-  "sunnyrx.com",
-  "yanshuo.io",
-  "cdnjs.cloudflare.com"
-]
-const DEPRECATED_CACHES = ['precache-v1', 'runtime', 'main-precache-v1', 'main-runtime']
-
-
-// The Util Function to hack URLs of intercepted requests
-const getCacheBustingUrl = (req) => {
-  var now = Date.now();
-  url = new URL(req.url)
-
-  // 1. fixed http URL
-  // Just keep syncing with location.protocol
-  // fetch(httpURL) belongs to active mixed content.
-  // And fetch(httpRequest) is not supported yet.
-  url.protocol = self.location.protocol
-
-  // 2. add query for caching-busting.
-  // Github Pages served with Cache-Control: max-age=600
-  // max-age on mutable content is error-prone, with SW life of bugs can even extend.
-  // Until cache mode of Fetch API landed, we have to workaround cache-busting with query string.
-  // Cache-Control-Bug: https://bugs.chromium.org/p/chromium/issues/detail?id=453190
-  url.search += (url.search ? '&' : '?') + 'cache-bust=' + now;
-  return url.href
+function isScopedGet(request) {
+  const url = new URL(request.url);
+  return request.method === 'GET' && url.origin === SCOPE.origin &&
+    url.pathname.startsWith(SCOPE.pathname);
 }
 
-// The Util Function to detect and polyfill req.mode="navigate"
-// request.mode of 'navigate' is unfortunately not supported in Chrome
-// versions older than 49, so we need to include a less precise fallback,
-// which checks for a GET request with an Accept: text/html header.
-const isNavigationReq = (req) => (req.mode === 'navigate' || (req.method === 'GET' && req.headers.get('accept').includes('text/html')))
-
-// The Util Function to detect if a req is end with extension
-// Accordin to Fetch API spec <https://fetch.spec.whatwg.org/#concept-request-destination>
-// Any HTML's navigation has consistently mode="navigate" type="" and destination="document"
-// including requesting an img (or any static resources) from URL Bar directly.
-// So It ends up with that regExp is still the king of URL routing ;)
-// P.S. An url.pathname has no '.' can not indicate it ends with extension (e.g. /api/version/1.2/)
-const endWithExtension = (req) => Boolean(new URL(req.url).pathname.match(/\.\w+$/))
-
-// Redirect in SW manually fixed github pages arbitray 404s on things?blah
-// what we want:
-//    repo?blah -> !(gh 404) -> sw 302 -> repo/?blah
-//    .ext?blah -> !(sw 302 -> .ext/?blah -> gh 404) -> .ext?blah
-// If It's a navigation req and it's url.pathname isn't end with '/' or '.ext'
-// it should be a dir/repo request and need to be fixed (a.k.a be redirected)
-// Tracking https://twitter.com/Huxpro/status/798816417097224193
-const shouldRedirect = (req) => (isNavigationReq(req) && new URL(req.url).pathname.substr(-1) !== "/" && !endWithExtension(req))
-
-// The Util Function to get redirect URL
-// `${url}/` would mis-add "/" in the end of query, so we use URL object.
-// P.P.S. Always trust url.pathname instead of the whole url string.
-const getRedirectUrl = (req) => {
-  url = new URL(req.url)
-  url.pathname += "/"
-  return url.href
+function isHTML(response) {
+  return /\btext\/html\b/i.test(response.headers.get('content-type') || '');
 }
 
+function canCache(request, response) {
+  if (!response || !response.ok || response.status === 206 || !isScopedGet(request)) return false;
+  // Do not inherit old HTML fallbacks stored under a script/style/data URL.
+  const pathname = new URL(request.url).pathname;
+  return !isHTML(response) || !/\.[^/]+$/.test(pathname) || /\.html?$/i.test(pathname);
+}
 
-/**
- *  @Lifecycle Install
- *  Precache anything static to this version of your app.
- *  e.g. App Shell, 404, JS/CSS dependencies...
- *
- *  waitUntil() : installing ====> installed
- *  skipWaiting() : waiting(installed) ====> activating
- */
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(cache => {
-      return cache.addAll(PRECACHE_LIST)
-        .then(self.skipWaiting())
-        .catch(err => console.log(err))
-    })
-  )
+function isOldCache(name) {
+  return name !== PRECACHE && name !== RUNTIME &&
+    (name.startsWith(CACHE_NAMESPACE) || LEGACY_CACHES.includes(name));
+}
+
+self.addEventListener('install', event => {
+  // All dependencies are local. A failed shell must leave the old worker active.
+  event.waitUntil(
+    caches.open(PRECACHE)
+      .then(cache => cache.addAll(PRECACHE_URLS.map(url => new Request(url, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
+  );
 });
 
+async function migrateCaches() {
+  const names = await caches.keys();
+  const oldNames = names.filter(isOldCache);
+  const runtime = await caches.open(RUNTIME);
+  // Newest cached articles win. Never overwrite the freshly installed shell.
+  for (const name of oldNames.reverse()) {
+    const old = await caches.open(name);
+    for (const request of await old.keys()) {
+      if (!isScopedGet(request) || PRECACHE_URLS.includes(request.url) || await runtime.match(request)) continue;
+      const response = await old.match(request);
+      if (canCache(request, response)) await runtime.put(request, response);
+    }
+  }
+  // Copy everything before any deletion; a failed migration keeps its sources.
+  // Legacy names were shared by all scopes: only the historical root app deletes them.
+  await Promise.all(oldNames.filter(name => name.startsWith(CACHE_NAMESPACE) || SCOPE.pathname === '/')
+    .map(name => caches.delete(name)));
+}
 
-/**
- *  @Lifecycle Activate
- *  New one activated when old isnt being used.
- *
- *  waitUntil(): activating ====> activated
- */
 self.addEventListener('activate', event => {
-  // delete old deprecated caches.
-  caches.keys().then(cacheNames => Promise.all(
-    cacheNames
-      .filter(cacheName => DEPRECATED_CACHES.includes(cacheName))
-      .map(cacheName => caches.delete(cacheName))
-  ))
-  console.log('service worker activated.')
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(migrateCaches()
+    .catch(error => console.warn('Cache migration deferred; retaining old offline pages.', error))
+    .then(() => self.clients.claim()));
 });
 
-
-var fetchHelper = {
-
-  fetchThenCache: function(request){
-    // Requests with mode "no-cors" can result in Opaque Response,
-    // Requests to Allow-Control-Cross-Origin: * can't include credentials.
-    const init = { mode: "cors", credentials: "omit" } 
-
-    const fetched = fetch(request, init)
-    const fetchedCopy = fetched.then(resp => resp.clone());
-
-    // NOTE: Opaque Responses have no hedaders so [[ok]] make no sense to them
-    //       so Opaque Resp will not be cached in this case.
-    Promise.all([fetchedCopy, caches.open(CACHE)])
-      .then(([response, cache]) => response.ok && cache.put(request, response))
-      .catch(_ => {/* eat any errors */})
-    
-    return fetched;
-  },
-
-  cacheFirst: function(url){
-    return caches.match(url) 
-      .then(resp => resp || this.fetchThenCache(url))
-      .catch(_ => {/* eat any errors */})
+async function matchCurrent(request) {
+  const runtime = await caches.open(RUNTIME);
+  const precache = await caches.open(PRECACHE);
+  const current = await runtime.match(request) || await precache.match(request);
+  if (current) return current;
+  // A quota/storage failure during migration must not strand the retained articles.
+  for (const name of (await caches.keys()).filter(isOldCache).reverse()) {
+    const old = await caches.open(name);
+    const response = await old.match(request);
+    if (canCache(request, response)) return response;
   }
 }
 
+async function notifyContentUpdate(request, cached, response) {
+  if (!cached || !isHTML(cached) || !isHTML(response)) return;
+  // A Pages rebuild changes Last-Modified even when the article did not change.
+  if (await cached.text() === await response.text()) return;
+  const clients = await self.clients.matchAll({ type: 'window' });
+  for (const client of clients) {
+    const url = new URL(client.url);
+    url.hash = '';
+    if (url.href === request.url) client.postMessage({ command: 'UPDATE_FOUND', url: request.url });
+  }
+}
 
-/**
- *  @Functional Fetch
- *  All network requests are being intercepted here.
- *
- *  void respondWith(Promise<Response> r);
- */
 self.addEventListener('fetch', event => {
-  // logs for debugging
-  //console.log(`fetch ${event.request.url}`)
-  //console.log(` - type: ${event.request.type}; destination: ${event.request.destination}`)
-  //console.log(` - mode: ${event.request.mode}, accept: ${event.request.headers.get('accept')}`)
+  const request = event.request;
+  if (!isScopedGet(request)) return;
 
-  // Skip some of cross-origin requests, like those for Google Analytics.
-  if (HOSTNAME_WHITELIST.indexOf(new URL(event.request.url).hostname) > -1) {
+  const navigation = request.mode === 'navigate';
+  const search = new URL(request.url).pathname === new URL(SEARCH_URL).pathname;
+  const cached = matchCurrent(request).catch(() => undefined);
+  // Revalidate documents/index with HTTP validators, keeping the URL and credentials.
+  // Assets use normal HTTP caching, then refresh their offline copy in the background.
+  const fetched = fetch(request, navigation || search ? { cache: 'no-cache' } : undefined);
+  event.waitUntil(fetched.then(async response => {
+    if (!canCache(request, response)) return;
+    // Clone before yielding: respondWith may already be consuming the original.
+    const stored = response.clone();
+    const copy = navigation ? response.clone() : null;
+    const previous = await cached;
+    const cache = await caches.open(RUNTIME);
+    await cache.put(request, stored);
+    if (navigation) await notifyContentUpdate(request, previous, copy);
+  }).catch(() => { /* Network/quota failures must not break a cached response. */ }));
 
-    // Redirect in SW manually fixed github pages 404s on repo?blah
-    if (shouldRedirect(event.request)) {
-      event.respondWith(Response.redirect(getRedirectUrl(event.request)))
-      return;
-    }
-
-    // Cache-only Startgies for ys.static resources
-    if (event.request.url.indexOf('ys.static') > -1){
-      event.respondWith(fetchHelper.cacheFirst(event.request.url))
-      return;
-    }
-
-    // Stale-while-revalidate for possiblily dynamic content
-    // similar to HTTP's stale-while-revalidate: https://www.mnot.net/blog/2007/12/12/stale
-    // Upgrade from Jake's to Surma's: https://gist.github.com/surma/eb441223daaedf880801ad80006389f1
-    const cached = caches.match(event.request);
-    const fetched = fetch(getCacheBustingUrl(event.request), { cache: "no-store" });
-    const fetchedCopy = fetched.then(resp => resp.clone());
-    
-    // Call respondWith() with whatever we get first.
-    // Promise.race() resolves with first one settled (even rejected)
-    // If the fetch fails (e.g disconnected), wait for the cache.
-    // If there’s nothing in cache, wait for the fetch.
-    // If neither yields a response, return offline pages.
-    event.respondWith(
-      Promise.race([fetched.catch(_ => cached), cached])
-        .then(resp => resp || fetched)
-        .catch(_ => caches.match('offline.html'))
-    );
-
-    // Update the cache with the version we fetched (only for ok status)
-    event.waitUntil(
-      Promise.all([fetchedCopy, caches.open(CACHE)])
-        .then(([response, cache]) => response.ok && cache.put(event.request, response))
-        .catch(_ => {/* eat any errors */ })
-    );
-
-    // If one request is a HTML naviagtion, checking update!
-    if (isNavigationReq(event.request)) {
-      // you need "preserve logs" to see this log
-      // cuz it happened before navigating
-      console.log(`fetch ${event.request.url}`)
-      event.waitUntil(revalidateContent(cached, fetchedCopy))
-    }
-  }
-});
-
-
-/**
- * Broadcasting all clients with MessageChannel API
- */
-function sendMessageToAllClients(msg) {
-  self.clients.matchAll().then(clients => {
-    clients.forEach(client => {
-      console.log(client);
-      client.postMessage(msg)
-    })
-  })
-}
-
-/**
- * Broadcasting all clients async
- */
-function sendMessageToClientsAsync(msg) {
-  // waiting for new client alive with "async" setTimeout hacking
-  // https://twitter.com/Huxpro/status/799265578443751424
-  // https://jakearchibald.com/2016/service-worker-meeting-notes/#fetch-event-clients
-  setTimeout(() => {
-    sendMessageToAllClients(msg)
-  }, 1000)
-}
-
-/**
- * if content modified, we can notify clients to refresh
- * TODO: Gh-pages rebuild everything in each release. should find a workaround (e.g. ETag with cloudflare)
- * 
- * @param  {Promise<response>} cachedResp  [description]
- * @param  {Promise<response>} fetchedResp [description]
- * @return {Promise}
- */
-function revalidateContent(cachedResp, fetchedResp) {
-  // revalidate when both promise resolved
-  return Promise.all([cachedResp, fetchedResp])
-    .then(([cached, fetched]) => {
-      const cachedVer = cached.headers.get('last-modified')
-      const fetchedVer = fetched.headers.get('last-modified')
-      console.log(`"${cachedVer}" vs. "${fetchedVer}"`);
-      if (cachedVer !== fetchedVer) {
-        sendMessageToClientsAsync({
-          'command': 'UPDATE_FOUND',
-          'url': fetched.url
-        })
+  event.respondWith((async () => {
+    if (navigation || search) {
+      try {
+        const response = await fetched;
+        // Preserve real HTTP 4xx responses; use offline copies for transient 5xx.
+        if (response.status < 500) return response;
+        const previous = await cached;
+        if (previous) return previous;
+        if (!navigation) return response;
+      } catch (_) { /* Offline: try this URL before the offline document. */ }
+      const previous = await cached;
+      if (previous) return previous;
+      if (navigation) {
+        const shell = await caches.open(PRECACHE);
+        const offline = await shell.match(OFFLINE_URL);
+        if (offline) return offline;
       }
-    })
-    .catch(err => console.log(err))
-}
+      return Response.error();
+    }
+    // Only document navigations may fall back to HTML. Missing assets fail normally.
+    return await cached || await fetched;
+  })().catch(() => Response.error()));
+});

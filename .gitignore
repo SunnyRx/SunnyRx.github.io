@@ -1,13 +1,42 @@
-_site
-_posts/_draft
-_posts/_archive
-_archive
-node_modules
-.vscode
+# Jekyll output and local Ruby dependencies
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+/.sass-cache/
+/.bundle/
+/vendor/bundle/
+/vendor/cache/
+# Local preview lockfile currently resolves Windows-only gems.
+/Gemfile.lock
+
+# Node dependencies, logs and test output
+node_modules/
 *.log
-*.lock
-*.sh
+/coverage/
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/
+
+# Python image-maintenance environment and bytecode
+/.venv/
+__pycache__/
+*.py[cod]
+
+# Local configuration; keep shared editor settings and example configuration
+/.env
+/.env.*
+!/.env.example
+/.vscode/*
+!/.vscode/settings.json
+/.idea/
+
+# Unpublished drafts and archives
+/_posts/_draft/
+/_posts/_archive/
+/_archive/
+
+# Operating-system metadata (at any depth)
 .DS_Store
-.jekyll-cache
-*/.DS_Store
-*/*/.DS_Store
+Thumbs.db
+Desktop.ini

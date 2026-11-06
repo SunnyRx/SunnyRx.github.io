@@ -92,6 +92,6 @@ Sider 有自带一条用于解释的提示词，它向 AI 提供一段比较优�
 > - 意味： [The corresponding meaning of this vocabulary in ${lang}]
 > - 簡易メモ：[Help me remember this vocabulary by providing any additional notes in ${lang}, such as the typical situations where this vocabulary is used]
 
-最近笔者用于制作 Logseq 记忆卡片用的提示词，详情可以查看笔者的另一篇[博文](https://sunnyrx.com/2023/11/25/2023-11-25-2023-11-25-Create-A-Logseq-Memo-Prompt/)。
+最近笔者用于制作 Logseq 记忆卡片用的提示词，详情可以查看笔者的另一篇[博文]({% post_url 2023-11-25-Create-A-Logseq-Memo-Prompt %})。
 
 根据这条提示词的思路，可以根据自己的需要创建提示词，让 AI 来帮忙把一些想要收集的信息，整理成指定的格式，方便存档。

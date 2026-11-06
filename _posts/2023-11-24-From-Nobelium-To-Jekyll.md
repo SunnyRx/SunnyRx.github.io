@@ -10,7 +10,7 @@ tags:
     - 随笔
 ---
   
-半年前笔者[从 Jekyll 搬到了 Nobelium](/2020/04/02/Form-Jekyll-To-Nobelium/)，然后现在又搬回来了。
+半年前笔者[从 Jekyll 搬到了 Nobelium]({% post_url 2023-03-11-Form-Jekyll-To-Nobelium %})，然后现在又搬回来了。
 
 其实几个月前就转回了 Jekyll，只是一直没有把当初在 Nobelium 写的博文搬回来。
 

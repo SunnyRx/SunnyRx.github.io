@@ -40,6 +40,8 @@ anchorjs: true                          # if you want to customize anchor. check
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
+# Match the supported Pages plugin when running a local `jekyll build --safe`.
+whitelist: [jekyll-paginate]
 
 
 

@@ -10,13 +10,30 @@
     },
     "bugs": "https://github.com/Huxpro/huxpro.github.io/issues",
     "devDependencies": {
-        "grunt": ">=1.5.3",
-        "grunt-banner": "~0.2.3",
+        "grunt": "^1.6.3",
+        "grunt-contrib-cssmin": "^5.0.0",
         "grunt-contrib-less": "^2.0.0",
         "grunt-contrib-uglify": "^4.0.1",
-        "grunt-contrib-watch": "^1.1.0"
+        "grunt-contrib-watch": "^1.1.0",
+        "jquery": "4.0.0",
+        "playwright": "^1.65.0"
+    },
+    "overrides": {
+        "globule": {
+            "minimatch": "^3.1.5"
+        }
+    },
+    "engines": {
+        "node": ">=20"
     },
     "scripts": {
+        "build": "grunt",
+        "check": "npm run check:site",
+        "check:site": "node scripts/check-site.mjs",
+        "test": "npm run check && npm run test:unit && npm run test:browser",
+        "test:unit": "node --test tests/service-worker.test.cjs tests/site-links.test.mjs",
+        "test:browser": "node --test tests/browser.test.cjs",
+        "watch": "grunt watch",
         "start": "bundle exec jekyll serve -w -l --host 0.0.0.0",
         "dev": "grunt watch & npm run start",
         "boil": "git push boilerplate boilerplate:master",

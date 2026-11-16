@@ -45,6 +45,17 @@ $env:BLOG_BROWSER_CHANNEL = 'msedge'
 npm run test:browser
 ```
 
+## 持续集成
+
+`.github/workflows/ci.yml` 在推送到 `master` 和提交 Pull Request 时运行：
+
+- `test`：按提交的 `Gemfile.lock` 安装依赖，执行 npm 构建、Jekyll 安全模式构建、完整测试和 `npm audit`。
+- `pages-parity`：用 GitHub Pages 同款 `github-pages` 依赖集独立构建，并运行站内链接检查，提前发现本地与线上构建环境的差异。
+
+`Gemfile.lock` 同时包含 Windows、Linux 和通用 Ruby 平台，供本地与 CI 复现依赖版本；新增或升级 gem 后应重新生成并提交。
+
+Windows 本地直接安装 `github-pages` 依赖集可能因 OpenSSL 等原生扩展缺少开发库而失败，因此 Pages 环境验证放在 Ubuntu CI 的 `pages-parity` 任务中，不要求每位本地开发者安装两套 gem。
+
 ## 依赖维护
 
 更新依赖后，提交 `package.json`、`package-lock.json` 和重新生成的浏览器资源，并检查默认构建及 JS/Less 文件修改能否触发 watch。

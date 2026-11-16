@@ -54,6 +54,8 @@ npm run test:browser
 
 `Gemfile.lock` 同时包含 Windows、Linux 和通用 Ruby 平台，供本地与 CI 复现依赖版本；新增或升级 gem 后应重新生成并提交。
 
+Windows 本地直接安装 `github-pages` 依赖集可能因 OpenSSL 等原生扩展缺少开发库而失败，因此 Pages 环境验证放在 Ubuntu CI 的 `pages-parity` 任务中，不要求每位本地开发者安装两套 gem。
+
 ## 依赖维护
 
 更新依赖后，提交 `package.json`、`package-lock.json` 和重新生成的浏览器资源，并检查默认构建及 JS/Less 文件修改能否触发 watch。

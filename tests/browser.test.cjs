@@ -189,7 +189,7 @@ test('ads load once and analytics uses the configured target', async () => {
     assert.equal(state.ads, 1);
     assert.equal(state.configs.length, 1);
     assert.equal(new URL(state.ga).searchParams.get('id'), state.configs[0][1]);
-    assert.equal(state.configs[0][1], 'UA-71624738-3');
+    assert.equal(state.configs[0][1], 'G-4E2ZXH489S');
     assert.deepEqual(state.oldScripts, []);
     assert.ok(parseInt(state.jquery, 10) >= 4);
   } finally { await ctx.close(); }

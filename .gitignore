@@ -6,8 +6,6 @@
 /.bundle/
 /vendor/bundle/
 /vendor/cache/
-# Local preview lockfile currently resolves Windows-only gems.
-/Gemfile.lock
 
 # Node dependencies, logs and test output
 node_modules/

@@ -70,6 +70,7 @@ const bannerOffsetByPosition = {
 };
 const bannerOffset =
 	bannerOffsetByPosition[siteConfig.banner.position || "center"];
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -92,6 +93,7 @@ const bannerOffset =
 		</script>
 		<meta name="description" content={description || pageTitle}>
 		<meta name="author" content={profileConfig.name}>
+		<link rel="canonical" href={canonicalURL} />
 
 		<meta property="og:site_name" content={siteConfig.title}>
 		<meta property="og:url" content={Astro.url}>
@@ -178,6 +180,14 @@ const bannerOffset =
 	.enable-banner.is-home #banner-wrapper {
 		@apply h-[var(--banner-height-home)] translate-y-[var(--banner-height-extend)]
 	}
+	.enable-banner .banner-hero {
+		top: calc(var(--banner-height-extend, 8vh) + 4.25rem);
+		bottom: 2.5rem;
+	}
+	.enable-banner.is-home .banner-hero {
+		top: 4.5rem;
+		bottom: 2.5rem;
+	}
 	.enable-banner #banner-wrapper {
 		@apply h-[var(--banner-height-home)]
 	}
@@ -198,7 +208,14 @@ const bannerOffset =
 		@apply top-[calc(1rem_-_var(--banner-height-extend))]
 	}
 	.navbar-hidden {
-		@apply opacity-0 -translate-y-16
+		transform: translateY(-100%);
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	#navbar-wrapper {
+		transition: none !important;
 	}
 }
 </style>
@@ -215,9 +232,7 @@ import {getHue, getStoredTheme, setHue, setTheme} from "../utils/setting-utils";
 import {pathsEqual, url} from "../utils/url-utils";
 import {
 	BANNER_HEIGHT,
-	BANNER_HEIGHT_HOME,
 	BANNER_HEIGHT_EXTEND,
-	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT
 } from "../constants/constants";
 import { siteConfig } from '../config';
 
@@ -399,21 +414,12 @@ const setup = () => {
 	window.swup.hooks.on('link:click', () => {
 		// Remove the delay for the first time page load
 		document.documentElement.style.setProperty('--content-delay', '0ms')
-
-		// prevent elements from overlapping the navbar
-		if (!bannerEnabled) {
-			return
-		}
-		let threshold = window.innerHeight * (BANNER_HEIGHT / 100) - 72 - 16
-		let navbar = document.getElementById('navbar-wrapper')
-		if (!navbar || !document.body.classList.contains('lg:is-home')) {
-			return
-		}
-		if (document.body.scrollTop >= threshold || document.documentElement.scrollTop >= threshold) {
-			navbar.classList.add('navbar-hidden')
-		}
+		resetNavbarVisibility()
 	})
-	window.swup.hooks.on('content:replace', initCustomScrollbar)
+	window.swup.hooks.on('content:replace', () => {
+		initCustomScrollbar()
+		document.dispatchEvent(new CustomEvent('lang-switch:sync'))
+	})
 	window.swup.hooks.on('visit:start', (visit: {to: {url: string}}) => {
 		// change banner height immediately when a link is clicked
 		const bodyElement = document.querySelector('body')
@@ -441,6 +447,8 @@ const setup = () => {
 		if (heightExtend) {
 			heightExtend.classList.remove('hidden')
 		}
+		resetNavbarVisibility()
+		document.dispatchEvent(new CustomEvent('lang-switch:sync'))
 	});
 	window.swup.hooks.on('visit:end', (_visit: {to: {url: string}}) => {
 		setTimeout(() => {
@@ -465,44 +473,78 @@ if (window?.swup?.hooks) {
 
 let backToTopBtn = document.getElementById('back-to-top-btn');
 let toc = document.getElementById('toc-wrapper');
-let navbar = document.getElementById('navbar-wrapper')
+let navbar = document.getElementById('navbar-wrapper');
+let lastScrollY = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
+const NAVBAR_HIDE_OFFSET = 96;
+const NAVBAR_SCROLL_DELTA = 10;
+
+function isNavbarLockedOpen(navEl: HTMLElement): boolean {
+	if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		return true;
+	}
+	const active = document.activeElement;
+	if (active && active !== document.body && navEl.contains(active)) {
+		return true;
+	}
+	for (const panelId of ['nav-menu-panel', 'display-setting', 'search-panel']) {
+		const panel = document.getElementById(panelId);
+		if (panel && !panel.classList.contains('float-panel-closed')) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function resetNavbarVisibility() {
+	lastScrollY = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
+	if (navbar) {
+		navbar.classList.remove('navbar-hidden');
+	}
+}
+
+if (navbar) {
+	navbar.addEventListener('focusin', () => {
+		navbar?.classList.remove('navbar-hidden');
+	});
+}
+
 function scrollFunction() {
-	let bannerHeight = window.innerHeight * (BANNER_HEIGHT / 100)
+	let bannerHeight = window.innerHeight * (BANNER_HEIGHT / 100);
+	const currentY = Math.max(0, window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
 
 	if (backToTopBtn) {
-		if (document.body.scrollTop > bannerHeight || document.documentElement.scrollTop > bannerHeight) {
-			backToTopBtn.classList.remove('hide')
+		if (currentY > bannerHeight) {
+			backToTopBtn.classList.remove('hide');
 		} else {
-			backToTopBtn.classList.add('hide')
+			backToTopBtn.classList.add('hide');
 		}
 	}
 
 	if (bannerEnabled && toc) {
-		if (document.body.scrollTop > bannerHeight || document.documentElement.scrollTop > bannerHeight) {
-			toc.classList.remove('toc-hide')
+		if (currentY > bannerHeight) {
+			toc.classList.remove('toc-hide');
 		} else {
-			toc.classList.add('toc-hide')
+			toc.classList.add('toc-hide');
 		}
 	}
 
-	if (!bannerEnabled) return
 	if (navbar) {
-		const NAVBAR_HEIGHT = 72
-		const MAIN_PANEL_EXCESS_HEIGHT = MAIN_PANEL_OVERLAPS_BANNER_HEIGHT * 16			// The height the main panel overlaps the banner
-
-		let bannerHeight = BANNER_HEIGHT
-		if (document.body.classList.contains('lg:is-home') && window.innerWidth >= 1024) {
-			bannerHeight = BANNER_HEIGHT_HOME
-		}
-		let threshold = window.innerHeight * (bannerHeight / 100) - NAVBAR_HEIGHT - MAIN_PANEL_EXCESS_HEIGHT - 16
-		if (document.body.scrollTop >= threshold || document.documentElement.scrollTop >= threshold) {
-			navbar.classList.add('navbar-hidden')
+		if (currentY <= NAVBAR_HIDE_OFFSET || isNavbarLockedOpen(navbar)) {
+			navbar.classList.remove('navbar-hidden');
+			lastScrollY = currentY;
 		} else {
-			navbar.classList.remove('navbar-hidden')
+			const delta = currentY - lastScrollY;
+			if (delta > NAVBAR_SCROLL_DELTA) {
+				navbar.classList.add('navbar-hidden');
+				lastScrollY = currentY;
+			} else if (delta < -NAVBAR_SCROLL_DELTA) {
+				navbar.classList.remove('navbar-hidden');
+				lastScrollY = currentY;
+			}
 		}
 	}
 }
-window.onscroll = scrollFunction
+window.addEventListener('scroll', scrollFunction, { passive: true });
 
 window.onresize = () => {
 	// calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text

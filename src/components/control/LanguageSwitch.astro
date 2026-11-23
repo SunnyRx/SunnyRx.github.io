@@ -1,0 +1,70 @@
+---
+import { url } from "@utils/url-utils";
+
+const pathname = Astro.url.pathname;
+const isJaPage = pathname === "/ja" || pathname.startsWith("/ja/");
+
+const homeHref = url("/");
+const jaHref = url("/ja/");
+
+const initialHref = isJaPage ? homeHref : jaHref;
+const initialLang = isJaPage ? "zh-Hans" : "ja";
+const initialLabel = isJaPage ? "中文" : "日本語";
+const initialAriaLabel = isJaPage ? "切换到中文版" : "日本語版へ切り替え";
+---
+<a
+	id="lang-switch"
+	href={initialHref}
+	lang={initialLang}
+	hreflang={initialLang}
+	aria-label={initialAriaLabel}
+	data-no-swup
+	data-home-href={homeHref}
+	data-ja-href={jaHref}
+	class="btn-plain scale-animation rounded-lg h-10 md:h-11 px-2 sm:px-2.5 text-xs sm:text-sm font-bold whitespace-nowrap shrink-0 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+>
+	<span id="lang-switch-label">{initialLabel}</span>
+</a>
+
+<script>
+function resolveSameOriginHref(rawHref: string | null, fallback: string): string {
+	if (!rawHref) return fallback;
+	try {
+		const parsed = new URL(rawHref, window.location.origin);
+		return `${parsed.pathname}${parsed.search}${parsed.hash}`;
+	} catch {
+		return fallback;
+	}
+}
+
+function syncLanguageSwitch() {
+	const link = document.getElementById("lang-switch") as HTMLAnchorElement | null;
+	const labelEl = document.getElementById("lang-switch-label");
+	if (!link || !labelEl) return;
+
+	const homeHref = link.dataset.homeHref || "/";
+	const jaHref = link.dataset.jaHref || "/ja/";
+	const path = window.location.pathname;
+	const isJa = path === "/ja" || path.startsWith("/ja/");
+
+	const targetSelector = isJa
+		? 'link[rel="alternate"][hreflang="zh-Hans"], link[rel="alternate"][hreflang^="zh"]'
+		: 'link[rel="alternate"][hreflang="ja"], link[rel="alternate"][hreflang^="ja"]';
+	const altNode = document.head.querySelector(targetSelector) as HTMLLinkElement | null;
+	const fallbackHref = isJa ? homeHref : jaHref;
+	const targetHref = resolveSameOriginHref(altNode?.getAttribute("href") ?? null, fallbackHref);
+
+	const targetLang = isJa ? "zh-Hans" : "ja";
+	const targetLabel = isJa ? "中文" : "日本語";
+	const targetAria = isJa ? "切换到中文版" : "日本語版へ切り替え";
+
+	link.setAttribute("href", targetHref);
+	link.setAttribute("lang", targetLang);
+	link.setAttribute("hreflang", targetLang);
+	link.setAttribute("aria-label", targetAria);
+	labelEl.textContent = targetLabel;
+}
+
+syncLanguageSwitch();
+document.addEventListener("lang-switch:sync", syncLanguageSwitch);
+</script>

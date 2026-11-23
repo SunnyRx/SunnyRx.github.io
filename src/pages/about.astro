@@ -1,25 +1,239 @@
 ---
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import type { MarkdownHeading } from "astro";
+import { Icon } from "astro-icon/components";
+import { profileConfig } from "../config";
+import { friendLinks } from "../data/friends";
 
-import { getEntry, render } from "astro:content";
-import Markdown from "@components/misc/Markdown.astro";
-import I18nKey from "../i18n/i18nKey";
-import { i18n } from "../i18n/translation";
-import MainGridLayout from "../layouts/MainGridLayout.astro";
-
-const aboutPost = await getEntry("spec", "about");
-
-if (!aboutPost) {
-	throw new Error("About page content not found");
+interface CommunityItem {
+	name: string;
+	role: string;
+	href?: string;
 }
 
-const { Content } = await render(aboutPost);
+const communities: CommunityItem[] = [
+	{
+		name: "漫研社",
+		role: "创始人",
+		href: "http://doujin.bgm.tv/club/manyanshe",
+	},
+	{
+		name: "星期日工作室",
+		role: "创始人",
+	},
+	{
+		name: "格林达姆136工程团",
+		role: "主催",
+	},
+];
+
+const skillTags: string[] = [
+	"项目管理",
+	"游戏创作",
+	"音视频剪辑",
+	"Photoshop",
+	"广播剧",
+	"同人本",
+];
+
+function getHostname(href: string): string {
+	try {
+		return new URL(href).hostname.replace(/^www\./, "");
+	} catch {
+		return href;
+	}
+}
+
+const headings: MarkdownHeading[] = [
+	{ depth: 2, slug: "intro", text: "关于我" },
+	{ depth: 2, slug: "explore", text: "站内入口" },
+	{ depth: 2, slug: "friends", text: "友链" },
+];
 ---
-<MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
-    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-        <div class="card-base z-10 px-9 py-6 relative w-full ">
-            <Markdown class="mt-2">
-                <Content />
-            </Markdown>
-        </div>
-    </div>
+<MainGridLayout title={i18n(I18nKey.about)} description="热爱生活和追梦的魔法师，一直想创作游戏。" headings={headings}>
+	<div class="flex flex-col gap-4 w-full" data-pagefind-body>
+		<!-- Intro & Story (distinct from desktop sidebar card) -->
+		<section id="intro" class="card-base px-6 md:px-9 py-7 rounded-[var(--radius-large)] scroll-mt-20 onload-animation">
+			<div class="flex flex-wrap items-baseline justify-between gap-2 mb-4">
+				<h1
+					class="relative font-bold text-2xl md:text-3xl text-black/90 dark:text-white/90
+					md:before:w-1 before:h-6 before:rounded-md before:bg-[var(--primary)]
+					before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[-1.125rem]"
+				>
+					关于我
+				</h1>
+				<span class="text-xs md:text-sm text-black/45 dark:text-white/45">
+					热心人士 · SunnyRx
+				</span>
+			</div>
+
+			<blockquote class="pl-4 py-1 mb-5 border-l-[3px] border-[var(--primary)] text-base md:text-lg font-medium text-black/85 dark:text-white/85 leading-relaxed">
+				热爱生活和追梦的魔法师，一直想创作游戏。
+			</blockquote>
+
+			<div class="space-y-3 text-sm md:text-base text-black/75 dark:text-white/75 leading-relaxed">
+				<p>
+					网名热心人士，ID <strong class="font-semibold text-black/90 dark:text-white/90">SunnyRx</strong>。软件工程背景，长期接触 ACG 文化，喜欢电子游戏，也一直想创作属于自己的游戏。
+				</p>
+				<p>
+					有好多技能，但多数是半桶水：会音视频剪辑，会 Photoshop，做过广播剧，做过游戏，催过同人本。当前最顺手的还是项目管理，以及把想法一点点落地的过程。
+				</p>
+			</div>
+
+			<!-- Mobile-only social quick links (desktop already shows these in the left sidebar) -->
+			<div class="lg:hidden mt-5 pt-4 border-t border-dashed border-[var(--line-divider)] flex flex-wrap gap-2">
+				{profileConfig.links.map((item) => (
+					<a
+						href={item.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] text-black/80 dark:text-white/85 hover:text-[var(--primary)] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+					>
+						<Icon name={item.icon} class="text-sm" />
+						<span>{item.name}</span>
+						<Icon name="fa6-solid:arrow-up-right-from-square" class="text-[10px] opacity-55" />
+					</a>
+				))}
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+				<!-- Communities & Teams -->
+				<div class="p-4 rounded-xl border border-[var(--line-divider)] bg-black/[0.015] dark:bg-white/[0.02]">
+					<h2 class="text-sm font-bold text-black/85 dark:text-white/85 flex items-center gap-2 mb-3">
+						<Icon name="fa6-solid:users" class="text-xs text-[var(--primary)]" />
+						<span>参与过的社区与团队</span>
+					</h2>
+					<ul class="space-y-2">
+						{communities.map((item) => (
+							<li class="flex items-center justify-between gap-2 text-sm">
+								{item.href ? (
+									<a
+										href={item.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="inline-flex items-center gap-1.5 font-medium text-black/85 dark:text-white/85 hover:text-[var(--primary)] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] rounded"
+									>
+										<span>{item.name}</span>
+										<Icon name="fa6-solid:arrow-up-right-from-square" class="text-[10px] opacity-55" />
+									</a>
+								) : (
+									<span class="font-medium text-black/85 dark:text-white/85">{item.name}</span>
+								)}
+								<span class="text-xs px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/10 text-black/60 dark:text-white/60 shrink-0">
+									{item.role}
+								</span>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				<!-- Creative Interests -->
+				<div class="p-4 rounded-xl border border-[var(--line-divider)] bg-black/[0.015] dark:bg-white/[0.02]">
+					<h2 class="text-sm font-bold text-black/85 dark:text-white/85 flex items-center gap-2 mb-3">
+						<Icon name="fa6-solid:layer-group" class="text-xs text-[var(--primary)]" />
+						<span>涉猎过的领域</span>
+					</h2>
+					<div class="flex flex-wrap gap-2">
+						{skillTags.map((tag) => (
+							<span class="px-2.5 py-1 rounded-lg text-xs bg-black/5 dark:bg-white/10 text-black/75 dark:text-white/75">
+								{tag}
+							</span>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Site Portals -->
+		<section id="explore" class="card-base px-6 md:px-9 py-6 rounded-[var(--radius-large)] scroll-mt-20 onload-animation">
+			<h2 class="text-xl font-bold text-black/90 dark:text-white/90 flex items-center gap-2.5 mb-4">
+				<span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[var(--btn-regular-bg)] text-[var(--primary)]">
+					<Icon name="fa6-solid:compass" class="text-sm" />
+				</span>
+				<span>站内入口</span>
+			</h2>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+				<a
+					href="/works/"
+					class="group flex items-center justify-between gap-3 p-4 rounded-xl border border-[var(--line-divider)] bg-black/[0.015] dark:bg-white/[0.02] hover:border-[var(--primary)]/50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+				>
+					<div class="flex items-start gap-3 min-w-0">
+						<span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[var(--btn-regular-bg)] text-[var(--primary)] shrink-0 mt-0.5">
+							<Icon name="fa6-solid:gamepad" class="text-base" />
+						</span>
+						<div class="min-w-0">
+							<div class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-[var(--primary)] transition">
+								Works · 作品集
+							</div>
+							<p class="text-xs text-black/55 dark:text-white/55 mt-0.5">
+								查看参与过的游戏、工具、广播剧、歌曲与 3D 模型
+							</p>
+						</div>
+					</div>
+					<Icon name="fa6-solid:arrow-right" class="text-sm text-black/35 dark:text-white/35 group-hover:text-[var(--primary)] group-hover:translate-x-0.5 transition shrink-0" />
+				</a>
+
+				<a
+					href="/tools/"
+					class="group flex items-center justify-between gap-3 p-4 rounded-xl border border-[var(--line-divider)] bg-black/[0.015] dark:bg-white/[0.02] hover:border-[var(--primary)]/50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+				>
+					<div class="flex items-start gap-3 min-w-0">
+						<span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[var(--btn-regular-bg)] text-[var(--primary)] shrink-0 mt-0.5">
+							<Icon name="fa6-solid:wrench" class="text-base" />
+						</span>
+						<div class="min-w-0">
+							<div class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-[var(--primary)] transition">
+								Tools · 工具推荐
+							</div>
+							<p class="text-xs text-black/55 dark:text-white/55 mt-0.5">
+								整理平时自己正在用、觉得顺手的生活与效率工具
+							</p>
+						</div>
+					</div>
+					<Icon name="fa6-solid:arrow-right" class="text-sm text-black/35 dark:text-white/35 group-hover:text-[var(--primary)] group-hover:translate-x-0.5 transition shrink-0" />
+				</a>
+			</div>
+		</section>
+
+		<!-- Friend Links -->
+		<section id="friends" class="card-base px-6 md:px-9 py-6 rounded-[var(--radius-large)] scroll-mt-20 onload-animation">
+			<div class="flex items-center justify-between mb-4">
+				<h2 class="text-xl font-bold text-black/90 dark:text-white/90 flex items-center gap-2.5">
+					<span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[var(--btn-regular-bg)] text-[var(--primary)]">
+						<Icon name="fa6-solid:link" class="text-sm" />
+					</span>
+					<span>友链</span>
+				</h2>
+				<span class="text-xs px-2 py-0.5 rounded-full bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50">
+					{friendLinks.length} 位朋友
+				</span>
+			</div>
+
+			<ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+				{friendLinks.map((friend) => (
+					<li>
+						<a
+							href={friend.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex items-center justify-between gap-3 p-3.5 rounded-xl border border-[var(--line-divider)] bg-black/[0.015] dark:bg-white/[0.02] hover:border-[var(--primary)]/45 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+						>
+							<div class="min-w-0">
+								<div class="font-semibold text-sm md:text-base text-black/85 dark:text-white/90 group-hover:text-[var(--primary)] transition truncate">
+									{friend.title}
+								</div>
+								<div class="text-xs text-black/45 dark:text-white/45 truncate mt-0.5">
+									{getHostname(friend.href)}
+								</div>
+							</div>
+							<Icon name="fa6-solid:arrow-up-right-from-square" class="text-xs text-black/35 dark:text-white/35 group-hover:text-[var(--primary)] transition shrink-0" />
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	</div>
 </MainGridLayout>

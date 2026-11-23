@@ -1,5 +1,7 @@
 import { defineCollection, z } from "astro:content";
 
+const PLACEHOLDER_COVER = "/img/post-bg-gray.webp";
+
 const postsCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
@@ -7,7 +9,11 @@ const postsCollection = defineCollection({
 		updated: z.date().optional(),
 		draft: z.boolean().optional().default(false),
 		description: z.string().optional().default(""),
-		image: z.string().optional().default(""),
+		image: z
+			.string()
+			.optional()
+			.default("")
+			.transform((val) => (val === PLACEHOLDER_COVER ? "" : val)),
 		tags: z.array(z.string()).optional().default([]),
 		category: z.string().optional().nullable().default(""),
 		lang: z.string().optional().default("zh_CN"),

@@ -50,10 +50,6 @@ export const navBarConfig: NavBarConfig = {
 		},
 		LinkPreset.About,
 		{
-			name: "日本語",
-			url: "/ja/",
-		},
-		{
 			name: "GitHub",
 			url: "https://github.com/SunnyRx",
 			external: true,

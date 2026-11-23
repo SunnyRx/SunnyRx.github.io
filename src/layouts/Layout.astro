@@ -177,32 +177,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 }}>
 @tailwind components;
 @layer components {
-	.enable-banner.is-home #banner-wrapper {
+	.enable-banner #banner-wrapper {
 		@apply h-[var(--banner-height-home)] translate-y-[var(--banner-height-extend)]
 	}
 	.enable-banner .banner-hero {
-		top: calc(var(--banner-height-extend, 8vh) + 4.25rem);
-		bottom: 2.5rem;
-	}
-	.enable-banner.is-home .banner-hero {
 		top: 4.5rem;
 		bottom: 2.5rem;
 	}
-	.enable-banner #banner-wrapper {
-		@apply h-[var(--banner-height-home)]
-	}
-
-	.enable-banner.is-home #banner {
+	.enable-banner #banner {
 		@apply h-[var(--banner-height-home)] translate-y-0
 	}
-	.enable-banner #banner {
-		@apply h-[var(--banner-height-home)] translate-y-[var(--bannerOffset)]
-	}
-	.enable-banner.is-home #main-grid {
-		@apply translate-y-[var(--banner-height-extend)];
-	}
 	.enable-banner #top-row {
-		@apply h-[calc(var(--banner-height-home)_-_4.5rem)] transition-all duration-300
+		@apply h-[4.5rem] transition-all duration-300
 	}
 	.enable-banner.is-home #sidebar-sticky {
 		@apply top-[calc(1rem_-_var(--banner-height-extend))]

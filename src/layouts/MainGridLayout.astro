@@ -9,7 +9,7 @@ import ImageWrapper from "../components/misc/ImageWrapper.astro";
 import TOC from "../components/widget/TOC.astro";
 import { siteConfig } from "../config";
 import {
-	BANNER_HEIGHT,
+	BANNER_HEIGHT_HOME,
 	BANNER_HEIGHT_EXTEND,
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT,
 } from "../constants/constants";
@@ -37,7 +37,7 @@ const hasBannerCredit =
 const hasBannerLink = !!siteConfig.banner.credit.url;
 
 const mainPanelTop = siteConfig.banner.enable
-	? `max(6.5rem, calc(${BANNER_HEIGHT}vh - ${MAIN_PANEL_OVERLAPS_BANNER_HEIGHT}rem))`
+	? `max(6.5rem, calc(${BANNER_HEIGHT_HOME}vh - ${MAIN_PANEL_OVERLAPS_BANNER_HEIGHT}rem))`
 	: "5.5rem";
 ---
 
@@ -52,8 +52,8 @@ const mainPanelTop = siteConfig.banner.enable
 </div>
 
 <!-- Banner -->
-{siteConfig.banner.enable && <div id="banner-wrapper" class={`absolute z-10 w-full transition duration-700 overflow-hidden`} style={`top: -${BANNER_HEIGHT_EXTEND}vh`}>
-    <ImageWrapper id="banner" alt="Banner image of the blog" class:list={["object-cover h-full transition duration-700 opacity-0 scale-105"]}
+{siteConfig.banner.enable && <div id="banner-wrapper" class={`absolute z-10 w-full overflow-hidden`} style={`top: -${BANNER_HEIGHT_EXTEND}vh`}>
+    <ImageWrapper id="banner" alt="Banner image of the blog" class:list={["object-cover h-full"]}
                   src={siteConfig.banner.src} position={siteConfig.banner.position}
     >
     </ImageWrapper>

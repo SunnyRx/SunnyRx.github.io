@@ -181,8 +181,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 		@apply h-[var(--banner-height-home)] translate-y-[var(--banner-height-extend)]
 	}
 	.enable-banner .banner-hero {
-		top: 4.5rem;
-		bottom: 2.5rem;
+		top: calc(var(--banner-height-extend, 8vh) + 4.5rem);
+		height: max(2.5rem, calc(var(--banner-height-home) - var(--banner-height-extend, 8vh) - 4.5rem - 4rem));
+		bottom: auto;
 	}
 	.enable-banner #banner {
 		@apply h-[var(--banner-height-home)] translate-y-0

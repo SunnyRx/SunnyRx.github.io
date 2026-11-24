@@ -18,11 +18,10 @@ html.is-animating .transition-swup-fade {
     }
 }
 
-/* Main components */
+/* Main components: first paint equals the settled layout */
 .onload-animation {
-    opacity: 0;
-    animation: 300ms fade-in-up;
-    animation-fill-mode: forwards;
+    opacity: 1;
+    animation: none;
 }
 #navbar {
     animation-delay: 0ms

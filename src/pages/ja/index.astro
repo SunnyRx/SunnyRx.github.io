@@ -1,7 +1,7 @@
 ---
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedJapanesePosts } from "@utils/content-utils";
-import { getPostUrlBySlug } from "@utils/url-utils";
+import { getPostUrlBySlug, url } from "@utils/url-utils";
 import { formatDateToYYYYMMDD } from "../../utils/date-utils";
 
 const jaPosts = await getSortedJapanesePosts();
@@ -16,8 +16,14 @@ const jaPosts = await getSortedJapanesePosts();
         </p>
 
         {jaPosts.length === 0 ? (
-            <div class="rounded-xl border border-dashed border-[var(--line-divider)] p-6 text-black/60 dark:text-white/60 text-sm">
-                日本語の記事はまだ公開されていません。<code class="mx-1">src/content/posts/ja/</code> に Markdown ファイルを追加し、対応する中国語記事と同じ <code class="mx-1">translationKey</code> を設定すると、ここに一覧表示され相互リンクが自動生成されます。
+            <div class="rounded-xl border border-dashed border-[var(--line-divider)] p-6 text-black/60 dark:text-white/60 text-sm space-y-3">
+                <p>日本語の記事は現在準備中です。公開までしばらくお待ちください。</p>
+                <a
+                    href={url("/")}
+                    class="inline-flex items-center text-[var(--primary)] font-medium hover:underline"
+                >
+                    中国語版のトップページへ戻る →
+                </a>
             </div>
         ) : (
             <ul class="space-y-4">

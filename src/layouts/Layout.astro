@@ -428,6 +428,16 @@ document.addEventListener(
 		if (anchor.target && anchor.target !== "_self") return;
 		const href = anchor.getAttribute("href");
 		if (!href || href.startsWith("#")) return;
+		// Leave modified and non-primary clicks to the browser: they open a new
+		// tab/window and must not be turned into a same-tab replace.
+		if (
+			event.button !== 0 ||
+			event.metaKey ||
+			event.ctrlKey ||
+			event.shiftKey ||
+			event.altKey
+		)
+			return;
 		const link = new URL(href, window.location.href);
 		if (link.origin !== window.location.origin) return;
 		if (isJapanesePath(link.pathname) === isJapanesePath(window.location.pathname))

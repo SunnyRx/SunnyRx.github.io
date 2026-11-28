@@ -57,6 +57,8 @@ export type NavBarLink = {
 	/** Japanese label for /ja/ pages; falls back to name. */
 	nameJa?: string;
 	url: string;
+	/** Japanese URL for /ja/ pages; falls back to url. */
+	urlJa?: string;
 	external?: boolean;
 };
 

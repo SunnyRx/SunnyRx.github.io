@@ -45,11 +45,13 @@ export const navBarConfig: NavBarConfig = {
 			name: "Works",
 			nameJa: "作品",
 			url: "/works/",
+			urlJa: "/ja/works/",
 		},
 		{
 			name: "Tools",
 			nameJa: "ツール",
 			url: "/tools/",
+			urlJa: "/ja/tools/",
 		},
 		LinkPreset.About,
 		],

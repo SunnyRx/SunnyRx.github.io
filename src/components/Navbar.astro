@@ -13,14 +13,16 @@ import NavMenuPanel from "./widget/NavMenuPanel.astro";
 const className = Astro.props.class;
 
 const lang = Astro.locals.lang;
+const isJapanese = lang.toLowerCase().startsWith("ja");
 const presets = getLinkPresets(lang);
 
 let links: NavBarLink[] = navBarConfig.links.map(
 	(item: NavBarLink | LinkPreset): NavBarLink => {
-		if (typeof item === "number") {
-			return presets[item];
-		}
-		return item;
+		const link = typeof item === "number" ? presets[item] : item;
+		return {
+			...link,
+			name: isJapanese ? link.nameJa || link.name : link.name,
+		};
 	},
 );
 ---

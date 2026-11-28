@@ -43,19 +43,16 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		{
 			name: "Works",
+			nameJa: "作品",
 			url: "/works/",
 		},
 		{
 			name: "Tools",
+			nameJa: "ツール",
 			url: "/tools/",
 		},
 		LinkPreset.About,
-		{
-			name: "GitHub",
-			url: "https://github.com/SunnyRx",
-			external: true,
-		},
-	],
+		],
 };
 
 export const profileConfig: ProfileConfig = {

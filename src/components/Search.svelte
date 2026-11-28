@@ -2,6 +2,8 @@
 export let lang: string = "";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
+import AriaKey from "@i18n/ariaKey";
+import { ariaI18n } from "@i18n/ariaTranslation";
 import Icon from "@iconify/svelte";
 import { url } from "@utils/url-utils.ts";
 import { onMount } from "svelte";
@@ -31,6 +33,15 @@ const fakeResult: SearchResult[] = [
 		excerpt: "Try running <mark>npm build && npm preview</mark> instead.",
 	},
 ];
+
+// Pagefind excerpts are HTML pulled from indexed page content. Keep only the
+// <mark> highlight it emits (attributes stripped) and drop every other tag,
+// so the {@html} below cannot be used for XSS. Doing this with a parser
+// dependency added ~190 kB to the search bundle for one call.
+const sanitizeExcerpt = (excerpt: string): string =>
+	excerpt
+		.replace(/<(?!\/?mark\b)[^>]*>/gi, "")
+		.replace(/<mark\b[^>]*>/gi, "<mark>");
 
 const togglePanel = () => {
 	const panel = document.getElementById("search-panel");
@@ -152,7 +163,7 @@ $: if (initialized && keywordMobile) {
 </div>
 
 <!-- toggle btn for phone/tablet view -->
-<button on:click={togglePanel} aria-label="Search Panel" id="search-switch"
+<button on:click={togglePanel} aria-label={ariaI18n(AriaKey.searchPanel, lang)} id="search-switch"
         class="btn-plain scale-animation lg:!hidden rounded-lg w-11 h-11 active:scale-90">
     <Icon icon="material-symbols:search" class="text-[1.25rem]"></Icon>
 </button>
@@ -182,7 +193,7 @@ top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
                 {item.meta.title}<Icon icon="fa6-solid:chevron-right" class="transition text-[0.75rem] translate-x-1 my-auto text-[var(--primary)]"></Icon>
             </div>
             <div class="transition text-sm text-50">
-                {@html item.excerpt}
+                {@html sanitizeExcerpt(item.excerpt)}
             </div>
         </a>
     {/each}

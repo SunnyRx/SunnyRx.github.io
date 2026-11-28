@@ -3,7 +3,7 @@ title: "2023 回顾"
 published: 2023-12-31
 description: "看看 2023 年自己都发生了些什么"
 image: "/img/post-bg-gray.webp"
-tags: ["随笔"]
+tags: ["年度回顾"]
 category: "随笔"
 draft: false
 lang: "zh_CN"

@@ -54,6 +54,8 @@ export enum LinkPreset {
 
 export type NavBarLink = {
 	name: string;
+	/** Japanese label for /ja/ pages; falls back to name. */
+	nameJa?: string;
 	url: string;
 	external?: boolean;
 };
@@ -65,6 +67,9 @@ export type NavBarConfig = {
 export type ProfileConfig = {
 	avatar?: string;
 	name: string;
+	/** Japanese name and bio for /ja/ pages; fall back to the fields below. */
+	nameJa?: string;
+	bioJa?: string;
 	bio?: string;
 	links: {
 		name: string;

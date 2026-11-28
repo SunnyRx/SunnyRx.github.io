@@ -96,7 +96,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 		<link rel="canonical" href={canonicalURL} />
 
 		<meta property="og:site_name" content={siteConfig.title}>
-		<meta property="og:url" content={Astro.url}>
+		<meta property="og:url" content={canonicalURL}>
 		<meta property="og:title" content={pageTitle}>
 		<meta property="og:description" content={description || pageTitle}>
 		{setOGTypeArticle ? (
@@ -106,7 +106,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
         )}
 
 		<meta name="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content={Astro.url}>
+		<meta property="twitter:url" content={canonicalURL}>
 		<meta name="twitter:title" content={pageTitle}>
 		<meta name="twitter:description" content={description || pageTitle}>
 
@@ -181,8 +181,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 		@apply h-[var(--banner-height-home)] translate-y-[var(--banner-height-extend)]
 	}
 	.enable-banner .banner-hero {
-		top: calc(var(--banner-height-extend, 8vh) + 4.5rem);
-		height: max(2.5rem, calc(var(--banner-height-home) - var(--banner-height-extend, 8vh) - 4.5rem - 4rem));
+		top: 4.5rem;
+		height: max(2.5rem, calc(var(--banner-height-home) - 7rem));
 		bottom: auto;
 	}
 	.enable-banner #banner {
@@ -280,7 +280,7 @@ function setClickOutsideToClose(panel: string, ignores: string[]) {
 				return;
 			}
 		}
-		panelDom!.classList.add("float-panel-closed");
+		panelDom?.classList.add("float-panel-closed");
 	});
 }
 setClickOutsideToClose("display-setting", ["display-setting", "display-settings-switch"])

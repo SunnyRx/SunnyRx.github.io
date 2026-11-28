@@ -63,7 +63,7 @@ const mainPanelTop = siteConfig.banner.enable
             {siteConfig.title}
         </div>
         <p class="mt-1 text-xs md:text-base text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
-            每一天都是周末
+            {Astro.locals.lang?.toLowerCase().startsWith("ja") ? "毎日が週末" : "每一天都是周末"}
         </p>
     </div>
 </div>}

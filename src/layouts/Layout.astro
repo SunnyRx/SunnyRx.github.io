@@ -29,6 +29,8 @@ import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
 
+const LangIsJapanese = (value: string) => value.toLowerCase().startsWith("ja");
+
 interface Props {
 	title?: string;
 	banner?: string;
@@ -60,7 +62,11 @@ let pageTitle: string;
 if (title) {
 	pageTitle = `${title} - ${siteConfig.title}`;
 } else {
-	pageTitle = `${siteConfig.title} - ${siteConfig.subtitle}`;
+	const subtitle =
+		LangIsJapanese(lang ?? siteConfig.lang) && siteConfig.subtitleJa
+			? siteConfig.subtitleJa
+			: siteConfig.subtitle;
+	pageTitle = `${siteConfig.title} - ${subtitle}`;
 }
 
 const favicons: Favicon[] =

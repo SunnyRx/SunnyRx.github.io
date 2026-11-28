@@ -48,7 +48,7 @@ const dateStr = formatDateToYYYYMMDD(published);
         </time>
         <span aria-hidden="true">·</span>
         <span>
-            {remarkPluginFrontmatter.minutes} {i18n(remarkPluginFrontmatter.minutes === 1 ? I18nKey.minuteCount : I18nKey.minutesCount)}
+            {remarkPluginFrontmatter.minutes} {i18n(remarkPluginFrontmatter.minutes === 1 ? I18nKey.minuteCount : I18nKey.minutesCount, Astro.locals.lang)}
         </span>
         {tags && tags.length > 0 && (
             <>

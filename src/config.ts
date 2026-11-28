@@ -10,6 +10,7 @@ import { LinkPreset } from "./types/config";
 export const siteConfig: SiteConfig = {
 	title: "Weekend",
 	subtitle: "热心的博客",
+	subtitleJa: "Sunny Rx のブログ",
 	lang: "zh_CN",
 	themeColor: {
 		hue: 205,
@@ -60,7 +61,10 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "/img/avatar-rx.webp",
 	name: "热心人士 (SunnyRx)",
+	nameJa: "Sunny Rx (熱心人士)",
 	bio: "热爱生活和追梦的魔法师。傻傻的，就是想做自己想做的事情。",
+	bioJa:
+		"暮らしを愛し、夢を追う魔法使い。ちょっと抜けてるけど、ただ自分のやりたいことをやりたいだけ。",
 	links: [
 		{
 			name: "Twitter",

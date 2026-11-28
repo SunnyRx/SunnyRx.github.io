@@ -52,7 +52,7 @@ const headings: MarkdownHeading[] = [
 	{ depth: 2, slug: "friends", text: "友链" },
 ];
 ---
-<MainGridLayout title={i18n(I18nKey.about)} description="热爱生活和追梦的魔法师，一直想创作游戏。" headings={headings}>
+<MainGridLayout title={i18n(I18nKey.about, Astro.locals.lang)} description="热爱生活和追梦的魔法师，一直想创作游戏。" headings={headings}>
 	<div class="flex flex-col gap-4 w-full" data-pagefind-body>
 		<!-- Intro & Story (distinct from desktop sidebar card) -->
 		<section id="intro" class="card-base px-6 md:px-9 py-7 rounded-[var(--radius-large)] scroll-mt-20 onload-animation">

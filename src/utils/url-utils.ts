@@ -24,11 +24,11 @@ export function getTagUrl(tag: string): string {
 	return url(`/archive/?tag=${encodeURIComponent(tag.trim())}`);
 }
 
-export function getCategoryUrl(category: string | null): string {
+export function getCategoryUrl(category: string | null, lang?: string): string {
 	if (
 		!category ||
 		category.trim() === "" ||
-		category.trim().toLowerCase() === i18n(I18nKey.uncategorized).toLowerCase()
+		category.trim().toLowerCase() === i18n(I18nKey.uncategorized, lang).toLowerCase()
 	)
 		return url("/archive/?uncategorized=true");
 	return url(`/archive/?category=${encodeURIComponent(category.trim())}`);

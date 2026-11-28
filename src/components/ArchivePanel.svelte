@@ -9,18 +9,13 @@ export let tags: string[] = [];
 export let categories: string[] = [];
 export let sortedPosts: Post[] = [];
 
-const params = new URLSearchParams(window.location.search);
-tags = params.has("tag") ? params.getAll("tag") : [];
-categories = params.has("category") ? params.getAll("category") : [];
-const uncategorized = params.get("uncategorized");
-
 interface Post {
 	slug: string;
 	data: {
 		title: string;
 		tags: string[];
 		category?: string | null;
-		published: Date;
+		published: Date | string;
 	};
 }
 
@@ -29,11 +24,39 @@ interface Group {
 	posts: Post[];
 }
 
-let groups: Group[] = [];
+function toDate(value: Date | string): Date {
+	return value instanceof Date ? value : new Date(value);
+}
 
-function formatDate(date: Date) {
-	const month = (date.getMonth() + 1).toString().padStart(2, "0");
-	const day = date.getDate().toString().padStart(2, "0");
+function buildGroups(posts: Post[]): Group[] {
+	const grouped = posts.reduce(
+		(acc, post) => {
+			const year = toDate(post.data.published).getFullYear();
+			if (!acc[year]) {
+				acc[year] = [];
+			}
+			acc[year].push(post);
+			return acc;
+		},
+		{} as Record<number, Post[]>,
+	);
+
+	const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
+		year: Number.parseInt(yearStr, 10),
+		posts: grouped[Number.parseInt(yearStr, 10)],
+	}));
+
+	groupedPostsArray.sort((a, b) => b.year - a.year);
+	return groupedPostsArray;
+}
+
+// Render full archive list during SSR so /archive/ has immediate content and SEO crawlability.
+let groups: Group[] = buildGroups(sortedPosts);
+
+function formatDate(date: Date | string) {
+	const d = toDate(date);
+	const month = (d.getMonth() + 1).toString().padStart(2, "0");
+	const day = d.getDate().toString().padStart(2, "0");
 	return `${month}-${day}`;
 }
 
@@ -41,7 +64,14 @@ function formatTag(tagList: string[]) {
 	return tagList.map((t) => `#${t}`).join(" ");
 }
 
-onMount(async () => {
+onMount(() => {
+	if (typeof window === "undefined") return;
+
+	const params = new URLSearchParams(window.location.search);
+	tags = params.has("tag") ? params.getAll("tag") : [];
+	categories = params.has("category") ? params.getAll("category") : [];
+	const uncategorized = params.get("uncategorized");
+
 	let filteredPosts: Post[] = sortedPosts;
 
 	if (tags.length > 0) {
@@ -62,26 +92,7 @@ onMount(async () => {
 		filteredPosts = filteredPosts.filter((post) => !post.data.category);
 	}
 
-	const grouped = filteredPosts.reduce(
-		(acc, post) => {
-			const year = post.data.published.getFullYear();
-			if (!acc[year]) {
-				acc[year] = [];
-			}
-			acc[year].push(post);
-			return acc;
-		},
-		{} as Record<number, Post[]>,
-	);
-
-	const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
-		year: Number.parseInt(yearStr, 10),
-		posts: grouped[Number.parseInt(yearStr, 10)],
-	}));
-
-	groupedPostsArray.sort((a, b) => b.year - a.year);
-
-	groups = groupedPostsArray;
+	groups = buildGroups(filteredPosts);
 });
 </script>
 

@@ -49,9 +49,20 @@ const isHomePage = pathsEqual(Astro.url.pathname, url("/"));
 // defines global css variables
 // why doing this in Layout instead of GlobalStyles: https://github.com/withastro/astro/issues/6728#issuecomment-1502203757
 const configHue = siteConfig.themeColor.hue;
-if (!banner || typeof banner !== "string" || banner.trim() === "") {
-	banner = siteConfig.banner.src;
-}
+const socialImagePath =
+	banner && typeof banner === "string" && banner.trim() !== ""
+		? banner.trim()
+		: siteConfig.banner.src;
+const siteOrigin = Astro.site ?? Astro.url;
+const canonicalURL = new URL(Astro.url.pathname, siteOrigin).href;
+const ogImageUrl = new URL(
+	socialImagePath.startsWith("http://") || socialImagePath.startsWith("https://")
+		? socialImagePath
+		: socialImagePath.startsWith("/")
+			? url(socialImagePath)
+			: url(`/${socialImagePath}`),
+	siteOrigin,
+).href;
 
 // TODO don't use post cover as banner for now
 banner = siteConfig.banner.src;
@@ -85,7 +96,6 @@ const bannerOffsetByPosition = {
 };
 const bannerOffset =
 	bannerOffsetByPosition[siteConfig.banner.position || "center"];
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -110,10 +120,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 		<meta name="author" content={profileConfig.name}>
 		<link rel="canonical" href={canonicalURL} />
 
+
 		<meta property="og:site_name" content={siteConfig.title}>
 		<meta property="og:url" content={canonicalURL}>
 		<meta property="og:title" content={pageTitle}>
 		<meta property="og:description" content={description || pageTitle}>
+		<meta property="og:image" content={ogImageUrl}>
 		{setOGTypeArticle ? (
         <meta property="og:type" content="article" />
         ) : (
@@ -121,9 +133,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
         )}
 
 		<meta name="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content={canonicalURL}>
+		<meta name="twitter:url" content={canonicalURL}>
 		<meta name="twitter:title" content={pageTitle}>
 		<meta name="twitter:description" content={description || pageTitle}>
+		<meta name="twitter:image" content={ogImageUrl}>
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -451,6 +464,15 @@ const setup = () => {
 		}
 		resetNavbarVisibility()
 		document.dispatchEvent(new CustomEvent('lang-switch:sync'))
+
+		// Report SPA page navigation to GA4 after Swup updates head/title
+		if (typeof window.gtag === 'function') {
+			window.gtag('event', 'page_view', {
+				page_title: document.title,
+				page_location: window.location.href,
+				page_path: window.location.pathname + window.location.search,
+			})
+		}
 	});
 	window.swup.hooks.on('visit:end', (_visit: {to: {url: string}}) => {
 		setTimeout(() => {

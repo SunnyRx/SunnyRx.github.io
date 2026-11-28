@@ -24,6 +24,11 @@ const {
 	hideTagsForMobile = false,
 	hideUpdateDate = false,
 } = Astro.props;
+
+const categoryLabel =
+	getCategoryLabel(category, Astro.locals.lang) ||
+	i18n(I18nKey.uncategorized, Astro.locals.lang);
+
 const className = Astro.props.class;
 ---
 
@@ -55,10 +60,10 @@ const className = Astro.props.class;
             <Icon name="material-symbols:book-2-outline-rounded" class="text-xl"></Icon>
         </div>
         <div class="flex flex-row flex-nowrap items-center">
-            <a href={getCategoryUrl(category, Astro.locals.lang)} aria-label={`View all posts in the ${category} category`}
+            <a href={getCategoryUrl(category, Astro.locals.lang)} aria-label={`View all posts in the ${categoryLabel} category`}
                class="link-lg transition text-50 text-sm font-medium
                             hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap">
-                {getCategoryLabel(category, Astro.locals.lang) || i18n(I18nKey.uncategorized, Astro.locals.lang)}
+                {categoryLabel}
             </a>
         </div>
     </div>

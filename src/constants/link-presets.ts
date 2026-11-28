@@ -12,6 +12,7 @@ export function getLinkPresets(lang?: string): { [key in LinkPreset]: NavBarLink
 		[LinkPreset.Home]: {
 			name: i18n(I18nKey.home, lang),
 			url: "/",
+			urlJa: "/ja/",
 		},
 		[LinkPreset.About]: {
 			name: i18n(I18nKey.about, lang),

@@ -413,6 +413,32 @@ function init() {
 /* Load settings when entering the site */
 init();
 
+// Swup swaps only <main> and #toc, so following a link that crosses the
+// Chinese/Japanese boundary would keep the shell (nav, sidebar, banner) in the
+// previous language. Intercept those clicks before Swup and do a full load.
+const isJapanesePath = (pathname: string) =>
+	pathname === "/ja" || pathname.startsWith("/ja/");
+document.addEventListener(
+	"click",
+	(event) => {
+		const target = event.target as Element | null;
+		const anchor = target?.closest?.("a");
+		if (!anchor) return;
+		if (anchor.hasAttribute("data-no-swup")) return;
+		if (anchor.target && anchor.target !== "_self") return;
+		const href = anchor.getAttribute("href");
+		if (!href || href.startsWith("#")) return;
+		const link = new URL(href, window.location.href);
+		if (link.origin !== window.location.origin) return;
+		if (isJapanesePath(link.pathname) === isJapanesePath(window.location.pathname))
+			return;
+		event.preventDefault();
+		event.stopPropagation();
+		window.location.assign(link.href);
+	},
+	true,
+);
+
 const setup = () => {
 	// TODO: temp solution to change the height of the banner
 /*

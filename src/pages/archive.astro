@@ -9,6 +9,6 @@ const sortedPostsList = await getSortedPostsList();
 ---
 
 <MainGridLayout title={i18n(I18nKey.archive, Astro.locals.lang)}>
-    <ArchivePanel sortedPosts={sortedPostsList} client:load></ArchivePanel>
+    <ArchivePanel sortedPosts={sortedPostsList} lang={Astro.locals.lang} client:load></ArchivePanel>
 
 </MainGridLayout>

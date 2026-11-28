@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import I18nKey from "../i18n/i18nKey";
+import { getTagLabel } from "../i18n/tag-labels";
 import { i18n } from "../i18n/translation";
 import { formatDateToYYYYMMDD } from "../utils/date-utils";
 import { getTagUrl } from "../utils/url-utils";
@@ -59,7 +60,7 @@ const dateStr = formatDateToYYYYMMDD(published);
                             href={getTagUrl(tag)}
                             class="transition hover:text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] rounded"
                         >
-                            #{tag.trim()}
+                            #{getTagLabel(tag, Astro.locals.lang)}
                         </a>
                     ))}
                 </div>

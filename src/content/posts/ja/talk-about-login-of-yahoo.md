@@ -4,7 +4,7 @@ published: 2023-11-28
 description: "使いにくい、大変不便"
 image: ""
 tags: ["雑談"]
-category: ""
+category: "随笔"
 draft: false
 lang: "ja"
 translationKey: "talk-about-login-of-yahoo"

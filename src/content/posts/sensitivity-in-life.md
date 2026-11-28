@@ -4,7 +4,7 @@ published: 2024-12-05
 description: "放慢节奏，重视每一份体验，细细品味当下的感觉"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "随笔"
 draft: false
 lang: "zh_CN"
 translationKey: "sensitivity-in-life"

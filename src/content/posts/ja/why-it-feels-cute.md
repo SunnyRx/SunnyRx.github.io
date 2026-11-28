@@ -4,7 +4,7 @@ published: 2025-10-12
 description: "配色よりも、性格のイメージが「可愛い」を作る"
 image: ""
 tags: ["雑談"]
-category: ""
+category: "随笔"
 draft: false
 lang: "ja"
 translationKey: "why-it-feels-cute"

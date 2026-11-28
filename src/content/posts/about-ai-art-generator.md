@@ -4,7 +4,7 @@ published: 2023-03-03
 description: "简单分享一下笔者所知道的"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "AI"
 draft: false
 lang: "zh_CN"
 translationKey: "about-ai-art-generator"

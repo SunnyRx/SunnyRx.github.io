@@ -4,7 +4,7 @@ published: 2026-03-06
 description: "关于 AI 记忆的一些体验与思考"
 image: "/img/post-bg-gray.webp"
 tags: ["AI", "OpenClaw", "随笔"]
-category: ""
+category: "AI"
 draft: false
 lang: "zh_CN"
 translationKey: "thoughts-on-openclaw-memory"

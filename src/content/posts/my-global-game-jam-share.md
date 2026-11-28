@@ -4,7 +4,7 @@ published: 2016-02-03
 description: "紧张、兴奋、好玩"
 image: "/img/post-bg-gamejam.webp"
 tags: ["游戏制作", "分享"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "my-global-game-jam-share"

@@ -4,7 +4,7 @@ published: 2024-12-07
 description: "用 AI 创作的专注辅助工具"
 image: "/img/post-bg-gray.webp"
 tags: ["工具", "AI"]
-category: ""
+category: "AI"
 draft: false
 lang: "zh_CN"
 translationKey: "focus-maid"

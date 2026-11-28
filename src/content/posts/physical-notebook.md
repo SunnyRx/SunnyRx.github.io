@@ -4,7 +4,7 @@ published: 2025-09-06
 description: "对实物纸笔的联想"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "随笔"
 draft: false
 lang: "zh_CN"
 translationKey: "physical-notebook"

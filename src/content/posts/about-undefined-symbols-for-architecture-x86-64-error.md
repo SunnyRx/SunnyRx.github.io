@@ -4,7 +4,7 @@ published: 2016-01-14
 description: "Cocos2d-x : About Undefined symbols for architecture x86_64 Error"
 image: "/img/post-bg-gray.webp"
 tags: ["Xcode", "Mac", "iOS", "编程"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "about-undefined-symbols-for-architecture-x86-64-error"

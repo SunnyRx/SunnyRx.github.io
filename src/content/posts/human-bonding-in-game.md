@@ -4,7 +4,7 @@ published: 2024-02-11
 description: "「变得更强」与「建立情感链结」的冲突"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔", "游戏设计"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "human-bonding-in-game"

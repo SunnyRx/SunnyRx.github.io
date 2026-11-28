@@ -4,7 +4,7 @@ published: 2025-12-31
 description: "看看 2025 年自己都发生了些什么"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "随笔"
 draft: false
 lang: "zh_CN"
 translationKey: "review-2025"

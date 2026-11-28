@@ -4,7 +4,7 @@ published: 2015-12-20
 description: "Cocos2d-x 3.4 EditBox's instructions"
 image: "/img/post-bg-cocos2dx.webp"
 tags: ["cocos2dx", "编程"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "cocos2dx-3.4-editbox-instructions"

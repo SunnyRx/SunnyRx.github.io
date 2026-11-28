@@ -4,7 +4,7 @@ published: 2020-04-02
 description: "关于对关卡设计者的信任"
 image: "/img/in-post/post-half-life-alyx/OculusScreenshot1585053959.webp"
 tags: ["分享", "随笔", "游戏评论"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "how-i-overcome-the-fear-of-half-life-alyx"

@@ -4,7 +4,7 @@ published: 2023-12-01
 description: "顺手分享几个个性化提示词"
 image: "/img/post-bg-gray.webp"
 tags: ["AI", "生产力"]
-category: ""
+category: "AI"
 draft: false
 lang: "zh_CN"
 translationKey: "how-i-use-ai-with-brower"

@@ -4,7 +4,7 @@ published: 2021-10-10
 description: "Ludum Dare 49作品《回忆碎片》的设计流水账"
 image: "/img/in-post/post-FOM/00.webp"
 tags: ["游戏设计"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "game-design-talk-about-fragments-of-memory"

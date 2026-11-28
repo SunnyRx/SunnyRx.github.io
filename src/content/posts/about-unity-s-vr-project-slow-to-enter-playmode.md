@@ -4,7 +4,7 @@ published: 2022-09-03
 description: "About Unity's VR project slow to enter PlayMode"
 image: "/img/post-bg-gray.webp"
 tags: ["Unity"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "about-unity-s-vr-project-slow-to-enter-playmode"

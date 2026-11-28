@@ -4,7 +4,7 @@ published: 2016-08-30
 description: "第一次的游戏创作体验"
 image: "/img/post-bg-ksm.webp"
 tags: ["游戏制作", "分享"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "kreuz-skelett-mann-saligiare-four-anniversary"

@@ -4,7 +4,7 @@ published: 2017-07-17
 description: "Shadowsocks in HIWIFI"
 image: "/img/post-bg-gray.webp"
 tags: ["HIWIFI", "Shadowsocks"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "shadowsocks-in-hiwifi"

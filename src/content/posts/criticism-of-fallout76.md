@@ -4,7 +4,7 @@ published: 2021-07-04
 description: "谈《辐射76》对核弹的态度转变及割裂的系统设计"
 image: "/img/post-bg-gray.webp"
 tags: ["游戏评论"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "criticism-of-fallout76"

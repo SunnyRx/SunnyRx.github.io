@@ -4,7 +4,7 @@ published: 2023-11-25
 description: "简单造个 ChatGPT Sidebar + Logseq 的 Workflow"
 image: "/img/post-bg-gray.webp"
 tags: ["日语", "AI", "Logseq"]
-category: ""
+category: "AI"
 draft: false
 lang: "zh_CN"
 translationKey: "create-a-logseq-memo-prompt"

@@ -4,7 +4,7 @@ published: 2018-09-19
 description: "做项目的决策时遇到的问题分享"
 image: "/img/post-bg-gamejam.webp"
 tags: ["游戏制作", "分享", "游戏策划"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "realize-the-main-function-first-or-realize-the-foundation-first"

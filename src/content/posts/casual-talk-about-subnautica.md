@@ -4,7 +4,7 @@ published: 2023-03-11
 description: "随便聊聊《深海迷航》"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔", "游戏评论"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "casual-talk-about-subnautica"

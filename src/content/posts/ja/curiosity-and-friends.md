@@ -4,7 +4,7 @@ published: 2024-03-13
 description: "未知なるものへの興味を共有できる仲間は、新しい発見への扉を開いてくれる"
 image: ""
 tags: ["雑談"]
-category: ""
+category: "随笔"
 draft: false
 lang: "ja"
 translationKey: "curiosity-and-friends"

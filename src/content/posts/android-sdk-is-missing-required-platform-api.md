@@ -4,7 +4,7 @@ published: 2023-06-27
 description: "Android SDK is missing required platform API"
 image: "/img/post-bg-gray.webp"
 tags: ["编程", "Unity"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "android-sdk-is-missing-required-platform-api"

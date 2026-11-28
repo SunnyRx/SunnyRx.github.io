@@ -4,7 +4,7 @@ published: 2018-10-03
 description: "The list of Synology 3th party package sources"
 image: "/img/post-bg-nas.webp"
 tags: ["NAS", "群晖"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "the-list-of-synology-3th-party-package-sources"

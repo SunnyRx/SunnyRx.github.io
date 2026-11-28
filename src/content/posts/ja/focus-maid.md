@@ -4,7 +4,7 @@ published: 2024-12-07
 description: "Windsurf で 30 分で開発した私のお気に入りアプリ"
 image: ""
 tags: ["AI"]
-category: ""
+category: "AI"
 draft: false
 lang: "ja"
 translationKey: "focus-maid"

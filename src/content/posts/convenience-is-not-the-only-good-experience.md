@@ -4,7 +4,7 @@ published: 2024-02-22
 description: "拥抱体验，品味体验"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "随笔"
 draft: false
 lang: "zh_CN"
 translationKey: "convenience-is-not-the-only-good-experience"

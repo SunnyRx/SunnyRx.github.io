@@ -4,7 +4,7 @@ published: 2022-07-10
 description: "日系ACT与西方RPG的结合"
 image: "/img/post-bg-gray.webp"
 tags: ["游戏评论"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "game-review-of-dragon-s-dogma"

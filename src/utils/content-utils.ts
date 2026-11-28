@@ -136,11 +136,7 @@ export async function getCategoryList(): Promise<Category[]> {
 	const allBlogPosts = await getRawSortedPosts("default");
 	const count: { [key: string]: number } = {};
 	allBlogPosts.forEach((post: { data: { category: string | null } }) => {
-		if (!post.data.category) {
-			const ucKey = i18n(I18nKey.uncategorized);
-			count[ucKey] = count[ucKey] ? count[ucKey] + 1 : 1;
-			return;
-		}
+		if (!post.data.category) return; // uncategorized posts stay reachable via archive and tags
 
 		const categoryName =
 			typeof post.data.category === "string"

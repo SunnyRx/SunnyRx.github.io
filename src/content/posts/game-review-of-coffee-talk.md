@@ -4,7 +4,7 @@ published: 2023-03-01
 description: "“Welcome, please take your seat”"
 image: "/img/post-bg-gray.webp"
 tags: ["游戏评论"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "game-review-of-coffee-talk"

@@ -4,7 +4,7 @@ published: 2023-03-11
 description: "Generating prompt with ChatGPT and dreamlike-anime"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔", "AI"]
-category: ""
+category: "AI"
 draft: false
 lang: "zh_CN"
 translationKey: "generating-prompt-with-chatgpt-and-dreamlike-anime"

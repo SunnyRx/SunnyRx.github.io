@@ -4,7 +4,7 @@ published: 2016-01-04
 description: "Sample to use UIAutomation"
 image: "/img/post-bg-gray.webp"
 tags: ["iOS", "Xcode", "UIAutomation", "自动化测试"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "sample-to-use-uiautomation"

@@ -4,7 +4,7 @@ published: 2016-10-21
 description: "群晖NAS+frp发挥更大作用"
 image: "/img/post-bg-nas.webp"
 tags: ["NAS", "内网穿透"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "simple-to-use-frp"

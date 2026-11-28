@@ -4,7 +4,7 @@ published: 2024-05-18
 description: "四种接话方式"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "随笔"
 draft: false
 lang: "zh_CN"
 translationKey: "how-to-respond"

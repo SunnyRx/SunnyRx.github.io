@@ -4,7 +4,7 @@ published: 2022-11-15
 description: "试想，总之，没想出来"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "can-i-make-a-game-for-my-nephew"

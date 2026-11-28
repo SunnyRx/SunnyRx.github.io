@@ -4,7 +4,7 @@ published: 2018-09-30
 description: "记一次设置数据损毁经历"
 image: "/img/post-bg-nas.webp"
 tags: ["NAS", "群晖"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "protect-the-nas"

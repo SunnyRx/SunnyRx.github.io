@@ -4,7 +4,7 @@ published: 2024-04-07
 description: "太好玩了"
 image: "/img/post-bg-gray.webp"
 tags: ["游戏评论"]
-category: ""
+category: "游戏"
 draft: false
 lang: "zh_CN"
 translationKey: "game-review-of-dragon-s-dogma-2"

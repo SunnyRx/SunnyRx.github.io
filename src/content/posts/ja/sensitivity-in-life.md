@@ -4,7 +4,7 @@ published: 2024-12-05
 description: "感覚を研ぎ澄ます意識的な気づき"
 image: ""
 tags: ["雑談"]
-category: ""
+category: "随笔"
 draft: false
 lang: "ja"
 translationKey: "sensitivity-in-life"

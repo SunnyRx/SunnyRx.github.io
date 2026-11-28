@@ -4,7 +4,7 @@ published: 2024-01-07
 description: "感谢能激发自己好奇心的朋友们"
 image: "/img/post-bg-gray.webp"
 tags: ["随笔"]
-category: ""
+category: "随笔"
 draft: false
 lang: "zh_CN"
 translationKey: "curiosity-and-friends"

@@ -4,7 +4,7 @@ published: 2020-10-28
 description: "About Oculus Rift S Displayport not connecting"
 image: "/img/in-post/post-active-usb-hub.webp"
 tags: ["VR", "VRChat", "Oculus"]
-category: ""
+category: "技术"
 draft: false
 lang: "zh_CN"
 translationKey: "oculus-rift-s-displayport-not-connecting"

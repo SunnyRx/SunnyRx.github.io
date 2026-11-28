@@ -1,0 +1,150 @@
+---
+import { Icon } from "astro-icon/components";
+import AriaKey from "@i18n/ariaKey";
+import { ariaI18n } from "@i18n/ariaTranslation";
+import { navBarConfig, siteConfig } from "../config";
+import { getLinkPresets } from "../constants/link-presets";
+import { LinkPreset, type NavBarLink } from "../types/config";
+import { url } from "../utils/url-utils";
+import LanguageSwitch from "./control/LanguageSwitch.astro";
+import LightDarkSwitch from "./LightDarkSwitch.svelte";
+import Search from "./Search.svelte";
+import DisplaySettings from "./widget/DisplaySettings.svelte";
+import NavMenuPanel from "./widget/NavMenuPanel.astro";
+
+const className = Astro.props.class;
+
+const lang = Astro.locals.lang;
+const isJapanese = lang.toLowerCase().startsWith("ja");
+const presets = getLinkPresets(lang);
+
+let links: NavBarLink[] = navBarConfig.links.map(
+	(item: NavBarLink | LinkPreset): NavBarLink => {
+		const link = typeof item === "number" ? presets[item] : item;
+		return {
+			...link,
+			name: isJapanese ? link.nameJa || link.name : link.name,
+			url: isJapanese ? link.urlJa || link.url : link.url,
+		};
+	},
+);
+---
+<header id="navbar" class="z-50 w-full bg-[var(--card-bg)]/90 backdrop-blur-md border-b border-[var(--line-divider)] shadow-sm transition onload-animation">
+    <div class:list={[
+        className,
+        "relative !overflow-visible max-w-[var(--page-width)] h-[4.5rem] mx-auto flex items-center justify-between gap-1 px-2.5 sm:px-4"]}>
+        <a href={isJapanese ? url('/ja/') : url('/')} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-2.5 sm:px-4 font-bold active:scale-95 shrink-0">
+            <div class="flex flex-row text-[var(--primary)] items-center text-md">
+                <Icon name="material-symbols:home-outline-rounded" class="text-[1.6rem] sm:text-[1.75rem] mb-0.5 mr-1.5 sm:mr-2" />
+                <span>{siteConfig.title}</span>
+            </div>
+        </a>
+        <nav aria-label={ariaI18n(AriaKey.mainNavigation, lang)} class="hidden md:flex items-center">
+            {links.map((l) => {
+                return <a aria-label={l.name} href={l.external ? l.url : url(l.url)} target={l.external ? "_blank" : null} rel={l.external ? "noopener noreferrer" : null}
+                          class="btn-plain scale-animation rounded-lg h-11 font-bold px-4 lg:px-5 active:scale-95"
+                >
+                    <div class="flex items-center">
+                        {l.name}
+                        {l.external && <Icon name="fa6-solid:arrow-up-right-from-square" class="text-[0.875rem] transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]"></Icon>}
+                    </div>
+                </a>;
+            })}
+        </nav>
+        <div class="flex items-center gap-0.5 shrink-0">
+            <!--<SearchPanel client:load>-->
+            <Search client:only="svelte" lang={lang}></Search>
+            <LanguageSwitch></LanguageSwitch>
+            {!siteConfig.themeColor.fixed && (
+                    <button aria-label={ariaI18n(AriaKey.displaySettings, lang)} class="btn-plain scale-animation rounded-lg h-10 w-10 sm:h-11 sm:w-11 active:scale-90" id="display-settings-switch">
+                        <Icon name="material-symbols:palette-outline" class="text-[1.2rem] sm:text-[1.25rem]"></Icon>
+                    </button>
+            )}
+            <LightDarkSwitch client:only="svelte" lang={lang}></LightDarkSwitch>
+            <button aria-label={ariaI18n(AriaKey.menu, lang)} name="Nav Menu" class="btn-plain scale-animation rounded-lg w-10 h-10 sm:w-11 sm:h-11 active:scale-90 md:!hidden" id="nav-menu-switch">
+                <Icon name="material-symbols:menu-rounded" class="text-[1.25rem]"></Icon>
+            </button>
+        </div>
+        <NavMenuPanel links={links}></NavMenuPanel>
+        <DisplaySettings client:only="svelte" lang={lang}></DisplaySettings>
+    </div>
+</header>
+
+<script>
+function switchTheme() {
+    if (localStorage.theme === 'dark') {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+    } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+    }
+}
+
+function loadButtonScript() {
+    let switchBtn = document.getElementById("scheme-switch");
+    if (switchBtn) {
+        switchBtn.onclick = function () {
+            switchTheme()
+        };
+    }
+
+    let settingBtn = document.getElementById("display-settings-switch");
+    if (settingBtn) {
+        settingBtn.onclick = function () {
+            let settingPanel = document.getElementById("display-setting");
+            if (settingPanel) {
+                settingPanel.classList.toggle("float-panel-closed");
+            }
+        };
+    }
+
+    let menuBtn = document.getElementById("nav-menu-switch");
+    if (menuBtn) {
+        menuBtn.onclick = function () {
+            let menuPanel = document.getElementById("nav-menu-panel");
+            if (menuPanel) {
+                menuPanel.classList.toggle("float-panel-closed");
+            }
+        };
+    }
+}
+
+loadButtonScript();
+</script>
+
+{import.meta.env.PROD && <script is:inline define:vars={{scriptUrl: url('/pagefind/pagefind.js')}}>
+async function loadPagefind() {
+    try {
+        const response = await fetch(scriptUrl, { method: 'HEAD' });
+        if (!response.ok) {
+            throw new Error(`Pagefind script not found: ${response.status}`);
+        }
+
+        const pagefind = await import(scriptUrl);
+
+        await pagefind.options({
+            excerptLength: 20
+        });
+
+        window.pagefind = pagefind;
+
+        document.dispatchEvent(new CustomEvent('pagefindready'));
+        console.log('Pagefind loaded and initialized successfully, event dispatched.');
+    } catch (error) {
+        console.error('Failed to load Pagefind:', error);
+        window.pagefind = {
+            search: () => Promise.resolve({ results: [] }),
+            options: () => Promise.resolve(),
+        };
+        document.dispatchEvent(new CustomEvent('pagefindloaderror'));
+        console.log('Pagefind load error, event dispatched.');
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadPagefind);
+} else {
+    loadPagefind();
+}
+</script>}

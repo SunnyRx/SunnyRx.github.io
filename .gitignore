@@ -1,40 +1,31 @@
-# Jekyll output and local Ruby dependencies
-/_site/
-/.jekyll-cache/
-/.jekyll-metadata
-/.sass-cache/
-/.bundle/
-/vendor/bundle/
-/vendor/cache/
+# build output
+dist/
 
-# Node dependencies, logs and test output
+# generated types
+.astro/
+
+# dependencies
 node_modules/
-*.log
-/coverage/
-/playwright-report/
-/test-results/
-/blob-report/
-/playwright/.cache/
 
-# Python image-maintenance environment and bytecode
-/.venv/
-__pycache__/
-*.py[cod]
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Local configuration; keep shared editor settings and example configuration
-/.env
-/.env.*
-!/.env.example
-/.vscode/*
-!/.vscode/settings.json
-/.idea/
+# environment variables
+.env
+.env.production
 
-# Unpublished drafts and archives
-/_posts/_draft/
-/_posts/_archive/
-/_archive/
-
-# Operating-system metadata (at any depth)
+# macOS-specific files
 .DS_Store
-Thumbs.db
-Desktop.ini
+
+.vercel
+
+package-lock.json
+bun.lockb
+yarn.lock
+
+# ide
+.idea
+*.iml

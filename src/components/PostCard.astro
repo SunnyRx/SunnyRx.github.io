@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from "astro:content";
+import I18nKey from "../i18n/i18nKey";
+import { getTagLabel } from "../i18n/tag-labels";
+import { i18n } from "../i18n/translation";
+import { formatDateToYYYYMMDD } from "../utils/date-utils";
+import { getTagUrl } from "../utils/url-utils";
+
+interface Props {
+	class?: string;
+	entry: CollectionEntry<"posts">;
+	title: string;
+	url: string;
+	published: Date;
+	updated?: Date;
+	tags: string[];
+	category?: string | null;
+	image?: string;
+	description: string;
+	draft?: boolean;
+	style?: string;
+}
+const { entry, title, url, published, tags, description, style } = Astro.props;
+const className = Astro.props.class;
+
+const { remarkPluginFrontmatter } = await entry.render();
+const summary = description || remarkPluginFrontmatter.excerpt;
+const dateStr = formatDateToYYYYMMDD(published);
+---
+<article class:list={["py-5 md:py-6 first:pt-4 last:pb-4", className]} style={style}>
+    <h2 class="text-xl md:text-2xl font-bold leading-snug mb-2">
+        <a
+            href={url}
+            class="transition text-black/90 dark:text-white/90 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] rounded"
+        >
+            {title}
+        </a>
+    </h2>
+
+    {summary && (
+        <p class="text-sm md:text-[0.95rem] text-black/65 dark:text-white/65 leading-relaxed line-clamp-2 mb-3">
+            {summary}
+        </p>
+    )}
+
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-black/45 dark:text-white/45">
+        <time datetime={dateStr} class="font-medium text-black/55 dark:text-white/55">
+            {dateStr}
+        </time>
+        <span aria-hidden="true">·</span>
+        <span>
+            {remarkPluginFrontmatter.minutes} {i18n(remarkPluginFrontmatter.minutes === 1 ? I18nKey.minuteCount : I18nKey.minutesCount, Astro.locals.lang)}
+        </span>
+        {tags && tags.length > 0 && (
+            <>
+                <span aria-hidden="true" class="hidden sm:inline">·</span>
+                <div class="hidden sm:flex flex-wrap items-center gap-x-2 gap-y-1">
+                    {tags.slice(0, 4).map((tag) => (
+                        <a
+                            href={getTagUrl(tag)}
+                            class="transition hover:text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] rounded"
+                        >
+                            #{getTagLabel(tag, Astro.locals.lang)}
+                        </a>
+                    ))}
+                </div>
+            </>
+        )}
+    </div>
+</article>
